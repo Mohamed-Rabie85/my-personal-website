@@ -197,7 +197,7 @@ export default function Contact() {
             
             <div className="card">
               <h3 className="text-lg font-semibold mb-2 text-[rgb(var(--primary-dark))]">كيف يمكنني معرفة المزيد عن خدماتكم؟</h3>
-              <p className="text-[rgb(var(--neutral-medium))]">&quot;يمكنك معرفة المزيد عن خدماتنا من خلال تصفح موقعنا الإلكتروني، وخاصة صفحة "الخدمات". كما يمكنك التواصل معنا مباشرة للحصول على معلومات مخصصة حسب احتياجاتك.&quot;</p>
+              <p className="text-[rgb(var(--neutral-medium))]">&quot;يمكنك معرفة المزيد عن خدماتنا من خلال تصفح موقعنا الإلكتروني، وخاصة صفحة "خدماتنا". كما يمكنك التواصل معنا مباشرة للحصول على معلومات مخصصة حسب احتياجاتك.&quot;</p>
             </div>
           </div>
         </div>

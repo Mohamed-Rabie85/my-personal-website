@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "تواصل معنا | مستشار تطوير أعمال وتسويق استراتيجي",
@@ -215,9 +215,7 @@ export default function Contact() {
       <section className="w-full py-16 bg-[rgb(var(--primary-dark))] text-white">
         <div className="section-container text-center">
           <h2 className="text-white mb-6">هل أنت جاهز لتحويل رؤيتك إلى واقع؟</h2>
-          <p className="text-xl max-w-3xl mx-auto mb-8">
-            تواصل معنا اليوم لمناقشة كيف يمكننا مساعدتك في تحقيق أهدافك وتطوير أعمالك.
-          </p>
+          <p className="text-xl max-w-3xl mx-auto mb-8">&quot;تواصل معنا اليوم لمناقشة كيف يمكننا مساعدتك في تحقيق أهدافك وتطوير أعمالك.&quot;</p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Link href="/consultation" className="btn-secondary">
               احجز استشارة مجانية

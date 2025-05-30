@@ -267,9 +267,7 @@ export default function Consultation() {
                     </svg>
                   </div>
                 </div>
-                <p className="text-[rgb(var(--neutral-medium))] mb-4">
-                  "كنت مترددة في البداية، لكن الاستشارة المجانية أزالت كل مخاوفي. الاحترافية والخبرة العميقة كانت واضحة منذ اللحظة الأولى. أنصح بشدة بحجز استشارة مجانية لمن يبحث عن شريك استراتيجي حقيقي لتطوير أعماله."
-                </p>
+                <p className="text-[rgb(var(--neutral-medium))] mb-4">&quot;كنت مترددة في البداية، لكن الاستشارة المجانية أزالت كل مخاوفي. الاحترافية والخبرة العميقة كانت واضحة منذ اللحظة الأولى. أنصح بشدة بحجز استشارة مجانية لمن يبحث عن شريك استراتيجي حقيقي لتطوير أعماله.&quot;</p>
                 <div className="flex text-yellow-400">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"></path>
@@ -297,9 +295,7 @@ export default function Consultation() {
       <section className="w-full py-16 bg-[rgb(var(--primary-dark))] text-white">
         <div className="section-container text-center">
           <h2 className="text-white mb-6">هل أنت جاهز لتحويل رؤيتك إلى واقع؟</h2>
-          <p className="text-xl max-w-3xl mx-auto mb-8">
-            احجز استشارتك المجانية اليوم واكتشف كيف يمكننا العمل معًا لتحقيق أهدافك وتطوير أعمالك.
-          </p>
+          <p className="text-xl max-w-3xl mx-auto mb-8">&quot;احجز استشارتك المجانية اليوم واكتشف كيف يمكننا العمل معًا لتحقيق أهدافك وتطوير أعمالك.&quot;</p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Link href="#" className="btn-secondary">
               احجز استشارة مجانية

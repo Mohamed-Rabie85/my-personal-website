@@ -196,16 +196,12 @@ export default function Contact() {
             
             <div className="card">
               <h3 className="text-lg font-semibold mb-2 text-[rgb(var(--primary-dark))]">هل تقدمون خدمات استشارية عن بعد؟</h3>
-              <p className="text-[rgb(var(--neutral-medium))]">
-                نعم، نقدم خدمات استشارية عن بعد من خلال مكالمات الفيديو أو الهاتف. يمكنك حجز استشارة مجانية من خلال صفحة "حجز استشارة" على موقعنا.
-              </p>
+              <p className="text-[rgb(var(--neutral-medium))]">&quot; نعم، نقدم خدمات استشارية عن بعد من خلال مكالمات الفيديو أو الهاتف. يمكنك حجز استشارة مجانية من خلال صفحة "حجز استشارة" على موقعنا.&quot;</p>
             </div>
             
             <div className="card">
               <h3 className="text-lg font-semibold mb-2 text-[rgb(var(--primary-dark))]">كيف يمكنني معرفة المزيد عن خدماتكم؟</h3>
-              <p className="text-[rgb(var(--neutral-medium))]">
-                يمكنك معرفة المزيد عن خدماتنا من خلال تصفح موقعنا الإلكتروني، وخاصة صفحة "الخدمات". كما يمكنك التواصل معنا مباشرة للحصول على معلومات مخصصة حسب احتياجاتك.
-              </p>
+              <p className="text-[rgb(var(--neutral-medium))]">&quot; يمكنك معرفة المزيد عن خدماتنا من خلال تصفح موقعنا الإلكتروني، وخاصة صفحة "الخدمات". كما يمكنك التواصل معنا مباشرة للحصول على معلومات مخصصة حسب احتياجاتك.&quot;</p>
             </div>
           </div>
         </div>

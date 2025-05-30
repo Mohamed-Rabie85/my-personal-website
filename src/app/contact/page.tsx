@@ -182,16 +182,12 @@ export default function Contact() {
           <div className="space-y-6 max-w-3xl mx-auto">
             <div className="card">
               <h3 className="text-lg font-semibold mb-2 text-[rgb(var(--primary-dark))]">ما هي أوقات الرد على الاستفسارات؟</h3>
-              <p className="text-[rgb(var(--neutral-medium))]">
-                نحن نسعى للرد على جميع الاستفسارات خلال 24 ساعة من استلامها. في حالات الطوارئ، يمكنك الاتصال بنا مباشرة على رقم الهاتف المذكور.
-              </p>
+              <p className="text-[rgb(var(--neutral-medium))]">&quot;نحن نسعى للرد على جميع الاستفسارات خلال 24 ساعة من استلامها. في حالات الطوارئ، يمكنك الاتصال بنا مباشرة على رقم الهاتف المذكور.&quot;</p>
             </div>
             
             <div className="card">
               <h3 className="text-lg font-semibold mb-2 text-[rgb(var(--primary-dark))]">هل يمكنني حجز موعد لزيارة مكتبكم؟</h3>
-              <p className="text-[rgb(var(--neutral-medium))]">
-                نعم، يمكنك حجز موعد لزيارة مكتبنا من خلال الاتصال بنا أو إرسال بريد إلكتروني. نرحب بالزيارات خلال ساعات العمل الرسمية من الأحد إلى الخميس.
-              </p>
+              <p className="text-[rgb(var(--neutral-medium))]">&quot;نعم، يمكنك حجز موعد لزيارة مكتبنا من خلال الاتصال بنا أو إرسال بريد إلكتروني. نرحب بالزيارات خلال ساعات العمل الرسمية من الأحد إلى الخميس.&quot;</p>
             </div>
             
             <div className="card">

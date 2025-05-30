@@ -1,26 +1,127 @@
 @import "tailwindcss";
 
+/* تخصيص الألوان والمتغيرات الأساسية */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* الألوان الرئيسية - درجات الأزرق */
+  --primary-dark: #0A192F;       /* بدلًا من 25, 55, 100 */
+  --primary-medium: #1C3B5C;     /* بدلًا من 45, 85, 150 */
+  --primary-light: #4B7DBD;      /* بدلًا من 75, 125, 200 */
+
+  /* الألوان الثانوية - درجات الأخضر */
+  --secondary-dark: #144A2C;     /* بدلًا من 20, 90, 50 */
+  --secondary-medium: #4CAF50;   /* بدلًا من 40, 130, 70 */
+  --secondary-light: #689F38;    /* بدلًا من 60, 170, 100 */
+
+  /* الألوان المحايدة */
+  --neutral-dark: #1E1E23;       /* بدلًا من 30, 30, 35 */
+  --neutral-medium: #64646E;     /* بدلًا من 100, 100, 110 */
+  --neutral-light: #C8C8D2;      /* بدلًا من 200, 200, 210 */
+
+  /* متغيرات إضافية */
+  --background: #FFFFFF;         /* بدلًا من 255, 255, 255 */
+  --foreground: #1E1E23;         /* بدلًا من 30, 30, 35 */
+
+  /* وضع الظلام */
+  --dark-background: #0F172A;    /* بدلًا من 15, 23, 42 */
+  --dark-foreground: #FFFFFF;    /* بدلًا من 255, 255, 255 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* تطبيق الاتجاه من اليمين إلى اليسار للغة العربية */
+html {
+  direction: rtl;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] dark:bg-[var(--dark-background)] dark:text-[var(--dark-foreground)];
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  a {
+    @apply transition-colors duration-300;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* تنسيقات الحاويات */
+  .section-container {
+    @apply container mx-auto px-4 md:px-8 max-w-7xl;
+  }
+
+  /* تنسيقات البطاقات */
+  .card {
+    @apply bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg shadow-md overflow-hidden border border-gray-100 dark:border-slate-800;
+  }
+
+  /* تنسيقات الأزرار */
+  .btn-primary {
+    @apply bg-[var(--primary-medium)] hover:bg-[var(--primary-dark)] text-white px-6 py-3 rounded-md transition-colors duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-[var(--secondary-medium)] hover:bg-[var(--secondary-dark)] text-white px-6 py-3 rounded-md transition-colors duration-300;
+  }
+
+  .btn-outline {
+    @apply border-2 border-[var(--primary-medium)] text-[var(--primary-medium)] hover:bg-[var(--primary-medium)] hover:text-white px-6 py-3 rounded-md transition-colors duration-300;
+  }
+
+  /* تنسيقات النموذج */
+  input,
+  select,
+  textarea {
+    @apply focus:ring-[var(--primary-medium)] focus:border-[var(--primary-medium)];
+  }
+}
+
+/* باقي الأكواد تبقى كما هي */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    @apply px-4;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
 }

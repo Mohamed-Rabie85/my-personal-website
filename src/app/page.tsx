@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "الصفحة الرئيسية | مستشار تطوير أعمال وتسويق استراتيجي",
+  title: "Mohamed Rabie | مستشار تطوير أعمال وتسويق استراتيجي",
   description: "خبرة أكثر من 20 عاماً في تطوير الأعمال والتسويق الاستراتيجي وبناء العلامات التجارية. استشارات متخصصة للشركات الناشئة والصغيرة والمتوسطة.",
 };
 
@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       {/* قسم الترحيب الرئيسي */}
-      <section className="w-full bg-gradient-to-b from-[rgb(var(--primary-dark))] to-[rgb(var(--primary-medium))] text-white py-20 md:py-32">
+      <section className="w-full bg-background text-white py-20 md:py-32">
         <div className="section-container text-center md:text-right">
           <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            تحويل الرؤى إلى <span className="text-[rgb(var(--secondary-light))]">نجاحات استثنائية</span>
+            تحويل الرؤى إلى <span className="text-[var(--secondary-light)]">نجاحات استثنائية</span>
           </h1>
           <p className="mb-8 text-xl md:text-2xl max-w-3xl mx-auto md:mx-0">
             مستشار تطوير أعمال وتسويق استراتيجي متخصص في بناء علامات تجارية مؤثرة وتحقيق نمو مستدام للشركات الناشئة والصغيرة والمتوسطة.
@@ -30,11 +30,11 @@ export default function Home() {
       </section>
 
       {/* قسم الخدمات المميزة */}
-      <section className="w-full py-16 bg-white dark:bg-slate-900">
+      <section className="w-full py-16 bg-background">
         <div className="section-container">
           <div className="text-center mb-12">
-            <h2 className="text-[rgb(var(--primary-dark))]">خدمات استشارية متخصصة</h2>
-            <p className="text-[rgb(var(--neutral-medium))] max-w-3xl mx-auto">
+            <h2 className="text-[var(--secondary-medium)]">خدمات استشارية متخصصة</h2>
+            <p className="max-w-3xl mx-auto">
               خبرة عملية تمتد لأكثر من 20 عاماً في طليعة التحولات التسويقية، تطوير الأعمال، والابتكار التشغيلي
             </p>
           </div>
@@ -101,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* قسم لماذا تختارني */}
-      <section className="w-full py-16 bg-gray-50 dark:bg-slate-800">
+      <section className="w-full py-16 bg-slate-800">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-[rgb(var(--primary-dark))]">لماذا تختارني؟</h2>
@@ -219,7 +219,7 @@ export default function Home() {
       </section>
 
       {/* قسم دعوة للعمل */}
-      <section className="w-full py-16 bg-[rgb(var(--primary-dark))] text-white">
+      <section className="w-full py-16 bg-gray-400 text-white">
         <div className="section-container text-center">
           <h2 className="text-white mb-6">هل أنت جاهز لتحويل رؤيتك إلى واقع؟</h2>
           <p className="text-xl max-w-3xl mx-auto mb-8">

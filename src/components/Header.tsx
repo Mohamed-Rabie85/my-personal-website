@@ -1,39 +1,47 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white dark:bg-slate-900 shadow-sm sticky top-0 z-50">
+    <header className="bg-background shadow-md sticky top-0 z-50">
       <div className="section-container">
         <div className="flex justify-between items-center py-4">
           {/* الشعار */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-[rgb(var(--primary-dark))]">
-              الاستشاري
-            </Link>
-          </div>
+        <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-white">
+          <Image 
+            src="/logo.png" 
+            alt="شعار الاستشاري"
+            width={40} 
+            height={40}
+            className="object-contain" 
+          />
+          الاستشاري
+        </Link>
+      </div>
 
           {/* القائمة الرئيسية - للشاشات الكبيرة */}
           <nav className="hidden md:flex items-center space-x-1 space-x-reverse">
-            <Link href="/" className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))]">
+            <Link href="/" className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300">
               الرئيسية
             </Link>
-            <Link href="/about" className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))]">
+            <Link href="/about" className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300">
               نبذة عني
             </Link>
-            <Link href="/services" className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))]">
+            <Link href="/services" className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300">
               الخدمات
             </Link>
-            <Link href="/portfolio" className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))]">
+            <Link href="/portfolio" className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300">
               معرض الأعمال
             </Link>
-            <Link href="/blog" className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))]">
+            <Link href="/blog" className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300">
               المدونة
             </Link>
-            <Link href="/contact" className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))]">
+            <Link href="/contact" className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300">
               تواصل معنا
             </Link>
           </nav>
@@ -47,7 +55,7 @@ export default function Header() {
 
           {/* زر القائمة للجوال */}
           <button
-            className="md:hidden text-[rgb(var(--neutral-dark))]"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -68,42 +76,42 @@ export default function Header() {
             <nav className="flex flex-col space-y-2">
               <Link
                 href="/"
-                className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))] hover:bg-gray-50 rounded-md"
+                className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 الرئيسية
               </Link>
               <Link
                 href="/about"
-                className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))] hover:bg-gray-50 rounded-md"
+                className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 نبذة عني
               </Link>
               <Link
                 href="/services"
-                className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))] hover:bg-gray-50 rounded-md"
+                className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 الخدمات
               </Link>
               <Link
                 href="/portfolio"
-                className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))] hover:bg-gray-50 rounded-md"
+                className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 معرض الأعمال
               </Link>
               <Link
                 href="/blog"
-                className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))] hover:bg-gray-50 rounded-md"
+                className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 المدونة
               </Link>
               <Link
                 href="/contact"
-                className="px-3 py-2 text-[rgb(var(--neutral-medium))] hover:text-[rgb(var(--primary-medium))] hover:bg-gray-50 rounded-md"
+                className="px-3 py-2 border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 تواصل معنا

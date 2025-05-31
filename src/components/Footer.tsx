@@ -1,4 +1,6 @@
+import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -6,18 +8,31 @@ export default function Footer() {
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* القسم الأول - معلومات الاتصال */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">الاستشاري</h3>
-            <p className="mb-4">
+          <div className="space-y-6">
+            <div className="flex items-center">
+                    <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-white">
+                      <Image 
+                        src="/logo.png" 
+                        alt="شعار الاستشاري"
+                        width={40} 
+                        height={40}
+                        className="object-contain" 
+                      />
+                      الاستشاري
+                    </Link>
+            </div>
+            {/* <h3 className="text-xl font-bold mb-4">الاستشاري</h3> */}
+            {/* <p className="mb-4">
               خبرة عملية تمتد لأكثر من 20 عاماً في طليعة التحولات التسويقية، تطوير الأعمال، والابتكار التشغيلي.
-            </p>
-            <div className="space-y-2">
+            </p> */}
+            <div className="space-y-3">
               <p className="flex items-center gap-2">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z"></path>
                   <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z"></path>
                 </svg>
-                <span>info@example.com</span>
+                <span>mohamedrabie85@gmail.com
+                </span>
               </p>
               <p className="flex items-center gap-2">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -25,14 +40,14 @@ export default function Footer() {
                   <path d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM8.25 9.75a.75.75 0 0 0 1.5 0V6a.75.75 0 0 0-1.5 0v3.75ZM15.75 9.75a.75.75 0 0 0 1.5 0V6a.75.75 0 0 0-1.5 0v3.75ZM16.125 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM13.125 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM12.75 9.75a.75.75 0 0 0 1.5 0V6a.75.75 0 0 0-1.5 0v3.75ZM18.75 10.5a.75.75 0 0 0-.75.75v7.5c0 .414-.336.75-.75.75h-10.5a.75.75 0 0 1-.75-.75v-7.5a.75.75 0 0 0-1.5 0v7.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-7.5a.75.75 0 0 0-.75-.75ZM7.151 21.75a2.999 2.999 0 0 0 2.599 1.5h4.5a3 3 0 0 0 2.599-1.5h-9.698Z"></path>
                   <path d="M7.5 3h9a2.25 2.25 0 0 1 2.25 2.25v4.5a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-4.5A2.25 2.25 0 0 1 7.5 3Z"></path>
                 </svg>
-                <span>+966 5X XXX XXXX</span>
+                <span>05200 011 011 2+</span>
               </p>
               <p className="flex items-center gap-2">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M11.47 3.84a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.06l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 0 0 1.061 1.06l8.69-8.69Z"></path>
                   <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.43Z"></path>
                 </svg>
-                <span>الرياض، المملكة العربية السعودية</span>
+                <span>القاهرة، مصر</span>
               </p>
             </div>
           </div>
@@ -42,32 +57,32 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">روابط سريعة</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="hover:text-[rgb(var(--secondary-light))] transition-colors">
+                <Link href="/" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
                   الرئيسية
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-[rgb(var(--secondary-light))] transition-colors">
+                <Link href="/about" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
                   نبذة عني
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-[rgb(var(--secondary-light))] transition-colors">
+                <Link href="/services" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
                   الخدمات
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="hover:text-[rgb(var(--secondary-light))] transition-colors">
+                <Link href="/portfolio" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
                   معرض الأعمال
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-[rgb(var(--secondary-light))] transition-colors">
+                <Link href="/blog" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
                   المدونة
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[rgb(var(--secondary-light))] transition-colors">
+                <Link href="/contact" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
                   تواصل معنا
                 </Link>
               </li>
@@ -79,27 +94,27 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">الخدمات</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services#strategic-planning" className="hover:text-[rgb(var(--secondary-light))] transition-colors">
+                <Link href="/services#strategic-planning" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
                   التخطيط الاستراتيجي
                 </Link>
               </li>
               <li>
-                <Link href="/services#digital-marketing" className="hover:text-[rgb(var(--secondary-light))] transition-colors">
+                <Link href="/services#digital-marketing" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
                   التسويق الرقمي
                 </Link>
               </li>
               <li>
-                <Link href="/services#marketing-psychology" className="hover:text-[rgb(var(--secondary-light))] transition-colors">
+                <Link href="/services#marketing-psychology" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
                   علم النفس التسويقي
                 </Link>
               </li>
               <li>
-                <Link href="/services#data-analysis" className="hover:text-[rgb(var(--secondary-light))] transition-colors">
+                <Link href="/services#data-analysis" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
                   تحليل البيانات
                 </Link>
               </li>
               <li>
-                <Link href="/services#media-production" className="hover:text-[rgb(var(--secondary-light))] transition-colors">
+                <Link href="/services#media-production" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
                   الإنتاج الإعلامي
                 </Link>
               </li>
@@ -137,7 +152,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="أدخل بريدك الإلكتروني"
-                className="px-4 py-2 rounded-md text-[rgb(var(--neutral-dark))] focus:outline-none"
+                className="px-4 py-2 rounded-md border-2 border-transparent hover:border-emerald-600 transition-colors duration-300"
               />
               <button className="btn-secondary">
                 اشترك الآن
@@ -147,7 +162,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} الاستشاري. جميع الحقوق محفوظة.</p>
+          <p>&copy; {new Date().getFullYear()} Mohamed Rabie جميع الحقوق محفوظة</p>
         </div>
       </div>
     </footer>

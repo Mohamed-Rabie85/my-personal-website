@@ -41,7 +41,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">البريد الإلكتروني</h3>
-                    <p className="text-[rgb(var(--neutral-medium))]">info@example.com</p>
+                    <p className="text-[rgb(var(--neutral-medium))]">mohamedrabie85@gmail.com
+                    </p>
                   </div>
                 </div>
                 
@@ -55,7 +56,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">رقم الهاتف</h3>
-                    <p className="text-[rgb(var(--neutral-medium))]">+966 5X XXX XXXX</p>
+                    <p className="text-[rgb(var(--neutral-medium))]">05200 011 011 2+</p>
                   </div>
                 </div>
                 
@@ -68,7 +69,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">العنوان</h3>
-                    <p className="text-[rgb(var(--neutral-medium))]">الرياض، المملكة العربية السعودية</p>
+                    <p className="text-[rgb(var(--neutral-medium))]">القاهرة، مصر</p>
                   </div>
                 </div>
                 
@@ -81,7 +82,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">ساعات العمل</h3>
-                    <p className="text-[rgb(var(--neutral-medium))]">الأحد - الخميس: 9:00 صباحًا - 5:00 مساءً</p>
+                    <p className="text-[rgb(var(--neutral-medium))]">الأحد - الخميس: 11:00 صباحًا - 7:00 مساءً</p>
                   </div>
                 </div>
               </div>
@@ -115,27 +116,27 @@ export default function Contact() {
             
             {/* نموذج التواصل */}
             <div className="bg-gray-50 p-8 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-[rgb(var(--primary-dark))]">أرسل لنا رسالة</h3>
+              <h3 className="text-xl font-semibold mb-4 text-[var(--primary-dark)]">أرسل لنا رسالة</h3>
               <form className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[rgb(var(--neutral-dark))] mb-1">الاسم الكامل</label>
-                  <input type="text" id="name" name="name" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary-light))]" placeholder="أدخل اسمك الكامل" />
+                  <label htmlFor="name" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1">الاسم الكامل</label>
+                  <input type="text" id="name" name="name" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل اسمك الكامل" />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[rgb(var(--neutral-dark))] mb-1">البريد الإلكتروني</label>
-                  <input type="email" id="email" name="email" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary-light))]" placeholder="أدخل بريدك الإلكتروني" />
+                  <label htmlFor="email" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1">البريد الإلكتروني</label>
+                  <input type="email" id="email" name="email" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل بريدك الإلكتروني" />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-[rgb(var(--neutral-dark))] mb-1">رقم الهاتف</label>
-                  <input type="tel" id="phone" name="phone" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary-light))]" placeholder="أدخل رقم هاتفك" />
+                  <label htmlFor="phone" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1">رقم الهاتف</label>
+                  <input type="tel" id="phone" name="phone" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل رقم هاتفك" />
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-[rgb(var(--neutral-dark))] mb-1">الموضوع</label>
-                  <input type="text" id="subject" name="subject" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary-light))]" placeholder="أدخل موضوع رسالتك" />
+                  <label htmlFor="subject" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1">الموضوع</label>
+                  <input type="text" id="subject" name="subject" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل موضوع رسالتك" />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-[rgb(var(--neutral-dark))] mb-1">الرسالة</label>
-                  <textarea id="message" name="message" rows={6} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[rgb(var(--primary-light))]" placeholder="اكتب رسالتك هنا..."></textarea>
+                  <label htmlFor="message" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1">الرسالة</label>
+                  <textarea id="message" name="message" rows={6} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="اكتب رسالتك هنا..."></textarea>
                 </div>
                 <button type="submit" className="w-full btn-secondary">
                   إرسال الرسالة

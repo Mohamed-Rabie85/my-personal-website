@@ -17,13 +17,9 @@
   --neutral-medium: #64646E;     /* بدلًا من 100, 100, 110 */
   --neutral-light: #C8C8D2;      /* بدلًا من 200, 200, 210 */
 
-  /* متغيرات إضافية */
-  --background: #FFFFFF;         /* بدلًا من 255, 255, 255 */
-  --foreground: #1E1E23;         /* بدلًا من 30, 30, 35 */
-
   /* وضع الظلام */
-  --dark-background: #0F172A;    /* بدلًا من 15, 23, 42 */
-  --dark-foreground: #FFFFFF;    /* بدلًا من 255, 255, 255 */
+  --background: #1C3B5C;    /* بدلًا من 15, 23, 42 */
+  --foreground: #FFFFFF;    /* بدلًا من 255, 255, 255 */
 }
 
 /* تطبيق الاتجاه من اليمين إلى اليسار للغة العربية */
@@ -33,7 +29,7 @@ html {
 
 @layer base {
   body {
-    @apply bg-[var(--background)] text-[var(--foreground)] dark:bg-[var(--dark-background)] dark:text-[var(--dark-foreground)];
+    @apply bg-[var(--background)] text-[var(--foreground)];
   }
 
   h1 {
@@ -61,7 +57,7 @@ html {
 
   /* تنسيقات البطاقات */
   .card {
-    @apply bg-[var(--background)] dark:bg-[var(--dark-background)] rounded-lg shadow-md overflow-hidden border border-gray-100 dark:border-slate-800;
+    @apply bg-[var(--background)] rounded-lg shadow-md overflow-hidden border border-gray-100;
   }
 
   /* تنسيقات الأزرار */

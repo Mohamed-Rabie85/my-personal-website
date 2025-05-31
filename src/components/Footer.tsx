@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-[rgb(var(--primary-dark))] text-white py-12">
+    <footer className="bg-primary-medium text-white py-12">
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* القسم الأول - معلومات الاتصال */}
@@ -162,7 +162,8 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} Mohamed Rabie جميع الحقوق محفوظة</p>
+          <p>&copy; {new Date().getFullYear()} Designd By Mohamed Rabie </p>
+          <p>جميع الحقوق محفوظة</p>
         </div>
       </div>
     </footer>

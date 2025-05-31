@@ -4,21 +4,21 @@
 :root {
   /* الألوان الرئيسية - درجات الأزرق */
   --primary-dark: #0A192F;       /* بدلًا من 25, 55, 100 */
-  --primary-medium: #1C3B5C;     /* بدلًا من 45, 85, 150 */
+  --primary-medium: #0A2B52;     /* بدلًا من 45, 85, 150 */
   --primary-light: #4B7DBD;      /* بدلًا من 75, 125, 200 */
 
   /* الألوان الثانوية - درجات الأخضر */
   --secondary-dark: #144A2C;     /* بدلًا من 20, 90, 50 */
-  --secondary-medium: #4CAF50;   /* بدلًا من 40, 130, 70 */
-  --secondary-light: #689F38;    /* بدلًا من 60, 170, 100 */
+  --secondary-medium: #00E700;   /* بدلًا من 40, 130, 70 */
+  --secondary-light: #D2F7E2;    /* بدلًا من 60, 170, 100 */
 
   /* الألوان المحايدة */
   --neutral-dark: #1E1E23;       /* بدلًا من 30, 30, 35 */
   --neutral-medium: #64646E;     /* بدلًا من 100, 100, 110 */
-  --neutral-light: #C8C8D2;      /* بدلًا من 200, 200, 210 */
+  --neutral-light: #EEF0F3;      /* بدلًا من 200, 200, 210 */
 
   /* وضع الظلام */
-  --background: #1C3B5C;    /* بدلًا من 15, 23, 42 */
+  --background: #0A2B52;    /* بدلًا من 15, 23, 42 */
   --foreground: #FFFFFF;    /* بدلًا من 255, 255, 255 */
 }
 
@@ -57,7 +57,7 @@ html {
 
   /* تنسيقات البطاقات */
   .card {
-    @apply bg-[var(--background)] rounded-lg shadow-md overflow-hidden border border-gray-100;
+    @apply bg-[var(--primary-light)] rounded-lg shadow-md overflow-hidden border border-gray-100;
   }
 
   /* تنسيقات الأزرار */

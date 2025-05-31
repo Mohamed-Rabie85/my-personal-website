@@ -32,19 +32,19 @@ export default function Portfolio() {
           
           {/* فلتر المشاريع */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <button className="px-4 py-2 bg-[rgb(var(--primary-light))] text-white rounded-md hover:bg-[rgb(var(--primary-medium))] transition-colors">
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)] text-[var(--neutral-dark)] font-bold rounded-md hover:bg-[var(--secondary-dark)] hover:text-[var(--neutral-light)] transition-colors">
               جميع المشاريع
             </button>
-            <button className="px-4 py-2 bg-gray-200 text-[rgb(var(--neutral-dark))] rounded-md hover:bg-gray-300 transition-colors">
-              التسويق الرقمي
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)] text-[var(--neutral-dark)] font-bold rounded-md hover:bg-[var(--secondary-dark)] hover:text-[var(--neutral-light)] transition-colors">
+              التسويق 
             </button>
-            <button className="px-4 py-2 bg-gray-200 text-[rgb(var(--neutral-dark))] rounded-md hover:bg-gray-300 transition-colors">
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)] text-[var(--neutral-dark)] font-bold rounded-md hover:bg-[var(--secondary-dark)] hover:text-[var(--neutral-light)] transition-colors">
               تطوير الأعمال
             </button>
-            <button className="px-4 py-2 bg-gray-200 text-[rgb(var(--neutral-dark))] rounded-md hover:bg-gray-300 transition-colors">
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)] text-[var(--neutral-dark)] font-bold rounded-md hover:bg-[var(--secondary-dark)] hover:text-[var(--neutral-light)] transition-colors">
               بناء العلامات التجارية
             </button>
-            <button className="px-4 py-2 bg-gray-200 text-[rgb(var(--neutral-dark))] rounded-md hover:bg-gray-300 transition-colors">
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)] text-[var(--neutral-dark)] font-bold rounded-md hover:bg-[var(--secondary-dark)] hover:text-[var(--neutral-light)] transition-colors">
               الإنتاج الإعلامي
             </button>
           </div>
@@ -86,8 +86,72 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            
             {/* مشروع 2 */}
+            <div className="card hover:shadow-xl transition-all">
+              <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
+                {/* هنا يمكن إضافة صورة المشروع */}
+                <div className="text-center text-gray-500">
+                  <svg className="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.5 4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h8.25a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3H4.5ZM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06Z"></path>
+                  </svg>
+                  <p>صورة المشروع</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="bg-[rgb(var(--secondary-light))] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
+                  <span className="text-[rgb(var(--neutral-medium))] text-sm">2024</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">بناء علامة تجارية قوية وموثوقة، لا مجرد مبيعات</h3>
+                <p className="text-[rgb(var(--neutral-medium))] mb-4">
+                  صممت وأعددت خطة تسويق رقمي متكاملة لعلامة تجارية في قطاع اللاند سكيب، لزيادة الظهور الرقمي والمبيعات عبر الإنترنت.
+                </p>
+                <div className="flex justify-between items-center">
+                  <Link href="/portfolio/verde-vertical" className="text-[rgb(var(--primary-medium))] hover:text-[rgb(var(--primary-dark))] font-medium">
+                    عرض دراسة الحالة &larr;
+                  </Link>
+                  <div className="flex gap-2">
+                    <span className="bg-gray-200 text-[rgb(var(--neutral-dark))] text-xs px-2 py-1 rounded">تسويق رقمي</span>
+                    <span className="bg-gray-200 text-[rgb(var(--neutral-dark))] text-xs px-2 py-1 rounded">وسائل التواصل</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* مشروع 3 */}
+            <div className="card hover:shadow-xl transition-all">
+              <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
+                {/* هنا يمكن إضافة صورة المشروع */}
+                <div className="text-center text-gray-500">
+                  <svg className="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.5 4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h8.25a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3H4.5ZM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06Z"></path>
+                  </svg>
+                  <p>صورة المشروع</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="bg-[rgb(var(--secondary-light))] text-white text-xs px-3 py-1 rounded-full">التسويق </span>
+                  <span className="text-[rgb(var(--neutral-medium))] text-sm">2024</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">صياغة النمو الاستراتيجي لخدمات الدعاية والفعاليات</h3>
+                <p className="text-[rgb(var(--neutral-medium))] mb-4">
+                  صممت وأعددت خطة تسويق ,نموذج عمل متكامل لخدمات الدعاية والفعاليات لعلامة تجارية في قطاع الدعاية والاعلان، لزيادة الظهور الرقمي والمبيعات.
+                </p>
+                <div className="flex justify-between items-center">
+                  <Link href="/portfolio/pixel-hd-strategy" className="text-[rgb(var(--primary-medium))] hover:text-[rgb(var(--primary-dark))] font-medium">
+                    عرض دراسة الحالة &larr;
+                  </Link>
+                  <div className="flex gap-2">
+                    <span className="bg-gray-200 text-[rgb(var(--neutral-dark))] text-xs px-2 py-1 rounded">تسويق </span>
+                    <span className="bg-gray-200 text-[rgb(var(--neutral-dark))] text-xs px-2 py-1 rounded">وسائل التواصل</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            {/* مشروع 3 */}
             <div className="card hover:shadow-xl transition-all">
               <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
@@ -119,7 +183,7 @@ export default function Portfolio() {
               </div>
             </div>
             
-            {/* مشروع 3 */}
+            {/* مشروع 4 */}
             <div className="card hover:shadow-xl transition-all">
               <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
@@ -151,7 +215,7 @@ export default function Portfolio() {
               </div>
             </div>
             
-            {/* مشروع 4 */}
+            {/* مشروع 5 */}
             <div className="card hover:shadow-xl transition-all">
               <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
@@ -183,7 +247,7 @@ export default function Portfolio() {
               </div>
             </div>
             
-            {/* مشروع 5 */}
+            {/* مشروع 6 */}
             <div className="card hover:shadow-xl transition-all">
               <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
@@ -215,7 +279,7 @@ export default function Portfolio() {
               </div>
             </div>
             
-            {/* مشروع 6 */}
+            {/* مشروع 7 */}
             <div className="card hover:shadow-xl transition-all">
               <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}

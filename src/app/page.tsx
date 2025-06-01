@@ -172,8 +172,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* شهادة العميل 1 */}
             <div className="card p-6">
-              <p className="mb-4 text-[var(--neutral-dark)] text-lg italic">
+              <p className="mb-4 text-[var(--neutral-dark)] text-lg italic">&quot;
                 محمد هو استشاري استثنائي يجمع بين الفهم العميق للسوق والقدرة على تحويل التحديات إلى فرص نمو ملموسة. خبرته الواسعة أحدثت فرقًا حقيقيًا في أعمالنا.
+                &quot;
               </p>
               <div className="flex items-center gap-4">
                 {/* <Image src="/path/to/client-avatar1.jpg" alt="Client Name" width={50} height={50} className="rounded-full" /> */}
@@ -186,8 +187,9 @@ export default function Home() {
             
             {/* شهادة العميل 2 */}
             <div className="card p-6">
-              <p className="mb-4 text-[var(--neutral-dark)] text-lg italic">
+              <p className="mb-4 text-[var(--neutral-dark)] text-lg italic">&quot;
                 لم نكن نتوقع هذا المستوى من التحليل الاستراتيجي والدعم التقني. محمد يمتلك رؤية فريدة وقدرة على تبسيط الأمور المعقدة، مما ساعدنا على تحقيق أهدافنا بسرعة وكفاءة.
+                &quot;
               </p>
               <div className="flex items-center gap-4">
                 {/* <Image src="/path/to/client-avatar2.jpg" alt="Client Name" width={50} height={50} className="rounded-full" /> */}

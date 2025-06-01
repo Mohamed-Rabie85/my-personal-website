@@ -40,7 +40,7 @@ export default function About() {
             </div>
             <div className="flex items-center justify-center">
               <div className="text-center"> {/* يمكن إزالة text-gray-500 من هنا لأنه لا يؤثر على الصورة */}
-                <Image
+                <img
                   src="images/mohamed-profile.jpg" // *مسار الصورة الفعلي داخل مجلد public*
                   alt="صورة شخصية لمحمد ربيع mohamed rabie" // نص وصفي للصورة (مهم جداً للوصول و SEO)
                   className="w-70 h-80 rounded-lg object-cover mx-auto mb-4" // فئات Tailwind للتحكم في الحجم والشكل

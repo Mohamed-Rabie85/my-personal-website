@@ -57,7 +57,7 @@ html {
 
   /* تنسيقات البطاقات */
   .card {
-    @apply bg-[var(--primary-light)] rounded-lg shadow-md overflow-hidden border border-gray-100;
+    @apply bg-[var(--neutral-light)] rounded-lg shadow-md overflow-hidden border border-[var(--secondary-medium)];
   }
 
   /* تنسيقات الأزرار */

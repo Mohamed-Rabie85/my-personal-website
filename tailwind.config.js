@@ -1,7 +1,6 @@
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    // darkMode: 'class', // للتأكد من أن الوضع الداكن يُفعّل بواسطة فئة 'dark'
     content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -22,8 +21,6 @@ module.exports = {
         'neutral-light': 'var(--neutral-light)',
         'background': 'var(--background)',          // الخلفية للوضع الفاتح
         'foreground': 'var(--foreground)',          // النص للوضع الفاتح
-        // 'dark-background': 'var(--dark-background)',// الخلفية للوضع الداكن
-        // 'dark-foreground': 'var(--dark-foreground)',// النص للوضع الداكن
         },
         // يمكن هنا إضافة أي إعدادات خطوط، تباعد، أحجام، إلخ.
         },

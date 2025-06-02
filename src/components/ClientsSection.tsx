@@ -35,7 +35,7 @@ const ClientsSection = () => {
   ];
 
   return (
-    <section className="bg-[var(--primary-medium)] text-white pt-8 pb-4">
+    <section className="w-full py-16 bg-[var(--primary-medium)] text-white pt-8 pb-4">
       <div className="section-container text-center">
         <h2 className="text-3xl font-bold mb-4">عملاء مميزون</h2>
         <p className="text-center text-lg font-extralight leading-8">

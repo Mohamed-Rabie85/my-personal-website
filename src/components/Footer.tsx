@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-medium text-white py-12">
+    <footer className="bg-primary-medium text-white pb-4 pt-8">
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* القسم الأول - معلومات الاتصال */}
@@ -57,32 +57,32 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">روابط سريعة</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
                   الرئيسية
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/about" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
                   نبذة عني
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/services" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
                   الخدمات
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/portfolio" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
                   معرض الأعمال
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/blog" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
                   المدونة
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/contact" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
                   تواصل معنا
                 </Link>
               </li>
@@ -94,27 +94,27 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">الخدمات</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services#strategic-planning" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/services#strategic-planning" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
                   التخطيط الاستراتيجي
                 </Link>
               </li>
               <li>
-                <Link href="/services#digital-marketing" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/services#digital-marketing" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
                   التسويق الرقمي
                 </Link>
               </li>
               <li>
-                <Link href="/services#marketing-psychology" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/services#marketing-psychology" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
                   علم النفس التسويقي
                 </Link>
               </li>
               <li>
-                <Link href="/services#data-analysis" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/services#data-analysis" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
                   تحليل البيانات
                 </Link>
               </li>
               <li>
-                <Link href="/services#media-production" className="border-2 border-transparent hover:border-emerald-600 rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/services#media-production" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
                   الإنتاج الإعلامي
                 </Link>
               </li>
@@ -152,7 +152,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="أدخل بريدك الإلكتروني"
-                className="px-4 py-2 rounded-md border-2 border-transparent hover:border-emerald-600 transition-colors duration-300"
+                className="px-4 py-2 rounded-md border-2 border-transparent hover:border-[var(--secondary-medium)] transition-colors duration-300"
               />
               <button className="btn-secondary">
                 اشترك الآن
@@ -162,8 +162,8 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} Designd By Mohamed Rabie </p>
-          <p>جميع الحقوق محفوظة</p>
+          <p>&copy; {new Date().getFullYear()}  جميع الحقوق محفوظة</p>
+          <p>Designd By Mohamed Rabie</p>
         </div>
       </div>
     </footer>

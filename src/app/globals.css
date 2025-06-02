@@ -3,23 +3,34 @@
 /* تخصيص الألوان والمتغيرات الأساسية */
 :root {
   /* الألوان الرئيسية - درجات الأزرق */
-  --primary-dark: #0A192F;       /* بدلًا من 25, 55, 100 */
-  --primary-medium: #0A2B52;     /* بدلًا من 45, 85, 150 */
-  --primary-light: #4B7DBD;      /* بدلًا من 75, 125, 200 */
+  --primary-dark: #0A192F;
+  /* بدلًا من 25, 55, 100 */
+  --primary-medium: #0A2B52;
+  /* بدلًا من 45, 85, 150 */
+  --primary-light: #4B7DBD;
+  /* بدلًا من 75, 125, 200 */
 
   /* الألوان الثانوية - درجات الأخضر */
-  --secondary-dark: #144A2C;     /* بدلًا من 20, 90, 50 */
-  --secondary-medium: #00E700;   /* بدلًا من 40, 130, 70 */
-  --secondary-light: #D2F7E2;    /* بدلًا من 60, 170, 100 */
+  --secondary-dark: #144A2C;
+  /* بدلًا من 20, 90, 50 */
+  --secondary-medium: #00E700;
+  /* بدلًا من 40, 130, 70 */
+  --secondary-light: #D2F7E2;
+  /* بدلًا من 60, 170, 100 */
 
   /* الألوان المحايدة */
-  --neutral-dark: #1E1E23;       /* بدلًا من 30, 30, 35 */
-  --neutral-medium: #64646E;     /* بدلًا من 100, 100, 110 */
-  --neutral-light: #EEF0F3;      /* بدلًا من 200, 200, 210 */
+  --neutral-dark: #1E1E23;
+  /* بدلًا من 30, 30, 35 */
+  --neutral-medium: #64646E;
+  /* بدلًا من 100, 100, 110 */
+  --neutral-light: #EEF0F3;
+  /* بدلًا من 200, 200, 210 */
 
   /* وضع الظلام */
-  --background: #0A2B52;    /* بدلًا من 15, 23, 42 */
-  --foreground: #FFFFFF;    /* بدلًا من 255, 255, 255 */
+  --background: #0A2B52;
+  /* بدلًا من 15, 23, 42 */
+  --foreground: #FFFFFF;
+  /* بدلًا من 255, 255, 255 */
 }
 
 /* تطبيق الاتجاه من اليمين إلى اليسار للغة العربية */
@@ -50,6 +61,7 @@ html {
 }
 
 @layer components {
+
   /* تنسيقات الحاويات */
   .section-container {
     @apply container mx-auto px-4 md:px-8 max-w-7xl;
@@ -82,29 +94,29 @@ html {
 }
 
 /* في ملف globals.css أو module.css */
-@keyframes slide-left-infinite {
+@keyframes slide-right-infinite {
   0% {
     transform: translateX(0);
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
 }
 
-.animate-slide-left-infinite {
-  animation: slide-left-infinite 20s linear infinite;
+.animate-slide-right-infinite {
+  animation: slide-right-infinite 50s linear infinite;
 }
 
-.group:hover .animate-slide-left-infinite {
+.group:hover .animate-slide-right-infinite {
   animation-play-state: paused;
 }
 
-/* باقي الأكواد تبقى كما هي */
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -119,6 +131,7 @@ html {
     transform: translateX(50px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;

@@ -31,7 +31,44 @@ const ClientsSection = () => {
     {
       src: '/logos/Concept.png',
       alt: 'Concept'
-    }
+    },
+    {
+      src: '/logos/mohand.png',
+      alt: 'Mohand'
+    },
+    {
+      src: '/logos/HELIOPOLIS.png',
+      alt: 'HELIOPOLIS'
+    },
+    {
+      src: '/logos/fast.png',
+      alt: 'Fast scan'
+    },
+    {
+      src: '/logos/wkalagroup.png',
+      alt: 'Wkala Group'
+    },
+
+    {
+      src: '/logos/smart.png',
+      alt: 'Smart'
+    },
+    {
+      src: '/logos/INFINITE.png',
+      alt: 'INFINITE'
+    },
+    {
+      src: '/logos/sunsir.png',
+      alt: 'Sunsir'
+    },
+    {
+      src: '/logos/Concept.png',
+      alt: 'Concept'
+    },
+    {
+      src: '/logos/mohand.png',
+      alt: 'Mohand'
+    },
   ];
 
   return (
@@ -43,7 +80,7 @@ const ClientsSection = () => {
         </p>
 
         <div className="logos group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
-          <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
+          <div className="animate-slide-right-infinite group-hover:animation-pause inline-block w-max">
             {logos.map((logo, index) => (
               <Image
                 key={`first-${index}`}
@@ -57,7 +94,7 @@ const ClientsSection = () => {
             ))}
           </div>
 
-          <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
+          <div className="animate-slide-right-infinite group-hover:animation-pause inline-block w-max">
             {logos.map((logo, index) => (
               <Image
                 key={`second-${index}`}

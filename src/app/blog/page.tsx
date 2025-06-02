@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "المدونة | مستشار تطوير أعمال وتسويق استراتيجي",
+  title: "المدونة | Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي",
   description: "مقالات ورؤى متخصصة في مجالات التسويق الاستراتيجي، تطوير الأعمال، علم النفس التسويقي، وأحدث اتجاهات السوق لمساعدتك في تنمية أعمالك.",
 };
 

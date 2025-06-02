@@ -3,7 +3,7 @@ import Link from "next/link";
 // import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "معرض الأعمال | مستشار تطوير أعمال وتسويق استراتيجي",
+  title: "معرض الأعمال | Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي",
   description: "استعرض نماذج من المشاريع الناجحة ودراسات الحالة التي قمت بتنفيذها في مجالات التسويق الاستراتيجي وتطوير الأعمال وبناء العلامات التجارية.",
 };
 

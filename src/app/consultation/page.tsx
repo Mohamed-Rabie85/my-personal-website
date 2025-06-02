@@ -3,7 +3,7 @@ import Link from "next/link";
 // import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "حجز استشارة | مستشار تطوير أعمال وتسويق استراتيجي",
+  title: "حجز استشارة | Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي",
   description: "احجز استشارة مجانية لمناقشة احتياجات عملك وكيفية تحقيق النمو المستدام من خلال استراتيجيات تسويقية وتطويرية مبتكرة.",
 };
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 // import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "تواصل معنا | مستشار تطوير أعمال وتسويق استراتيجي",
+  title: "تواصل معنا | Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي",
   description: "تواصل معنا للاستفسارات والمعلومات حول خدماتنا الاستشارية في مجالات التسويق الاستراتيجي وتطوير الأعمال وبناء العلامات التجارية.",
 };
 

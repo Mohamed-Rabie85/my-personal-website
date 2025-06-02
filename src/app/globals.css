@@ -81,6 +81,25 @@ html {
   }
 }
 
+/* في ملف globals.css أو module.css */
+@keyframes slide-left-infinite {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-left-infinite {
+  animation: slide-left-infinite 20s linear infinite;
+}
+
+.group:hover .animate-slide-left-infinite {
+  animation-play-state: paused;
+}
+
 /* باقي الأكواد تبقى كما هي */
 @keyframes fadeIn {
   from {

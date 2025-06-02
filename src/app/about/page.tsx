@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import CtaSection from "@/components/CtaSection";
 
 export const metadata: Metadata = {
   title: "نبذة عني | Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي",
@@ -246,22 +247,7 @@ export default function About() {
       </section>
 
       {/* قسم دعوة للعمل */}
-      <section className="w-full py-16 bg-[var(--primary-dark)] text-white">
-        <div className="section-container text-center">
-          <h2 className="text-white mb-6">هل تبحث عن شريك استراتيجي لتحقيق النمو؟</h2>
-          <p className="text-xl max-w-3xl mx-auto mb-8">
-            سواء كنت تسعى لإطلاق مشروع من فكرة، تطوير أعمالك القائمة، بناء علامة تجارية قوية وموثوقة، فهم سلوك عملائك بشكل أعمق، أو حتى تحسين عملياتك التشغيلية والتسويقية – أنا هنا لمساعدتك على تحقيق ذلك.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <Link href="/consultation" className="btn-secondary">
-              احجز استشارة مجانية
-            </Link>
-            <Link href="/contact" className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-[var(--primary-medium)] transition-colors duration-300">
-              تواصل معي
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CtaSection />
     </main>
   );
 }

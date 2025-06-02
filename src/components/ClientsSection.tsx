@@ -36,37 +36,39 @@ const ClientsSection = () => {
 
   return (
     <section className="bg-[var(--primary-medium)] text-white pt-8 pb-4">
-      <h2 className="text-center text-2xl mb-2 font-bold leading-8">Our Clients</h2>
-      <p className="text-center text-lg font-extralight leading-8">
-        We are trusted by the worlds most innovative teams
-      </p>
+      <div className="section-container text-center">
+        <h2 className="text-3xl font-bold mb-4">عملاء مميزون</h2>
+        <p className="text-center text-lg font-extralight leading-8">
+          We are trusted by the worlds most innovative teams
+        </p>
 
-      <div className="logos group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
-        <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
-          {logos.map((logo, index) => (
-            <Image
-              key={`first-${index}`}
-              className="mx-4 inline h-16"
-              src={logo.src}
-              alt={logo.alt}
-              width={158}
-              height={58}
-              priority={index < 2} // تحميل أول صورتين بأولوية
-            />
-          ))}
-        </div>
+        <div className="logos group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
+          <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
+            {logos.map((logo, index) => (
+              <Image
+                key={`first-${index}`}
+                className="mx-4 inline h-18"
+                src={logo.src}
+                alt={logo.alt}
+                width={158}
+                height={58}
+                priority={index < 2} // تحميل أول صورتين بأولوية
+              />
+            ))}
+          </div>
 
-        <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
-          {logos.map((logo, index) => (
-            <Image
-              key={`second-${index}`}
-              className="mx-4 inline h-16"
-              src={logo.src}
-              alt={logo.alt}
-              width={158}
-              height={58}
-            />
-          ))}
+          <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
+            {logos.map((logo, index) => (
+              <Image
+                key={`second-${index}`}
+                className="mx-4 inline h-18"
+                src={logo.src}
+                alt={logo.alt}
+                width={158}
+                height={58}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

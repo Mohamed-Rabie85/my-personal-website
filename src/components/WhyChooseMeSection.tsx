@@ -8,7 +8,7 @@ export default function WhyChooseMeSection() {
         <div className="text-center mb-12">
           <h2 className="text-[var(--primary-dark)]">لماذا تختارني؟</h2>
           <p className="text-xl max-w-3xl mx-auto text-[var(--primary-dark)]">
-            منهجية فريدة وشاملة تجمع بين الخبرة العملية، المعرفة التقنية، والفهم العميق للدوافع الإنسانية
+            منهجية فريدة وشاملة تجمع بين الخبرة العملية، التخطيط الاستراتيجي،  الفهم العميق للدوافع الإنسانية، والمعرفة التقنية
           </p>
         </div>
 

@@ -15,7 +15,6 @@ const ClientsSection = () => {
       src: '/logos/wkalagroup.png',
       alt: 'Wkala Group'
     },
-
     {
       src: '/logos/smart.png',
       alt: 'Smart'
@@ -35,6 +34,22 @@ const ClientsSection = () => {
     {
       src: '/logos/mohand.png',
       alt: 'Mohand'
+    },
+    {
+      src: '/logos/city.png',
+      alt: 'City'
+    },
+    {
+      src: '/logos/eslam.png',
+      alt: 'Eslam'
+    },
+    {
+      src: '/logos/baiho.png',
+      alt: 'Baiho'
+    },
+    {
+      src: '/logos/winner.png',
+      alt: 'Winner'
     },
     {
       src: '/logos/HELIOPOLIS.png',
@@ -48,7 +63,6 @@ const ClientsSection = () => {
       src: '/logos/wkalagroup.png',
       alt: 'Wkala Group'
     },
-
     {
       src: '/logos/smart.png',
       alt: 'Smart'
@@ -69,6 +83,22 @@ const ClientsSection = () => {
       src: '/logos/mohand.png',
       alt: 'Mohand'
     },
+    {
+      src: '/logos/city.png',
+      alt: 'City'
+    },
+    {
+      src: '/logos/eslam.png',
+      alt: 'Eslam'
+    },
+    {
+      src: '/logos/baiho.png',
+      alt: 'Baiho'
+    },
+    {
+      src: '/logos/winner.png',
+      alt: 'Winner'
+    },
   ];
 
   return (
@@ -76,34 +106,36 @@ const ClientsSection = () => {
       <div className="section-container text-center">
         <h2 className="text-3xl font-bold mb-4">عملاء مميزون</h2>
         <p className="text-center text-lg font-extralight leading-8">
-          We are trusted by the worlds most innovative teams
+          أصنع النجاح مع من يصنعون المستقبل
         </p>
 
         <div className="logos group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
           <div className="animate-slide-right-infinite group-hover:animation-pause inline-block w-max">
             {logos.map((logo, index) => (
-              <Image
-                key={`first-${index}`}
-                className="mx-4 inline h-18"
-                src={logo.src}
-                alt={logo.alt}
-                width={158}
-                height={58}
-                priority={index < 2} // تحميل أول صورتين بأولوية
-              />
+              <div key={`first-${index}`} className="mx-4 inline-flex items-center h-[72px]"> {/* 72px = h-18 */}
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={158}
+                  height={58}
+                  className="w-auto h-full object-contain"
+                  priority={index < 2}
+                />
+              </div>
             ))}
           </div>
 
           <div className="animate-slide-right-infinite group-hover:animation-pause inline-block w-max">
             {logos.map((logo, index) => (
-              <Image
-                key={`second-${index}`}
-                className="mx-4 inline h-18"
-                src={logo.src}
-                alt={logo.alt}
-                width={158}
-                height={58}
-              />
+              <div key={`second-${index}`} className="mx-4 inline-flex items-center h-[72px]">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={158}
+                  height={58}
+                  className="w-auto h-full object-contain"
+                />
+              </div>
             ))}
           </div>
         </div>

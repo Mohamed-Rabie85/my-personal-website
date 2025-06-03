@@ -74,7 +74,7 @@ html {
 
   /* تنسيقات الأزرار */
   .btn-primary {
-    @apply bg-[var(--primary-medium)] hover:bg-[var(--primary-dark)] text-white px-6 py-3 rounded-md transition-colors duration-300;
+    @apply bg-[var(--primary-medium)] hover:bg-[var(--secondary-medium)] text-white px-6 py-3 rounded-md transition-colors duration-300;
   }
 
   .btn-secondary {
@@ -105,7 +105,7 @@ html {
 }
 
 .animate-slide-right-infinite {
-  animation: slide-right-infinite 50s linear infinite;
+  animation: slide-right-infinite 120s linear infinite;
 }
 
 .group:hover .animate-slide-right-infinite {

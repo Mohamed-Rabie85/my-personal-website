@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-[600px] flex items-center justify-center text-white py-20 md:py-32 overflow-hidden">
+    <section className="relative w-full h-[700px] flex items-center justify-center text-white py-20 md:py-32 overflow-hidden">
       {/* صورة الخلفية */}
       <Image
         src="/hero-bg.png" // **تأكد أن هذا المسار صحيح لصورتك في مجلد public**
@@ -14,7 +14,7 @@ export default function HeroSection() {
         className="object-cover -z-10"
       />
       {/* تراكب لضمان وضوح النص فوق الصورة */}
-      <div className="absolute inset-0 bg-black/30 z-0"></div>
+      <div className="absolute inset-0 bg-black/50 z-0"></div>
 
       <div className="section-container text-center md:text-right relative z-10">
         <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">

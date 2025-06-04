@@ -147,8 +147,8 @@ export default function Footer() {
               </a>
             </div>
             
-            <h3 className="text-xl font-bold mb-4">النشرة البريدية</h3>
-            <div className="flex flex-col gap-2">
+            {/* <h3 className="text-xl font-bold mb-4">النشرة البريدية</h3> */}
+            {/* <div className="flex flex-col gap-2">
               <input
                 type="email"
                 placeholder="أدخل بريدك الإلكتروني"
@@ -157,7 +157,7 @@ export default function Footer() {
               <button className="btn-secondary">
                 اشترك الآن
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
         

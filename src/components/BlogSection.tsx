@@ -22,7 +22,7 @@ export default function BlogSection() {
                 <Image
                   src="/images/article1.png" // المسار إلى ملف PNG في مجلد public
                   alt="صورة المقال"
-                  width={400}  // العرض الفعلي للصورة
+                  width={450}  // العرض الفعلي للصورة
                   height={400} // الارتفاع الفعلي للصورة
                   className="object-contain"
                 />
@@ -52,7 +52,7 @@ export default function BlogSection() {
                 <Image
                   src="/images/article2.png" // المسار إلى ملف PNG في مجلد public
                   alt="صورة المقال"
-                  width={400}  // العرض الفعلي للصورة
+                  width={450}  // العرض الفعلي للصورة
                   height={400} // الارتفاع الفعلي للصورة
                   className="object-contain"
                 />
@@ -82,7 +82,7 @@ export default function BlogSection() {
                 <Image
                   src="/images/article3.jpg" // المسار إلى ملف PNG في مجلد public
                   alt="صورة المقال"
-                  width={400}  // العرض الفعلي للصورة
+                  width={450}  // العرض الفعلي للصورة
                   height={400} // الارتفاع الفعلي للصورة
                   className="object-contain"
                 />

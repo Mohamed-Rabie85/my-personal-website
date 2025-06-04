@@ -14,7 +14,7 @@ export default function HeroSection() {
         className="object-cover -z-10"
       />
       {/* تراكب لضمان وضوح النص فوق الصورة */}
-      <div className="absolute inset-0 bg-black/50 z-0"></div>
+      <div className="absolute inset-0 bg-[var(--primary-dark)]/50 z-0"></div>
 
       <div className="section-container text-center md:text-right relative z-10">
         <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">

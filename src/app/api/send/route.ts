@@ -39,6 +39,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ message: 'Email sent successfully!', data });
     } catch (error) {
-        return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });
+    console.error("Error in /api/send:", error); 
+    
+    return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });
     }
 }

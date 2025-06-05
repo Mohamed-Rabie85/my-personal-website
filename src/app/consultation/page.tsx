@@ -1,13 +1,55 @@
-import type { Metadata } from "next";
-// import Link from "next/link";
-// import Image from "next/image";
+'use client';
 
-export const metadata: Metadata = {
-  title: "حجز استشارة | Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي",
-  description: "احجز استشارة مجانية لمناقشة احتياجات عملك وكيفية تحقيق النمو المستدام من خلال استراتيجيات تسويقية وتطويرية مبتكرة.",
-};
+import { useState, FormEvent } from 'react';
 
 export default function Consultation() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    consultation_type: '',
+    message: '',
+    preferred_date: '',
+    preferred_time: '',
+    communication_preference: '',
+  });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    try {
+      const response = await fetch('/api/book', { // <-- لاحظ: نرسل إلى الـ API الجديد
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({
+            name: '', email: '', phone: '', company: '',
+            consultation_type: '', message: '', preferred_date: '',
+            preferred_time: '', communication_preference: '',
+        });
+      } else {
+        setStatus('error');
+        console.error('Failed to send booking request:', await response.json());
+      }
+    } catch (error) {
+      setStatus('error');
+      console.error('An error occurred:', error);
+    }
+  };
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       {/* قسم العنوان الرئيسي */}
@@ -82,63 +124,76 @@ export default function Consultation() {
             {/* نموذج الحجز */}
             <div className="bg-gray-50 p-8 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4 text-[var(--primary-dark)]">احجز موعدك الآن</h3>
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {/* كل حقل الآن مربوط بـ value و onChange */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">الاسم الكامل</label>
-                  <input type="text" id="name" name="name" className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل اسمك الكامل" />
+                  <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل اسمك الكامل" />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">البريد الإلكتروني</label>
-                  <input type="email" id="email" name="email" className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل بريدك الإلكتروني" />
+                  <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل بريدك الإلكتروني" />
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">رقم الهاتف</label>
-                  <input type="tel" id="phone" name="phone" className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل رقم هاتفك" />
+                  <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل رقم هاتفك" />
                 </div>
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">اسم الشركة</label>
-                  <input type="text" id="company" name="company" className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل اسم شركتك" />
+                  <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل اسم شركتك (اختياري)" />
                 </div>
                 <div>
                   <label htmlFor="consultation_type" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">نوع الاستشارة</label>
-                  <select id="consultation_type" name="consultation_type" className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]">
-                    <option value="" className="text-[var(--neutral-medium)]">اختر نوع الاستشارة</option>
-                    <option value="strategic_planning" className="text-[var(--neutral-medium)]">التخطيط الاستراتيجي</option>
-                    <option value="digital_marketing" className="text-[var(--neutral-medium)]">التسويق</option>
-                    <option value="marketing_psychology" className="text-[var(--neutral-medium)]">علم النفس التسويقي</option>
-                    <option value="data_analysis" className="text-[var(--neutral-medium)]">تحليل البيانات</option>
-                    <option value="media_production" className="text-[var(--neutral-medium)]">الإنتاج الإعلامي</option>
-                    <option value="other" className="text-[var(--neutral-medium)]">أخرى</option>
+                  <select id="consultation_type" name="consultation_type" value={formData.consultation_type} onChange={handleChange} required className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]">
+                    <option value="">اختر نوع الاستشارة</option>
+                    <option value="strategic_planning">التخطيط الاستراتيجي</option>
+                    <option value="digital_marketing">التسويق</option>
+                    <option value="marketing_psychology">علم النفس التسويقي</option>
+                    <option value="data_analysis">تحليل البيانات</option>
+                    <option value="media_production">الإنتاج الإعلامي</option>
+                    <option value="other">أخرى</option>
                   </select>
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">رسالتك</label>
-                  <textarea id="message" name="message" rows={4} className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="اشرح باختصار ما هي احتياجاتك وأهدافك"></textarea>
+                  <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="اشرح باختصار ما هي احتياجاتك وأهدافك"></textarea>
                 </div>
                 <div>
                   <label htmlFor="preferred_date" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">التاريخ المفضل</label>
-                  <input type="date" id="preferred_date" name="preferred_date" className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" />
+                  <input type="date" id="preferred_date" name="preferred_date" value={formData.preferred_date} onChange={handleChange} className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" />
                 </div>
                 <div>
                   <label htmlFor="preferred_time" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">الوقت المفضل</label>
-                  <select id="preferred_time" name="preferred_time" className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]">
-                    <option value="" className="text-[var(--neutral-medium)]">اختر الوقت المفضل</option>
-                    <option value="morning" className="text-[var(--neutral-medium)]">صباحًا (11:00 - 12:00)</option>
-                    <option value="afternoon" className="text-[var(--neutral-medium)]">ظهرًا (4:00 - 5:00)</option>
-                    <option value="evening" className="text-[var(--neutral-medium)]">مساءً (6:00 - 7:00)</option>
+                  <select id="preferred_time" name="preferred_time" value={formData.preferred_time} onChange={handleChange} className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]">
+                    <option value="">اختر الوقت المفضل</option>
+                    <option value="morning">صباحًا (11:00 - 12:00)</option>
+                    <option value="afternoon">ظهرًا (4:00 - 5:00)</option>
+                    <option value="evening">مساءً (6:00 - 7:00)</option>
                   </select>
                 </div>
                 <div>
                   <label htmlFor="communication_preference" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">طريقة التواصل المفضلة</label>
-                  <select id="communication_preference" name="communication_preference" className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]">
-                    <option value="" className="text-[var(--neutral-medium)]">اختر طريقة التواصل</option>
-                    <option value="video_call" className="text-[var(--neutral-medium)]">مكالمة فيديو</option>
-                    <option value="phone_call" className="text-[var(--neutral-medium)]">مكالمة هاتفية</option>
+                  <select id="communication_preference" name="communication_preference" value={formData.communication_preference} onChange={handleChange} className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]">
+                    <option value="">اختر طريقة التواصل</option>
+                    <option value="video_call">مكالمة فيديو</option>
+                    <option value="phone_call">مكالمة هاتفية</option>
                   </select>
                 </div>
-                <button type="submit" className="w-full btn-secondary">
-                  احجز الاستشارة
+                <button type="submit" disabled={status === 'sending'} className="w-full btn-secondary disabled:opacity-50 disabled:cursor-not-allowed">
+                  {status === 'sending' ? 'جار الحجز...' : 'احجز الاستشارة'}
                 </button>
+
+                {/* رسائل الحالة للمستخدم */}
+                {status === 'success' && (
+                  <p className="text-green-600 mt-2 text-center">
+                    تم إرسال طلبك بنجاح! سأتواصل معك قريبًا لتأكيد الموعد.
+                  </p>
+                )}
+                {status === 'error' && (
+                  <p className="text-red-600 mt-2 text-center">
+                    حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل معي مباشرة.
+                  </p>
+                )}
               </form>
             </div>
           </div>

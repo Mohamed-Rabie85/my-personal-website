@@ -70,7 +70,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">وضع خرائط طريق واضحة للنمو</p>
+                    <p>وضع خرائط طريق واضحة للنمو</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -80,7 +80,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">استراتيجيات دخول أسواق جديدة</p>
+                    <p>استراتيجيات دخول أسواق جديدة</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -90,7 +90,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[rgb(var(--neutral-medium))]">إعادة هيكلة العمليات القائمة</p>
+                    <p>إعادة هيكلة العمليات القائمة</p>
                   </div>
                 </li>
               </ul>
@@ -143,7 +143,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">إدارة وسائل التواصل الاجتماعي</p>
+                    <p>إدارة وسائل التواصل الاجتماعي</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -153,7 +153,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">تحسين محركات البحث (SEO)</p>
+                    <p>تحسين محركات البحث (SEO)</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -163,7 +163,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">التسويق بالمحتوى</p>
+                    <p>التسويق بالمحتوى</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -173,7 +173,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">إعلانات الدفع لكل نقرة (PPC)</p>
+                    <p>إعلانات الدفع لكل نقرة (PPC)</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -183,7 +183,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">التسويق عبر البريد الإلكتروني</p>
+                    <p>التسويق عبر البريد الإلكتروني</p>
                   </div>
                 </li>
               </ul>
@@ -212,7 +212,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">فهم دوافع المستهلك وعمليات اتخاذ القرار</p>
+                    <p>فهم دوافع المستهلك وعمليات اتخاذ القرار</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -222,7 +222,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">صياغة رسائل تخاطب العقل والقلب</p>
+                    <p>صياغة رسائل تخاطب العقل والقلب</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -232,7 +232,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">تصميم تجارب عملاء لا تُنسى</p>
+                    <p>تصميم تجارب عملاء لا تُنسى</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -242,7 +242,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">بناء علاقات قوية مع العملاء</p>
+                    <p>بناء علاقات قوية مع العملاء</p>
                   </div>
                 </li>
               </ul>
@@ -295,7 +295,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">تحليل أداء الحملات التسويقية</p>
+                    <p>تحليل أداء الحملات التسويقية</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -305,7 +305,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">تحليل سلوك المستخدم وتجربة العملاء</p>
+                    <p>تحليل سلوك المستخدم وتجربة العملاء</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -315,7 +315,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">تحليل اتجاهات السوق والمنافسين</p>
+                    <p>تحليل اتجاهات السوق والمنافسين</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -325,7 +325,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">إعداد تقارير أداء وتوصيات قابلة للتنفيذ</p>
+                    <p>إعداد تقارير أداء وتوصيات قابلة للتنفيذ</p>
                   </div>
                 </li>
               </ul>
@@ -354,7 +354,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">تصميم وتصنيع الحروف البارزة والكلادينج</p>
+                    <p>تصميم وتصنيع الحروف البارزة والكلادينج</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -364,7 +364,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">تصميم وتنفيذ أجنحة المعارض والمؤتمرات</p>
+                    <p>تصميم وتنفيذ أجنحة المعارض والمؤتمرات</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -374,7 +374,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">خدمات الطباعة الرقمية والورقية</p>
+                    <p>خدمات الطباعة الرقمية والورقية</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -384,7 +384,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">حلول التغليف المبتكرة</p>
+                    <p>حلول التغليف المبتكرة</p>
                   </div>
                 </li>
                 <li className="flex gap-3 items-start">
@@ -394,7 +394,7 @@ export default function Services() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[var(--neutral-medium)]">إعداد وتطوير محتوى للبرامج التلفزيونية</p>
+                    <p>إعداد وتطوير محتوى للبرامج التلفزيونية</p>
                   </div>
                 </li>
               </ul>

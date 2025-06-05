@@ -113,3 +113,13 @@ export const metadata: Metadata = {
 
 ## الدعم والمساعدة
 إذا كنت بحاجة إلى مساعدة إضافية في تطوير أو تعديل الموقع، يرجى التواصل مع فريق التطوير.
+
+
+## كيفية إضافة تغييرات إلى GitHub
+1. اتبع الخطوات التالية:
+
+```bash
+git add .
+git commit -m "Your commit message"
+git push origin main
+```

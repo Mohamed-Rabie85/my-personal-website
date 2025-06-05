@@ -7,7 +7,7 @@ export default function HeroSection() {
     <section className="relative w-full h-[700px] flex items-center justify-center text-white py-20 md:py-32 overflow-hidden">
       {/* صورة الخلفية */}
       <Image
-        src="/hero-bg.png" // **تأكد أن هذا المسار صحيح لصورتك في مجلد public**
+        src="/images/hero-bg.png" // **تأكد أن هذا المسار صحيح لصورتك في مجلد public**
         alt="Mohamed Rabie Background"
         fill
         priority

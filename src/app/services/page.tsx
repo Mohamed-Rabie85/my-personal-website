@@ -101,7 +101,7 @@ export default function Services() {
             <div className="bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
               {/* هنا يمكن إضافة صورة توضيحية */}
               <Image
-                src="/images/strategic-planning.png"
+                src="/services/strategic-planning.png"
                 alt="التخطيط الاستراتيجي"
                 width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                 height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -115,13 +115,13 @@ export default function Services() {
       </section>
 
       {/* قسم التسويق  */}
-      <section id="digital-marketing" className="w-full py-16 bg-[var(--foreground)]">
+      <section id="marketing" className="w-full py-16 bg-[var(--foreground)]">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
               {/* هنا يمكن إضافة صورة توضيحية */}
               <Image
-                src="/images/marketing.png"
+                src="/services/marketing.png"
                 alt="التسويق "
                 width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                 height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -253,7 +253,7 @@ export default function Services() {
             <div className="bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
               {/* هنا يمكن إضافة صورة توضيحية */}
               <Image
-                src="/images/marketing-psychology.png"
+                src="/services/marketing-psychology.png"
                 alt="علم النفس التسويقي"
                 width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                 height={300} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -273,7 +273,7 @@ export default function Services() {
             <div className="order-2 md:order-1 bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
               {/* هنا يمكن إضافة صورة توضيحية */}
               <Image
-                src="/images/data-analysis.jpg"
+                src="/services/data-analysis.png"
                 alt="تحليل البيانات"
                 width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                 height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -405,7 +405,7 @@ export default function Services() {
             <div className="bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
               {/* هنا يمكن إضافة صورة توضيحية */}
               <Image
-                src="/images/media.jpg"
+                src="/services/media.png"
                 alt="الإنتاج الإعلامي"
                 width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                 height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)

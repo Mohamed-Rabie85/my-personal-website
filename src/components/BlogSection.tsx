@@ -15,7 +15,7 @@ export default function BlogSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* مقال 1 (Placeholder) */}
-          <div className="card hover:shadow-xl transition-all">
+          <div className="card">
             <div className="bg-gray-200 h-50 rounded-t-lg flex items-center justify-center">
               {/* هنا يمكن إضافة صورة المقال */}
               <div className="text-center text-[var(--neutral-medium)]">
@@ -45,7 +45,7 @@ export default function BlogSection() {
             </div>
           </div>
           {/* مقال 2 (Placeholder) */}
-          <div className="card hover:shadow-xl transition-all">
+          <div className="card">
             <div className="bg-gray-200 h-50 rounded-t-lg flex items-center justify-center">
               {/* هنا يمكن إضافة صورة المقال */}
               <div className="text-center text-[var(--neutral-medium)]">
@@ -75,7 +75,7 @@ export default function BlogSection() {
             </div>
           </div>
           {/* مقال 3 (Placeholder) */}
-          <div className="card hover:shadow-xl transition-all">
+          <div className="card">
             <div className="bg-gray-200 h-50 rounded-t-lg flex items-center justify-center">
               {/* هنا يمكن إضافة صورة المقال */}
               <div className="text-center text-[var(--neutral-medium)]">

@@ -33,19 +33,19 @@ export default function Portfolio() {
           
           {/* فلتر المشاريع */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)] text-[var(--neutral-dark)] font-bold rounded-md hover:bg-[var(--secondary-dark)] hover:text-[var(--neutral-light)] transition-colors">
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
               جميع المشاريع
             </button>
-            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)] text-[var(--neutral-dark)] font-bold rounded-md hover:bg-[var(--secondary-dark)] hover:text-[var(--neutral-light)] transition-colors">
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
               التسويق 
             </button>
-            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)] text-[var(--neutral-dark)] font-bold rounded-md hover:bg-[var(--secondary-dark)] hover:text-[var(--neutral-light)] transition-colors">
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
               تطوير الأعمال
             </button>
-            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)] text-[var(--neutral-dark)] font-bold rounded-md hover:bg-[var(--secondary-dark)] hover:text-[var(--neutral-light)] transition-colors">
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
               بناء العلامات التجارية
             </button>
-            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)] text-[var(--neutral-dark)] font-bold rounded-md hover:bg-[var(--secondary-dark)] hover:text-[var(--neutral-light)] transition-colors">
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
               الإنتاج الإعلامي
             </button>
           </div>
@@ -57,11 +57,11 @@ export default function Portfolio() {
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* مشروع 1 */}
-            <div className="card hover:shadow-xl transition-all">
+            <div className="card">
               <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
-                  src="/images/media.jpg"
+                  src="/portfolio/1.jpg"
                   alt="الإنتاج الإعلامي"
                   width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                   height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -91,11 +91,11 @@ export default function Portfolio() {
               </div>
             </div>
             {/* مشروع 2 */}
-            <div className="card hover:shadow-xl transition-all">
+            <div className="card">
             <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
-                  src="/images/media.jpg"
+                  src="/portfolio/2.png"
                   alt="الإنتاج الإعلامي"
                   width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                   height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -126,11 +126,11 @@ export default function Portfolio() {
             </div>
 
             {/* مشروع 3 */}
-            <div className="card hover:shadow-xl transition-all">
+            <div className="card">
             <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
-                  src="/images/media.jpg"
+                  src="/portfolio/3.png"
                   alt="الإنتاج الإعلامي"
                   width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                   height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -161,12 +161,12 @@ export default function Portfolio() {
             </div>
 
 
-            {/* مشروع 3 */}
-            <div className="card hover:shadow-xl transition-all">
+            {/* مشروع 4 */}
+            <div className="card">
             <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
-                  src="/images/media.jpg"
+                  src="/portfolio/4.png"
                   alt="الإنتاج الإعلامي"
                   width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                   height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -196,12 +196,12 @@ export default function Portfolio() {
               </div>
             </div>
             
-            {/* مشروع 4 */}
-            <div className="card hover:shadow-xl transition-all">
+            {/* مشروع 5 */}
+            <div className="card">
             <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
-                  src="/images/media.jpg"
+                  src="/portfolio/5.jpg"
                   alt="الإنتاج الإعلامي"
                   width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                   height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -231,12 +231,12 @@ export default function Portfolio() {
               </div>
             </div>
             
-            {/* مشروع 5 */}
-            <div className="card hover:shadow-xl transition-all">
+            {/* مشروع 6 */}
+            <div className="card">
             <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
-                  src="/images/media.jpg"
+                  src="/portfolio/6.png"
                   alt="الإنتاج الإعلامي"
                   width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                   height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -266,12 +266,12 @@ export default function Portfolio() {
               </div>
             </div>
             
-            {/* مشروع 6 */}
-            <div className="card hover:shadow-xl transition-all">
+            {/* مشروع 7 */}
+            <div className="card">
             <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
-                  src="/images/media.jpg"
+                  src="/portfolio/7.png"
                   alt="الإنتاج الإعلامي"
                   width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                   height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -301,12 +301,46 @@ export default function Portfolio() {
               </div>
             </div>
             
-            {/* مشروع 7 */}
-            <div className="card hover:shadow-xl transition-all">
+            {/* مشروع 8 */}
+            <div className="card">
             <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
-                  src="/images/media.jpg"
+                  src="/portfolio/8.png"
+                  alt="الإنتاج الإعلامي"
+                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                  className="object-cover w-full h-full"
+                  quality={100}
+                  priority
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
+                  <span className="text-[var(--neutral-medium)] text-sm">2021</span>
+                </div>
+                <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">استراتيجية تسويق  لشركة خدمات </h3>
+                <p className="text-[var(--neutral-medium)] mb-4">
+                  طورت استراتيجية تسويق  لشركة خدمات، مما أدى إلى زيادة حركة المبيعات بنسبة 25% وتحسين الوعي بالعلامة التجارية بنسبة 20%.
+                </p>
+                <div className="flex justify-between items-center">
+                  <Link href="/portfolio/financial-services-content" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                    عرض دراسة الحالة &larr;
+                  </Link>
+                  <div className="flex gap-2">
+                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">تسويق</span>
+                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">استراتيجية</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* مشروع 9 */}
+            <div className="card">
+            <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                {/* هنا يمكن إضافة صورة المشروع */}
+                <Image
+                  src="/portfolio/9.jpg"
                   alt="الإنتاج الإعلامي"
                   width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                   height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)

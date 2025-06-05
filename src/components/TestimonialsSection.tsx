@@ -88,7 +88,7 @@ export default function TestimonialsSection() {
                   // w-[calc(100vw-48px)] يضمن أن البطاقة لا تتجاوز عرض الشاشة على الجوال
                   // sm:w-[350px] md:w-[400px] تعيد تحديد عرض ثابت للشاشات الأكبر
                   // mx-4 لإضافة مسافة أفقية بين البطاقات
-                  className="card p-4 flex-shrink-0 w-[calc(100vw-130px)] sm:w-[350px] md:w-[400px] mx-4 h-auto min-h-[250px] flex flex-col justify-between bg-white rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
+                  className="card p-4 flex-shrink-0 w-[calc(100vw-130px)] sm:w-[350px] md:w-[400px] mx-4 h-auto min-h-[250px] flex flex-col justify-between bg-white rounded-lg shadow-lg transition-transform duration-300 ease-in-out"
                 >
                   <p className="mb-4 text-[var(--neutral-dark)] text-lg italic whitespace-normal break-words text-justify leading-relaxed max-h-[120px] overflow-y-auto">
                     &quot;{testimonial.quote}&quot;
@@ -110,7 +110,7 @@ export default function TestimonialsSection() {
               {duplicatedTestimonials.map((testimonial, index) => (
                 <div
                   key={`second-${testimonial.id}-${index}`}
-                  className="card p-4 flex-shrink-0 w-[calc(100vw-130px)] sm:w-[350px] md:w-[400px] mx-4 h-auto min-h-[250px] flex flex-col justify-between bg-white rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105"
+                  className="card p-4 flex-shrink-0 w-[calc(100vw-130px)] sm:w-[350px] md:w-[400px] mx-4 h-auto min-h-[250px] flex flex-col justify-between bg-white rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
                 >
                   <p className="mb-4 text-[var(--neutral-dark)] text-lg italic whitespace-normal break-words text-justify leading-relaxed max-h-[120px] overflow-y-auto">
                     &quot;{testimonial.quote}&quot;

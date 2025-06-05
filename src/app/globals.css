@@ -69,7 +69,7 @@ html {
 
   /* تنسيقات البطاقات */
   .card {
-    @apply bg-[var(--neutral-light)] rounded-lg shadow-md overflow-hidden border border-[var(--secondary-medium)];
+    @apply bg-[var(--neutral-light)] rounded-lg shadow-md overflow-hidden border border-[var(--secondary-medium)] hover:scale-105 hover:shadow-lg transition-all duration-300;
   }
 
   /* تنسيقات الأزرار */

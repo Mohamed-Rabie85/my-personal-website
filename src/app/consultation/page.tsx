@@ -48,7 +48,7 @@ export default function Consultation() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold">تحديد الأهداف</h3>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">تحديد الأهداف</h3>
                     <p className="text-[var(--neutral-medium)]">تحديد أهدافك قصيرة وطويلة المدى، وما الذي تطمح لتحقيقه في عملك.</p>
                   </div>
                 </li>
@@ -59,7 +59,7 @@ export default function Consultation() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold">استراتيجيات مقترحة</h3>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">استراتيجيات مقترحة</h3>
                     <p className="text-[var(--neutral-medium)]">تقديم أفكار واستراتيجيات أولية يمكن أن تساعدك في تحقيق أهدافك.</p>
                   </div>
                 </li>
@@ -70,7 +70,7 @@ export default function Consultation() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold">خطة عمل أولية</h3>
+                    <h3 className="font-semibold text-[var(--primary-medium)] ">خطة عمل أولية</h3>
                     <p className="text-[var(--neutral-medium)]">مناقشة الخطوات التالية وكيف يمكننا العمل معًا لتحقيق أهدافك.</p>
                   </div>
                 </li>

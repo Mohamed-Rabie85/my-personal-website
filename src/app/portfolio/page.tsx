@@ -140,7 +140,35 @@ export default function Portfolio() {
               </Link>
             </div>
 
-            {/* exs-agency مشروع 4 */}
+            {/*top-guide مشروع 4 */}
+            <div className="card">
+              <Link href="/portfolio/top-guide" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/7.png"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
+                    <span className="text-[var(--neutral-medium)] text-sm">2025</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Top Guide</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    صممت وأشرفت على تنفيذ استراتيجية تسويق رقمي متكاملة لعلامة تجارية في قطاع السياحة التعليمية، مما أدى إلى زيادة الظهور الرقمي والمبيعات عبر الإنترنت بنسبة 30%.
+                  </p>
+                </div>
+              </Link>
+            </div>
+
+            {/* exs-agency مشروع 5 */}
             <div className="card">
               <Link href="/portfolio/exs-agency" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -168,9 +196,9 @@ export default function Portfolio() {
               </Link>
             </div>
 
-            {/*ajyal-academy مشروع 5 */}
+            {/*impact-interiors مشروع 6 */}
             <div className="card">
-              <Link href="/portfolio/ajyal-academy" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+              <Link href="/portfolio/impact-interiors" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                   {/* هنا يمكن إضافة صورة المشروع */}
                   <Image
@@ -188,15 +216,15 @@ export default function Portfolio() {
                     <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">بناء علامة تجارية</span>
                     <span className="text-[var(--neutral-medium)] text-sm">2024</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">أجيال أكاديمي</h3>
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Impact Interiors</h3>
                   <p className="text-[var(--neutral-medium)] mb-4">
-                    صممت وأشرفت على تنفيذ دراسة جدوى وخطة تسويقية للنمو المستدام لعلامة تجارية في قطاع التعليم، بهدف التميز في السوق وزيادة الوعي بالعلامة التجارية.
+                    صممت خطة تسويقية شاملة للنمو المستدام لعلامة تجارية في قطاع التصميم الداخلي، بهدف التميز في السوق وزيادة الوعي بالعلامة التجارية.
                   </p>
                 </div>
               </Link>
             </div>
 
-            {/*winner-advertising مشروع 6 */}
+            {/*winner-advertising مشروع 7 */}
             <div className="card">
               <Link href="/portfolio/winner-advertising" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -225,12 +253,61 @@ export default function Portfolio() {
               </Link>
             </div>
 
-            {/* مشروع 7 */}
+            {/*ajyal-academy مشروع 8 */}
+            <div className="card">
+              <Link href="/portfolio/ajyal-academy" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/5.jpg"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">بناء علامة تجارية</span>
+                    <span className="text-[var(--neutral-medium)] text-sm">2024</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">أجيال أكاديمي</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    صممت وأشرفت على تنفيذ دراسة جدوى وخطة تسويقية للنمو المستدام لعلامة تجارية في قطاع التعليم، بهدف التميز في السوق وزيادة الوعي بالعلامة التجارية.
+                  </p>
+                </div>
+              </Link>
+            </div>
 
-
-            {/* مشروع 8 */}
-
-            {/* مشروع 9 */}
+            {/*pixel-hd مشروع 9 */}
+            <div className="card">
+              <Link href="/portfolio/pixel-hd" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/5.jpg"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">بناء علامة تجارية</span>
+                    <span className="text-[var(--neutral-medium)] text-sm">2023</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Pixel HD</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    صممت وأشرفت على تنفيذ دراسة جدوى وخطة تسويقية للنمو المستدام لعلامة تجارية في قطاع التعليم، بهدف التميز في السوق وزيادة الوعي بالعلامة التجارية.
+                  </p>
+                </div>
+              </Link>
+            </div>
           </div>
 
           {/* زر تحميل المزيد */}

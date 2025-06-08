@@ -30,14 +30,14 @@ export default function Portfolio() {
               أؤمن بأن النجاح الحقيقي يقاس بالنتائج الملموسة. فيما يلي مجموعة مختارة من المشاريع التي ساهمت في تحقيق نمو استثنائي للعملاء في مختلف القطاعات.
             </p>
           </div>
-          
+
           {/* فلتر المشاريع */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
               جميع المشاريع
             </button>
             <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
-              التسويق 
+              التسويق
             </button>
             <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
               تطوير الأعمال
@@ -80,7 +80,7 @@ export default function Portfolio() {
                   ساعدت شركة ناشئة في مجال التكنولوجيا على تطوير استراتيجية نمو شاملة أدت إلى زيادة قاعدة العملاء بنسبة 150% خلال 6 أشهر.
                 </p>
                 <div className="flex justify-between items-center">
-                  <Link href="/portfolio/tech-startup" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                  <Link href="/portfolio/next-academy" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                     عرض دراسة الحالة &larr;
                   </Link>
                   <div className="flex gap-2">
@@ -92,7 +92,7 @@ export default function Portfolio() {
             </div>
             {/* مشروع 2 */}
             <div className="card">
-            <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
                   src="/portfolio/2.png"
@@ -127,7 +127,7 @@ export default function Portfolio() {
 
             {/* مشروع 3 */}
             <div className="card">
-            <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
                   src="/portfolio/3.png"
@@ -163,7 +163,7 @@ export default function Portfolio() {
 
             {/* مشروع 4 */}
             <div className="card">
-            <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
                   src="/portfolio/4.png"
@@ -195,10 +195,10 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            
+
             {/* مشروع 5 */}
             <div className="card">
-            <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
                   src="/portfolio/5.jpg"
@@ -230,10 +230,10 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            
+
             {/* مشروع 6 */}
             <div className="card">
-            <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
                   src="/portfolio/6.png"
@@ -265,10 +265,10 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            
+
             {/* مشروع 7 */}
             <div className="card">
-            <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
                   src="/portfolio/7.png"
@@ -300,10 +300,10 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            
+
             {/* مشروع 8 */}
             <div className="card">
-            <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
                   src="/portfolio/8.png"
@@ -337,7 +337,7 @@ export default function Portfolio() {
             </div>
             {/* مشروع 9 */}
             <div className="card">
-            <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
                   src="/portfolio/9.jpg"
@@ -370,7 +370,7 @@ export default function Portfolio() {
               </div>
             </div>
           </div>
-          
+
           {/* زر تحميل المزيد */}
           <div className="text-center mt-12">
             <button className="btn-primary">
@@ -389,7 +389,7 @@ export default function Portfolio() {
               آراء وشهادات من عملاء سعدت بالعمل معهم وتحقيق نتائج استثنائية لأعمالهم
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* شهادة 1 */}
             <div className="card">
@@ -432,7 +432,7 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            
+
             {/* شهادة 2 */}
             <div className="card">
               <div className="p-6">
@@ -474,7 +474,7 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            
+
             {/* شهادة 3 */}
             <div className="card">
               <div className="p-6">

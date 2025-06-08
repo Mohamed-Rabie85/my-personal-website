@@ -35,6 +35,9 @@ export default function Header() {
             <Link href="/services" className="px-3 py-2 border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300">
               الخدمات
             </Link>
+            <Link href="/experience" className="px-3 py-2 border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300">
+              دراسات الحالة 
+            </Link>
             <Link href="/portfolio" className="px-3 py-2 border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300">
               معرض الأعمال
             </Link>

@@ -12,17 +12,17 @@ export default function Header() {
         <div className="flex justify-between items-center py-2">
           {/* الشعار */}
           <div className="flex items-center">
-        <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-white">
-          <Image 
-            src="/logo.png" 
-            alt="شعار الاستشاري"
-            width={40} 
-            height={40}
-            className="object-contain" 
-          />
-          الاستشاري
-        </Link>
-      </div>
+            <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-white">
+              <Image
+                src="/logo.png"
+                alt="شعار الاستشاري"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+              الاستشاري
+            </Link>
+          </div>
 
           {/* القائمة الرئيسية - للشاشات الكبيرة */}
           <nav className="hidden md:flex items-center space-x-1 space-x-reverse">
@@ -34,9 +34,6 @@ export default function Header() {
             </Link>
             <Link href="/services" className="px-3 py-2 border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300">
               الخدمات
-            </Link>
-            <Link href="/experience" className="px-3 py-2 border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300">
-              دراسات الحالة 
             </Link>
             <Link href="/portfolio" className="px-3 py-2 border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300">
               معرض الأعمال

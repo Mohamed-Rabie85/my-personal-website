@@ -1,58 +1,55 @@
 'use client';
 import React, { useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, Area, AreaChart, Legend } from 'recharts';
-import { Users, Target, Globe, Award, DollarSign } from 'lucide-react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, AreaChart, Area } from 'recharts';
+import { BrainCircuit, Target, TrendingUp, Users, Lightbulb, Award, DollarSign, Share2, Rocket, Puzzle } from 'lucide-react';
 
 const NextAcademyDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
 
-  // ... (البيانات تبقى كما هي بدون تغيير)
+  // Data for charts adapted for Next Academy
   const audienceSegments = [
-    { name: 'طلاب جامعيون', value: 35, color: '#3B82F6' },
-    { name: 'خريجون جدد', value: 28, color: '#10B981' },
-    { name: 'محترفون شباب', value: 22, color: '#F59E0B' },
-    { name: 'رواد أعمال ناشئون', value: 15, color: '#EF4444' }
-  ];
-  const revenueStreams = [
-    { name: 'دورات فردية', value: 40, amount: 120000 },
-    { name: 'اشتراكات شهرية', value: 35, amount: 105000 },
-    { name: 'استشارات', value: 25, amount: 75000 }
-  ];
-  const monthlyGrowth = [
-    { month: 'يناير', students: 120, revenue: 45000 },
-    { month: 'فبراير', students: 180, revenue: 68000 },
-    { month: 'مارس', students: 250, revenue: 95000 },
-    { month: 'أبريل', students: 320, revenue: 128000 },
-    { month: 'مايو', students: 420, revenue: 165000 },
-    { month: 'يونيو', students: 580, revenue: 220000 }
-  ];
-  const strategicMetrics = [
-    { title: 'إجمالي المشتركين', value: '2,847', change: '+23%', icon: Users, color: 'bg-blue-500' },
-    { title: 'معدل التحويل', value: '12.4%', change: '+5.2%', icon: Target, color: 'bg-green-500' },
-    { title: 'الإيرادات الشهرية', value: '$220K', change: '+31%', icon: DollarSign, color: 'bg-purple-500' },
-    { title: 'الدورات المكتملة', value: '1,234', change: '+18%', icon: Award, color: 'bg-orange-500' }
-  ];
-  const partnerships = [
-    { name: 'حاضنات الأعمال', count: 15, status: 'نشط' },
-    { name: 'الجامعات', count: 8, status: 'تطوير' },
-    { name: 'المؤثرين', count: 25, status: 'نشط' },
-    { name: 'الشركات', count: 12, status: 'مخطط' }
+    { name: 'الحالمون والمستكشفون', percentage: 35, color: '#8884d8' },
+    { name: 'رواد الأعمال المبتدئون', percentage: 30, color: '#82ca9d' },
+    { name: 'أصحاب المشاريع الصغيرة', percentage: 25, color: '#ffc658' },
+    { name: 'الموظفون المستكشفون', percentage: 10, color: '#ff8042' }
   ];
 
+  const contentStrategyMix = [
+    { name: 'فيديوهات قصيرة (Reels/TikTok)', engagement: 9.5, color: '#E1306C' },
+    { name: 'مقالات (SEO)', engagement: 7.8, color: '#4285F4' },
+    { name: 'بودكاست', engagement: 8.2, color: '#9333ea' },
+    { name: 'ورش عمل مجانية', engagement: 9.1, color: '#1DB954' },
+    { name: 'فيديوهات يوتيوب', engagement: 8.8, color: '#FF0000' }
+  ];
 
-  interface TabButtonProps {
-    id: string;
-    label: string;
-    active: boolean;
-    onClick: (id: string) => void;
-  }
+  const leadMagnetEffectiveness = [
+    { name: 'دورات مصغرة', conversionRate: 15, color: '#3b82f6' },
+    { name: 'تحديات ريادية', conversionRate: 12, color: '#10b981' },
+    { name: 'أدلة PDF', conversionRate: 8, color: '#f97316' },
+    { name: 'ورش عمل', conversionRate: 18, color: '#8b5cf6' },
+  ];
 
-  const TabButton = ({ id, label, active, onClick }: TabButtonProps) => (
+  const leadGrowthProjection = [
+    { month: 'الشهر 1', leads: 500 },
+    { month: 'الشهر 2', leads: 1200 },
+    { month: 'الشهر 3', leads: 2500 },
+    { month: 'الشهر 4', leads: 4500 },
+    { month: 'الشهر 5', leads: 7000 },
+    { month: 'الشهر 6', leads: 10000 },
+  ];
+
+  const kpiMetrics = [
+    { title: 'العملاء المحتملون (Leads)', value: '+10,000', change: 'متوقع في 6 أشهر', icon: Users, color: 'bg-purple-500' },
+    { title: 'معدل التحويل', value: '5%', change: 'من Lead إلى طالب', icon: Target, color: 'bg-green-500' },
+    { title: 'الوصول الشهري', value: '+100k', change: 'عبر كل المنصات', icon: TrendingUp, color: 'bg-blue-500' },
+    { title: 'الإيرادات المتوقعة', value: 'مستدامة', change: 'مصادر متنوعة', icon: DollarSign, color: 'bg-orange-500' }
+  ];
+
+  const TabButton = ({ id, label, active, onClick }: { id: string; label: string; active: boolean; onClick: (id: string) => void }) => (
     <button
       onClick={() => onClick(id)}
-      // **تعديل:** تقليل حجم الهوامش على الموبايل
-      className={`px-4 py-2 md:px-6 md:py-3 text-sm md:text-base rounded-lg transition-all ${active
-        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+      className={`px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-base transition-all ${active
+        ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg'
         : 'bg-white text-gray-600 hover:bg-gray-50'
         }`}
     >
@@ -61,53 +58,41 @@ const NextAcademyDashboard = () => {
   );
 
   return (
-    <section className="w-full bg-[var(--foreground)] py-12 md:py-16">
-      <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-gray-800">دراسة حالة: لوحة تحكم Next Academy</h2>
-      {/* **تعديل:** تقليل الهوامش على الموبايل */}
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-2 md:p-6 rounded-lg" dir="rtl">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4 md:p-6" dir="rtl">
+      <div className="section-container">
         {/* Header */}
-        <div className="mb-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>
-              {/* **تعديل:** حجم خط متجاوب */}
-              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-center md:text-right">
+        <header className="mb-6 md:mb-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="section-container text-center">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Next Academy
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mt-2 text-center md:text-right">قيادة ريادة الأعمال الرقمية</p>
-            </div>
-            <div className="flex items-center space-x-4 space-x-reverse">
-              <div className="bg-white rounded-lg p-3 shadow-md">
-                <Globe className="w-8 h-8 text-blue-600" />
-              </div>
-              <div className="text-right">
-                <p className="text-sm text-gray-500">آخر تحديث</p>
-                <p className="text-lg font-semibold">يونيو 2025</p>
-              </div>
+              <p className="text-sm md:text-xl text-gray-600 mt-1 md:mt-2">قيادة التأسيس والنمو لأكاديمية ريادة أعمال رقمية رائدة</p>
             </div>
           </div>
-        </div>
+        </header>
 
         {/* Navigation Tabs */}
-        {/* **تعديل:** جعل التبويبات تلتف على الموبايل */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8 bg-white p-2 rounded-xl shadow-sm">
+        <nav className="flex overflow-x-auto pb-2 mb-6 md:mb-8 gap-2 md:gap-4 bg-white p-2 rounded-lg md:rounded-xl shadow-sm">
           <TabButton id="overview" label="نظرة عامة" active={activeTab === 'overview'} onClick={setActiveTab} />
-          <TabButton id="audience" label="الجمهور" active={activeTab === 'audience'} onClick={setActiveTab} />
-          <TabButton id="revenue" label="الإيرادات" active={activeTab === 'revenue'} onClick={setActiveTab} />
-          <TabButton id="partnerships" label="الشراكات" active={activeTab === 'partnerships'} onClick={setActiveTab} />
-        </div>
+          <TabButton id="audience" label="تحليل الجمهور" active={activeTab === 'audience'} onClick={setActiveTab} />
+          <TabButton id="strategy" label="الاستراتيجية التسويقية" active={activeTab === 'strategy'} onClick={setActiveTab} />
+          <TabButton id="business" label="نموذج العمل" active={activeTab === 'business'} onClick={setActiveTab} />
+          <TabButton id="results" label="النتائج والتوسع" active={activeTab === 'results'} onClick={setActiveTab} />
+        </nav>
 
         {/* Overview Tab */}
         {activeTab === 'overview' && (
           <div className="space-y-8">
+            {/* Key Metrics */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {strategicMetrics.map((metric, index) => (
-                <div key={index} className="bg-white rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow">
-                  {/* ... المحتوى الداخلي للبطاقة يبقى كما هو */}
+              {kpiMetrics.map((metric, index) => (
+                <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-gray-600 text-sm">{metric.title}</p>
                       <p className="text-3xl font-bold text-gray-900 mt-2">{metric.value}</p>
-                      <p className="text-green-600 text-sm mt-1">{metric.change}</p>
+                      <p className="text-purple-600 text-sm mt-1">{metric.change}</p>
                     </div>
                     <div className={`${metric.color} p-3 rounded-lg`}>
                       <metric.icon className="w-6 h-6 text-white" />
@@ -117,36 +102,67 @@ const NextAcademyDashboard = () => {
               ))}
             </div>
 
-            <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg">
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-6">نمو المنصة الشهري</h3>
-              <ResponsiveContainer width="100%" height={300}>
-                <AreaChart data={monthlyGrowth} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  {/* **تعديل:** جعل المحور السيني متجاوبًا */}
-                  <XAxis dataKey="month" angle={-45} textAnchor="end" height={60} tick={{ fontSize: 10 }} />
-                  <YAxis tick={{ fontSize: 10 }} />
-                  <Tooltip />
-                  <Area type="monotone" dataKey="students" stroke="#3B82F6" fill="#3B82F6" fillOpacity={0.6} />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-            {/* Challenge & Solution */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 border border-red-200">
-                <h3 className="text-xl font-bold text-red-800 mb-4">التحدي</h3>
-                <ul className="space-y-2 text-red-700">
-                  <li>• سوق مكتظ في التعليم وريادة الأعمال</li>
-                  <li>• تمكين الشباب العربي من تأسيس مشاريعهم</li>
-                  <li>• فهم الجمهور شديد التنوع</li>
+            {/* Project Categories */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-xl p-6 border border-purple-200">
+                <h3 className="text-xl font-bold text-purple-800 mb-4">حل مشكلات معقدة</h3>
+                <ul className="space-y-2 text-purple-700">
+                  <li>• تأسيس كيان تعليمي من الصفر </li>
+                  <li>• تصميم برامج ومسارات نمو فعالة </li>
+                  <li>• مواجهة سوق تنافسي مكتظ </li>
                 </ul>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200">
-                <h3 className="text-xl font-bold text-green-800 mb-4">الحل</h3>
-                <ul className="space-y-2 text-green-700">
-                  <li>• أكاديمية رقمية متكاملة لريادة الأعمال</li>
-                  <li>• تركيز على التعلم العملي والتفاعل</li>
-                  <li>• دمج أحدث التقنيات والذكاء الاصطناعي</li>
+              <div className="bg-gradient-to-br from-blue-100 to-sky-100 rounded-xl p-6 border border-blue-200">
+                <h3 className="text-xl font-bold text-blue-800 mb-4">تحول تسويقي</h3>
+                <ul className="space-y-2 text-blue-700">
+                  <li>• استراتيجيات تسويق رقمي شاملة </li>
+                  <li>• جذب وتأهيل العملاء المحتملين </li>
+                  <li>• بناء الثقة مع جمهور متنوع </li>
                 </ul>
+              </div>
+              <div className="bg-gradient-to-br from-teal-100 to-cyan-100 rounded-xl p-6 border border-teal-200">
+                <h3 className="text-xl font-bold text-teal-800 mb-4">بناء أصول رقمية وتقنية</h3>
+                <ul className="space-y-2 text-teal-700">
+                  <li>• تطوير محتوى رقمي متنوع </li>
+                  <li>• إطلاق بودكاست وفيديوهات </li>
+                  <li>• التخطيط لمنصة تعليمية خاصة </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Challenge & Approach */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">التحدي الأساسي</h3>
+                <div className="space-y-4 text-gray-700">
+                  <p>إطلاق أكاديمية رقمية جديدة (Next Academy) في سوق ريادة الأعمال المكتظ، بهدف تمكين الشباب العربي من خلال: </p>
+                  <ul className="space-y-2 mr-4">
+                    <li>• تصميم دورات تعليمية عملية ومبتكرة. </li>
+                    <li>• فهم عميق لجمهور مستهدف شديد التنوع وجذبهم. </li>
+                    <li>• بناء الثقة وتحويل المهتمين إلى طلاب ملتزمين. </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">النهج الاستراتيجي القائم على الرؤى</h3>
+                <div className="space-y-4 text-gray-700">
+                  <div className="flex items-center mb-3">
+                    <BrainCircuit className="w-5 h-5 text-purple-600 ml-3" />
+                    <span className="font-medium">التحليل العميق للجمهور وتقسيمه لشرائح دقيقة </span>
+                  </div>
+                  <div className="flex items-center mb-3">
+                    <Award className="w-5 h-5 text-blue-600 ml-3" />
+                    <span className="font-medium">تصميم عرض قيمة مخصص يلبي الاحتياجات </span>
+                  </div>
+                  <div className="flex items-center mb-3">
+                    <Puzzle className="w-5 h-5 text-teal-600 ml-3" />
+                    <span className="font-medium">استراتيجية تسويق متكاملة (محتوى، إعلانات، شراكات) </span>
+                  </div>
+                  <div className="flex items-center">
+                    <Share2 className="w-5 h-5 text-orange-600 ml-3" />
+                    <span className="font-medium">بناء مجتمع تعليمي داعم لتبادل الخبرات </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -155,36 +171,35 @@ const NextAcademyDashboard = () => {
         {/* Audience Tab */}
         {activeTab === 'audience' && (
           <div className="space-y-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg">
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-6">شرائح الجمهور المستهدف</h3>
-                <ResponsiveContainer width="100%" height={300}>
+            <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">جوهر تصميم الرؤى: فهم الجمهور</h3>
+              <p className="text-gray-600 max-w-2xl mx-auto">قمت بتقسيم الجمهور (الشباب العربي 18-30 سنة) إلى 4 شرائح رئيسية وشرائح فرعية دقيقة لفهم الدوافع، الاحتياجات، والسلوكيات، مما مكّن من تصميم رسائل وعروض قيمة مخصصة. </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">الشرائح الرئيسية للجمهور</h3>
+                <ResponsiveContainer width="100%" height={250} >
                   <PieChart>
-                    {/* **تعديل:** استخدام Legend بدلاً من النصوص الطويلة على المخطط */}
-                    <Pie data={audienceSegments} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" dataKey="value">
-                      {audienceSegments.map((entry, index) => (<Cell key={`cell-${index}`} fill={entry.color} />))}
+                    <Pie data={audienceSegments} cx="50%" cy="50%" innerRadius={60} outerRadius={100} paddingAngle={5} dataKey="percentage" label>
+                      {audienceSegments.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
                     </Pie>
-                    <Tooltip formatter={(value, name) => [`${value}%`, name]} />
-                    <Legend />
+                    <Tooltip />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
-              {/* Audience Details */}
               <div className="bg-white rounded-xl p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">تفاصيل الشرائح</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-6">تفاصيل الشرائح الرئيسية</h3>
                 <div className="space-y-4">
                   {audienceSegments.map((segment, index) => (
-                    <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                    <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                       <div className="flex items-center">
-                        <div
-                          className="w-4 h-4 rounded-full ml-3"
-                          style={{ backgroundColor: segment.color }}
-                        ></div>
-                        <span className="font-medium">{segment.name}</span>
+                        <div className="w-4 h-4 rounded-full ml-3" style={{ backgroundColor: segment.color }}></div>
+                        <span className="font-medium text-sm text-blue-900">{segment.name}</span>
                       </div>
-                      <span className="text-2xl font-bold" style={{ color: segment.color }}>
-                        {segment.value}%
-                      </span>
+                      <span className="text-lg font-bold" style={{ color: segment.color }}>{segment.percentage}%</span>
                     </div>
                   ))}
                 </div>
@@ -193,107 +208,230 @@ const NextAcademyDashboard = () => {
 
             {/* Target Demographics */}
             <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">المواصفات الديموغرافية</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <Users className="w-12 h-12 text-blue-600 mx-auto mb-3" />
-                  <h4 className="font-bold text-blue-800">الفئة العمرية</h4>
-                  <p className="text-blue-600 mt-2">18-30 سنة</p>
-                </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <Globe className="w-12 h-12 text-green-600 mx-auto mb-3" />
-                  <h4 className="font-bold text-green-800">النطاق الجغرافي</h4>
-                  <p className="text-green-600 mt-2">الشباب العربي</p>
-                </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <Target className="w-12 h-12 text-purple-600 mx-auto mb-3" />
-                  <h4 className="font-bold text-purple-800">الاهتمامات</h4>
-                  <p className="text-purple-600 mt-2">ريادة الأعمال والتقنية</p>
-                </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">الشرائح الفرعية الدقيقة (أمثلة)</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+                <div className="p-3 bg-indigo-50 rounded-lg"><p className="text-sm font-medium text-indigo-800">الباحثون عن العملاء</p></div>
+                <div className="p-3 bg-green-50 rounded-lg"><p className="text-sm font-medium text-green-800">المنظمون للمالية</p></div>
+                <div className="p-3 bg-rose-50 rounded-lg"><p className="text-sm font-medium text-rose-800">صناع المحتوى</p></div>
+                <div className="p-3 bg-amber-50 rounded-lg"><p className="text-sm font-medium text-amber-800">مهتمو التجارة الإلكترونية</p></div>
+                <div className="p-3 bg-sky-50 rounded-lg"><p className="text-sm font-medium text-sky-800">الباحثون عن تمويل</p></div>
               </div>
             </div>
           </div>
         )}
 
-        {/* Revenue Tab */}
-        {activeTab === 'revenue' && (
+        {/* Marketing Strategy Tab */}
+        {activeTab === 'strategy' && (
           <div className="space-y-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg">
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-6">مصادر الإيرادات</h3>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={revenueStreams} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
+            <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">استراتيجية تسويقية متكاملة ومبتكرة</h3>
+              <p className="text-gray-600 max-w-3xl mx-auto">دمجت بين التسويق بالمحتوى عالي القيمة، الإعلانات المدفوعة الموجهة، والشراكات الاستراتيجية، مع التركيز على Lead Magnets مبتكرة لجذب وتأهيل العملاء المحتملين. </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">مزيج استراتيجية المحتوى</h3>
+                <ResponsiveContainer width="100%" height={300} className="text-blue-900">
+                  <BarChart data={contentStrategyMix} layout="vertical">
                     <CartesianGrid strokeDasharray="3 3" />
-                    {/* **تعديل:** جعل المحور السيني متجاوبًا */}
-                    <XAxis dataKey="name" angle={-45} textAnchor="end" height={70} tick={{ fontSize: 10 }} />
-                    <YAxis tick={{ fontSize: 10 }} />
-                    <Tooltip formatter={(value) => [`$${value.toLocaleString()}`, 'المبلغ']} />
-                    <Bar dataKey="amount" fill="#3B82F6" radius={[4, 4, 0, 0]} />
+                    <XAxis type="number" />
+                    <YAxis dataKey="name" type="category" width={150} />
+                    <Tooltip />
+                    <Bar dataKey="engagement" name="مؤشر التفاعل المتوقع">
+                      {contentStrategyMix.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
+                    </Bar>
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-
-              <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg">
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-6">نمو الإيرادات الشهرية</h3>
-                <ResponsiveContainer width="100%" height={300}>
-                  <LineChart data={monthlyGrowth} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
+              <div className="bg-white rounded-xl p-6 shadow-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">فعالية آليات جذب العملاء (Lead Magnets)</h3>
+                <ResponsiveContainer width="100%" height={300} className="text-blue-900">
+                  <BarChart data={leadMagnetEffectiveness}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    {/* **تعديل:** جعل المحور السيني متجاوبًا */}
-                    <XAxis dataKey="month" angle={-45} textAnchor="end" height={60} tick={{ fontSize: 10 }} />
-                    <YAxis tick={{ fontSize: 10 }} />
-                    <Tooltip formatter={(value) => [`$${value.toLocaleString()}`, 'الإيرادات']} />
-                    <Line type="monotone" dataKey="revenue" stroke="#10B981" strokeWidth={3} dot={{ r: 4 }} activeDot={{ r: 8 }} />
-                  </LineChart>
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip formatter={(value) => `${value}%`} />
+                    <Bar dataKey="conversionRate" name="معدل التحويل المتوقع" radius={[4, 4, 0, 0]}>
+                      {leadMagnetEffectiveness.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)}
+                    </Bar>
+                  </BarChart>
                 </ResponsiveContainer>
               </div>
             </div>
             {/* Revenue Strategy */}
             <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">استراتيجية تحقيق الإيرادات</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">قنوات التسويق والإعلان</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+                <div className="p-4 bg-gray-100 text-blue-900 rounded-lg">Facebook</div>
+                <div className="p-4 bg-gray-100 text-blue-900 rounded-lg">Instagram</div>
+                <div className="p-4 bg-gray-100 text-blue-900 rounded-lg">TikTok</div>
+                <div className="p-4 bg-gray-100 text-blue-900 rounded-lg">LinkedIn</div>
+                <div className="p-4 bg-gray-100 text-blue-900 rounded-lg">Google</div>
+                <div className="p-4 bg-gray-100 text-blue-900 rounded-lg">YouTube</div>
+              </div>
+              <p className="text-center text-sm text-gray-500 mt-4">استهداف دقيق للفئات العمرية والاهتمامات والدول (مصر، الخليج، المغرب العربي). </p>
+            </div>
+          </div>
+        )}
+
+        {/* Business Model Tab */}
+        {activeTab === 'business' && (
+          <div className="space-y-8">
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">نموذج العمل (Business Model Canvas)</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {revenueStreams.map((stream, index) => (
-                  <div key={index} className="p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg border">
-                    <h4 className="font-bold text-gray-800 mb-2">{stream.name}</h4>
-                    <p className="text-3xl font-bold text-blue-600 mb-2">${stream.amount.toLocaleString()}</p>
-                    <p className="text-sm text-gray-600">{stream.value}% من إجمالي الإيرادات</p>
+                {/* Column 1 */}
+                <div className="space-y-6">
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-bold text-blue-800 mb-2">الشراكات الرئيسية</h4>
+                    <ul className="text-sm text-blue-700 list-disc list-inside">
+                      <li>مؤثرون، حاضنات أعمال </li>
+                      <li>جامعات، منصات تعليمية </li>
+                    </ul>
                   </div>
-                ))}
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-bold text-blue-800 mb-2">الأنشطة الرئيسية</h4>
+                    <ul className="text-sm text-blue-700 list-disc list-inside">
+                      <li>إنتاج محتوى تعليمي </li>
+                      <li>حملات تسويقية </li>
+                      <li>بناء مجتمع </li>
+                    </ul>
+                  </div>
+                </div>
+                {/* Column 2 */}
+                <div className="space-y-6">
+                  <div className="bg-green-50 p-4 rounded-lg">
+                    <h4 className="font-bold text-green-800 mb-2">عرض القيمة</h4>
+                    <ul className="text-sm text-green-700 list-disc list-inside">
+                      <li>تعليم عملي تطبيقي </li>
+                      <li>مجتمع دعم وتفاعل </li>
+                      <li>أسعار مرنة </li>
+                    </ul>
+                  </div>
+                  <div className="bg-green-50 p-4 rounded-lg">
+                    <h4 className="font-bold text-green-800 mb-2">علاقات العملاء</h4>
+                    <ul className="text-sm text-green-700 list-disc list-inside">
+                      <li>متابعة عبر WhatsApp </li>
+                      <li>محتوى حصري (بريد) </li>
+                    </ul>
+                  </div>
+                </div>
+                {/* Column 3 */}
+                <div className="space-y-6">
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <h4 className="font-bold text-purple-800 mb-2">شرائح العملاء</h4>
+                    <ul className="text-sm text-purple-700 list-disc list-inside">
+                      <li>الحالمون والمستكشفون </li>
+                      <li>رواد الأعمال المبتدئون </li>
+                      <li>أصحاب المشاريع الصغيرة </li>
+                    </ul>
+                  </div>
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <h4 className="font-bold text-purple-800 mb-2">القنوات</h4>
+                    <ul className="text-sm text-purple-700 list-disc list-inside">
+                      <li>وسائل التواصل الاجتماعي </li>
+                      <li>بودكاست، يوتيوب، مدونة </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div className="bg-orange-50 p-4 rounded-lg">
+                  <h4 className="font-bold text-orange-800 mb-2">مصادر الإيرادات</h4>
+                  <p className="text-sm text-orange-700">بيع دورات فردية، اشتراكات شهرية، استشارات، برامج مخصصة للشركات. </p>
+                </div>
+                <div className="bg-red-50 p-4 rounded-lg">
+                  <h4 className="font-bold text-red-800 mb-2">هيكل التكاليف</h4>
+                  <p className="text-sm text-red-700">تكاليف التسويق والإعلانات، تطوير المحتوى، أجور المدربين، تكاليف المنصات التقنية.</p>
+                </div>
               </div>
             </div>
           </div>
         )}
 
-        {/* Partnerships Tab */}
-        {activeTab === 'partnerships' && (
-          // ... محتوى تبويب الشراكات يبقى كما هو، فهو متجاوب بشكل جيد
-          <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg">
-            <h3 className="text-xl font-bold text-gray-900 mb-6">الشراكات الاستراتيجية</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {partnerships.map((partnership, index) => (
-                <div key={index} className="p-6 border rounded-lg hover:shadow-md transition-shadow">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="font-bold text-gray-800">{partnership.name}</h4>
-                    <span className={`px-3 py-1 rounded-full text-sm ${partnership.status === 'نشط' ? 'bg-green-100 text-green-800' :
-                      partnership.status === 'تطوير' ? 'bg-yellow-100 text-yellow-800' :
-                        'bg-blue-100 text-blue-800'
-                      }`}>
-                      {partnership.status}
-                    </span>
-                  </div>
-                  <p className="text-3xl font-bold text-blue-600">{partnership.count}</p>
-                  <p className="text-gray-600 text-sm">شريك</p>
+        {/* Results & Expansion Tab */}
+        {activeTab === 'results' && (
+          <div className="space-y-8">
+            <div className="bg-white rounded-xl p-6 shadow-lg">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">النتائج الملموسة المتوقعة</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg border border-purple-200">
+                  <h4 className="font-bold text-purple-800 mb-4">نمو القاعدة الجماهيرية</h4>
+                  <ul className="space-y-3 text-purple-700">
+                    <li className="flex items-center"><Users className="w-5 h-5 ml-3" /><span>نمو كبير في العملاء المحتملين </span></li>
+                    <li className="flex items-center"><TrendingUp className="w-5 h-5 ml-3" /><span>زيادة معدلات التسجيل والتحويل </span></li>
+                    <li className="flex items-center"><Share2 className="w-5 h-5 ml-3" /><span>بناء مجتمع طلابي قوي ونشط </span></li>
+                  </ul>
                 </div>
-              ))}
+                <div className="p-6 bg-gradient-to-br from-blue-50 to-sky-50 rounded-lg border border-blue-200">
+                  <h4 className="font-bold text-blue-800 mb-4">ترسيخ العلامة التجارية</h4>
+                  <ul className="space-y-3 text-blue-700">
+                    <li className="flex items-center"><Award className="w-5 h-5 ml-3" /><span>أكاديمية رائدة في الوطن العربي </span></li>
+                    <li className="flex items-center"><Lightbulb className="w-5 h-5 ml-3" /><span>قيادة فكرية في ريادة الأعمال </span></li>
+                    <li className="flex items-center"><Target className="w-5 h-5 ml-3" /><span>زيادة الوعي والوصول للشباب </span></li>
+                  </ul>
+                </div>
+                <div className="p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg border border-green-200">
+                  <h4 className="font-bold text-green-800 mb-4">الأثر المالي والاجتماعي</h4>
+                  <ul className="space-y-3 text-green-700">
+                    <li className="flex items-center"><DollarSign className="w-5 h-5 ml-3" /><span>تحقيق إيرادات مستدامة ومتنوعة </span></li>
+                    <li className="flex items-center"><BrainCircuit className="w-5 h-5 ml-3" /><span>تمكين آلاف الشباب العربي </span></li>
+                    <li className="flex items-center"><Rocket className="w-5 h-5 ml-3" /><span>تزويدهم بمهارات عملية للنجاح </span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="bg-white rounded-xl p-6 shadow-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">توقعات نمو قاعدة العملاء المحتملين</h3>
+                <ResponsiveContainer width="100%" height={300}>
+                  <AreaChart data={leadGrowthProjection}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="month" />
+                    <YAxis />
+                    <Tooltip />
+                    <Area type="monotone" dataKey="leads" stroke="#8884d8" fill="#8884d8" name="العملاء المحتملون" />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">خطط التوسع المستقبلية</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start p-4 bg-gray-50 rounded-lg">
+                    <Rocket className="w-6 h-6 text-purple-600 ml-4 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-gray-800">إضافة تخصصات جديدة</h4>
+                      <p className="text-gray-600 text-sm">التجارة الإلكترونية، الذكاء الاصطناعي للتسويق. </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start p-4 bg-gray-50 rounded-lg">
+                    <Target className="w-6 h-6 text-blue-600 ml-4 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-gray-800">استهداف أسواق جديدة</h4>
+                      <p className="text-gray-600 text-sm">التوسع في مناطق جغرافية جديدة بالوطن العربي. </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start p-4 bg-gray-50 rounded-lg">
+                    <Puzzle className="w-6 h-6 text-teal-600 ml-4 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-gray-800">تطوير منصة تعليمية خاصة</h4>
+                      <p className="text-gray-600 text-sm">بناء منصة خاصة لتعزيز تجربة المستخدم وجمع البيانات. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}
 
         {/* Footer */}
-        <div className="mt-12 text-center text-gray-500 text-sm">
-          <p>© 2025 Next Academy - قيادة ريادة الأعمال الرقمية</p>
+        <div className="mt-12 text-center text-gray-500">
+          <p>2025 Next Academy - قيادة التأسيس والنمو الاستراتيجي</p>
+          <p>Mohamed Rabie - Business Strategy Consultant</p>
         </div>
       </div>
-    </section >
+    </div>
   );
 };
 

@@ -15,14 +15,14 @@ export default function Portfolio() {
       <section className="w-full bg-gradient-to-b from-[var(--primary-dark)] to-[var(--primary-medium)] text-white py-16">
         <div className="section-container text-center">
           <h1 className="mb-4">معرض الأعمال</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            نماذج من المشاريع الناجحة ودراسات الحالة التي تعكس منهجيتي في تحقيق نتائج ملموسة
-          </p>
+          <p className="text-xl max-w-3xl mx-auto">أؤمن بأن النجاح الحقيقي يقاس بالنتائج الملموسة.
+            فيما يلي مجموعة مختارة من المشاريع التي ساهمت في تحقيق نمو استثنائي للعملاء في مختلف القطاعات.
+            من تطوير استراتيجيات النمو إلى بناء العلامات التجارية، كل مشروع يمثل قصة نجاح فريدة.</p>
         </div>
       </section>
 
       {/* قسم مقدمة المعرض */}
-      <section className="w-full py-16 bg-[var(--foreground)]">
+      {/* <section className="w-full py-16 bg-[var(--foreground)]">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-[var(--primary-dark)]">نتائج ملموسة وقصص نجاح حقيقية</h2>
@@ -31,7 +31,6 @@ export default function Portfolio() {
             </p>
           </div>
 
-          {/* فلتر المشاريع */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
               جميع المشاريع
@@ -50,333 +49,196 @@ export default function Portfolio() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* قسم المشاريع */}
-      <section className="w-full py-8 bg-[var(--foreground)]">
+      <section className="w-full py-20 bg-[var(--foreground)] ">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* مشروع 1 */}
+            {/*next-academy مشروع 1 */}
             <div className="card">
-              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                {/* هنا يمكن إضافة صورة المشروع */}
-                <Image
-                  src="/portfolio/1.jpg"
-                  alt="الإنتاج الإعلامي"
-                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                  className="object-cover w-full h-full"
-                  quality={100}
-                  priority
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">تطوير أعمال</span>
-                  <span className="text-[var(--neutral-medium)] text-sm">2024</span>
+              <Link href="/portfolio/next-academy" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium cursor-pointer">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/1.jpg"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">تطوير استراتيجية نمو لشركة ناشئة في مجال التكنولوجيا</h3>
-                <p className="text-[var(--neutral-medium)] mb-4">
-                  ساعدت شركة ناشئة في مجال التكنولوجيا على تطوير استراتيجية نمو شاملة أدت إلى زيادة قاعدة العملاء بنسبة 150% خلال 6 أشهر.
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link href="/portfolio/next-academy" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
-                    عرض دراسة الحالة &larr;
-                  </Link>
-                  <div className="flex gap-2">
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">استراتيجية</span>
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">تسويق</span>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">تطوير أعمال</span>
+                    <span className="text-[var(--neutral-medium)] text-sm">2025</span>
                   </div>
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Next Academy</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    أنشاء وتاسيس أكاديمية تعليمية متخصصة في مجال ريادة الاعمال والتسويق حيث قمت بتطوير استراتيجية شاملة للنمو والتوسع.
+                    من خلال تحليل السوق وتحديد الفرص، تمكنا من تحقيق نتائج ملموسة في زيادة وتوسيع قاعدة العملاء.
+                  </p>
                 </div>
-              </div>
+              </Link>
             </div>
-            {/* مشروع 2 */}
+            {/*verde-vertical مشروع 2 */}
             <div className="card">
-              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                {/* هنا يمكن إضافة صورة المشروع */}
-                <Image
-                  src="/portfolio/2.png"
-                  alt="الإنتاج الإعلامي"
-                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                  className="object-cover w-full h-full"
-                  quality={100}
-                  priority
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
-                  <span className="text-[var(--neutral-medium)] text-sm">2024</span>
+              <Link href="/portfolio/verde-vertical" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/2.png"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Verde Vertical بناء علامة تجارية قوية وموثوقة، لا مجرد مبيعات</h3>
-                <p className="text-[var(--neutral-medium)] mb-4">
-                  صممت وأعددت خطة تسويق رقمي متكاملة لعلامة تجارية في قطاع اللاند سكيب، لزيادة الظهور الرقمي والمبيعات عبر الإنترنت.
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link href="/portfolio/verde-vertical" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
-                    عرض دراسة الحالة &larr;
-                  </Link>
-                  <div className="flex gap-2">
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">تسويق رقمي</span>
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">وسائل التواصل</span>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
+                    <span className="text-[var(--neutral-medium)] text-sm">2025</span>
                   </div>
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Verde Vertical</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    بناء علامة تجارية قوية وموثوقة، لا مجرد مبيعات
+                    صممت وأعددت خطة تسويق رقمي متكاملة لعلامة تجارية في قطاع اللاند سكيب، لزيادة الظهور الرقمي والمبيعات عبر الإنترنت.
+                  </p>
                 </div>
-              </div>
+              </Link>
             </div>
 
-            {/* مشروع 3 */}
+            {/*almarsam-alawal مشروع 3 */}
             <div className="card">
-              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                {/* هنا يمكن إضافة صورة المشروع */}
-                <Image
-                  src="/portfolio/3.png"
-                  alt="الإنتاج الإعلامي"
-                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                  className="object-cover w-full h-full"
-                  quality={100}
-                  priority
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق </span>
-                  <span className="text-[var(--neutral-medium)] text-sm">2024</span>
+              <Link href="/portfolio/almarsam-alawal" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/4.png"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">صياغة النمو الاستراتيجي لخدمات الدعاية والفعاليات</h3>
-                <p className="text-[var(--neutral-medium)] mb-4">
-                  صممت وأعددت خطة تسويق ,نموذج عمل متكامل لخدمات الدعاية والفعاليات لعلامة تجارية في قطاع الدعاية والاعلان، لزيادة الظهور الرقمي والمبيعات.
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link href="/portfolio/pixel-hd-strategy" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
-                    عرض دراسة الحالة &larr;
-                  </Link>
-                  <div className="flex gap-2">
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">تسويق </span>
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">وسائل التواصل</span>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
+                    <span className="text-[var(--neutral-medium)] text-sm">2025</span>
                   </div>
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">المرسم الأول</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    صممت وأشرفت على تنفيذ حملة تسويق رقمي متكاملة لعلامة تجارية في قطاع الخدمات مما أدى إلى زيادة المبيعات عبر الإنترنت بنسبة 25%.
+                  </p>
                 </div>
-              </div>
+              </Link>
             </div>
 
-
-            {/* مشروع 4 */}
+            {/* exs-agency مشروع 4 */}
             <div className="card">
-              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                {/* هنا يمكن إضافة صورة المشروع */}
-                <Image
-                  src="/portfolio/4.png"
-                  alt="الإنتاج الإعلامي"
-                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                  className="object-cover w-full h-full"
-                  quality={100}
-                  priority
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
-                  <span className="text-[var(--neutral-medium)] text-sm">2023</span>
+              <Link href="/portfolio/exs-agency" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/6.png"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">حملة تسويق رقمي متكاملة لعلامة تجارية في قطاع الأزياء</h3>
-                <p className="text-[var(--neutral-medium)] mb-4">
-                  صممت وأشرفت على تنفيذ حملة تسويق رقمي متكاملة لعلامة تجارية في قطاع الأزياء، مما أدى إلى زيادة المبيعات عبر الإنترنت بنسبة 200%.
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link href="/portfolio/fashion-brand" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
-                    عرض دراسة الحالة &larr;
-                  </Link>
-                  <div className="flex gap-2">
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">تسويق رقمي</span>
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">وسائل التواصل</span>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">الإنتاج الإعلامي</span>
+                    <span className="text-[var(--neutral-medium)] text-sm">2024</span>
                   </div>
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Exs Agency</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    صممت وأشرفت على تنفيذ استراتيجية اختراق السوق السعودي،  لوكالة Exs، مما ساعدها على التميز في السوق وزيادة الوعي بالعلامة التجارية.
+                  </p>
                 </div>
-              </div>
+              </Link>
             </div>
 
-            {/* مشروع 5 */}
+            {/*ajyal-academy مشروع 5 */}
             <div className="card">
-              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                {/* هنا يمكن إضافة صورة المشروع */}
-                <Image
-                  src="/portfolio/5.jpg"
-                  alt="الإنتاج الإعلامي"
-                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                  className="object-cover w-full h-full"
-                  quality={100}
-                  priority
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">بناء علامة تجارية</span>
-                  <span className="text-[var(--neutral-medium)] text-sm">2023</span>
+              <Link href="/portfolio/ajyal-academy" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/5.jpg"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">إعادة تصميم هوية بصرية لعيادة طبية</h3>
-                <p className="text-[var(--neutral-medium)] mb-4">
-                  قمت بإعادة تصميم الهوية البصرية لعيادة طبية وتطوير استراتيجية تسويقية متكاملة، مما أدى إلى زيادة عدد المرضى الجدد بنسبة 80%.
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link href="/portfolio/medical-clinic" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
-                    عرض دراسة الحالة &larr;
-                  </Link>
-                  <div className="flex gap-2">
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">هوية بصرية</span>
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">تسويق</span>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">بناء علامة تجارية</span>
+                    <span className="text-[var(--neutral-medium)] text-sm">2024</span>
                   </div>
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">أجيال أكاديمي</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    صممت وأشرفت على تنفيذ دراسة جدوى وخطة تسويقية للنمو المستدام لعلامة تجارية في قطاع التعليم، بهدف التميز في السوق وزيادة الوعي بالعلامة التجارية.
+                  </p>
                 </div>
-              </div>
+              </Link>
             </div>
 
-            {/* مشروع 6 */}
+            {/*winner-advertising مشروع 6 */}
             <div className="card">
-              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                {/* هنا يمكن إضافة صورة المشروع */}
-                <Image
-                  src="/portfolio/6.png"
-                  alt="الإنتاج الإعلامي"
-                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                  className="object-cover w-full h-full"
-                  quality={100}
-                  priority
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">الإنتاج الإعلامي</span>
-                  <span className="text-[var(--neutral-medium)] text-sm">2022</span>
+              <Link href="/portfolio/winner-advertising" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/3.png"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">تصميم وتنفيذ جناح معرض لشركة عقارية</h3>
-                <p className="text-[var(--neutral-medium)] mb-4">
-                  صممت وأشرفت على تنفيذ جناح معرض متميز لشركة عقارية، مما ساهم في جذب أكثر من 500 عميل محتمل خلال فترة المعرض.
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link href="/portfolio/real-estate-exhibition" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
-                    عرض دراسة الحالة &larr;
-                  </Link>
-                  <div className="flex gap-2">
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">معارض</span>
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">تصميم</span>
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق </span>
+                    <span className="text-[var(--neutral-medium)] text-sm">2024</span>
                   </div>
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Winner Advertising</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    صياغة النمو الاستراتيجي لخدمات الدعاية والفعاليات
+                    صممت وأعددت خطة تسويق ,نموذج عمل متكامل لخدمات الدعاية والفعاليات لعلامة تجارية في قطاع الدعاية والاعلان، لزيادة الظهور الرقمي والمبيعات.
+                  </p>
                 </div>
-              </div>
+              </Link>
             </div>
 
             {/* مشروع 7 */}
-            <div className="card">
-              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                {/* هنا يمكن إضافة صورة المشروع */}
-                <Image
-                  src="/portfolio/7.png"
-                  alt="الإنتاج الإعلامي"
-                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                  className="object-cover w-full h-full"
-                  quality={100}
-                  priority
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">تطوير أعمال</span>
-                  <span className="text-[var(--neutral-medium)] text-sm">2022</span>
-                </div>
-                <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">استراتيجية توسع لشركة في قطاع الأغذية</h3>
-                <p className="text-[var(--neutral-medium)] mb-4">
-                  طورت استراتيجية توسع لشركة في قطاع الأغذية، مما ساعدها على فتح فرعين جديدين وزيادة الإيرادات بنسبة 120% خلال عام واحد.
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link href="/portfolio/food-company-expansion" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
-                    عرض دراسة الحالة &larr;
-                  </Link>
-                  <div className="flex gap-2">
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">توسع</span>
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">استراتيجية</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+
 
             {/* مشروع 8 */}
-            <div className="card">
-              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                {/* هنا يمكن إضافة صورة المشروع */}
-                <Image
-                  src="/portfolio/8.png"
-                  alt="الإنتاج الإعلامي"
-                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                  className="object-cover w-full h-full"
-                  quality={100}
-                  priority
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
-                  <span className="text-[var(--neutral-medium)] text-sm">2021</span>
-                </div>
-                <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">استراتيجية تسويق  لشركة خدمات </h3>
-                <p className="text-[var(--neutral-medium)] mb-4">
-                  طورت استراتيجية تسويق  لشركة خدمات، مما أدى إلى زيادة حركة المبيعات بنسبة 25% وتحسين الوعي بالعلامة التجارية بنسبة 20%.
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link href="/portfolio/financial-services-content" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
-                    عرض دراسة الحالة &larr;
-                  </Link>
-                  <div className="flex gap-2">
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">تسويق</span>
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">استراتيجية</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+
             {/* مشروع 9 */}
-            <div className="card">
-              <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                {/* هنا يمكن إضافة صورة المشروع */}
-                <Image
-                  src="/portfolio/9.jpg"
-                  alt="الإنتاج الإعلامي"
-                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                  className="object-cover w-full h-full"
-                  quality={100}
-                  priority
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
-                  <span className="text-[var(--neutral-medium)] text-sm">2021</span>
-                </div>
-                <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">استراتيجية تسويق محتوى لشركة خدمات مالية</h3>
-                <p className="text-[var(--neutral-medium)] mb-4">
-                  طورت استراتيجية تسويق محتوى لشركة خدمات مالية، مما أدى إلى زيادة حركة الموقع الإلكتروني بنسبة 250% وتحسين معدل تحويل العملاء بنسبة 40%.
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link href="/portfolio/financial-services-content" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
-                    عرض دراسة الحالة &larr;
-                  </Link>
-                  <div className="flex gap-2">
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">محتوى</span>
-                    <span className="bg-gray-200 text-[var(--neutral-dark)] text-xs px-2 py-1 rounded">SEO</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* زر تحميل المزيد */}
-          <div className="text-center mt-12">
+          {/* <div className="text-center mt-12">
             <button className="btn-primary">
               تحميل المزيد من المشاريع
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
 

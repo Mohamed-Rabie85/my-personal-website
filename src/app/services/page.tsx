@@ -115,7 +115,7 @@ export default function Services() {
       </section>
 
       {/* قسم التسويق  */}
-      <section id="marketing" className="w-full py-16 bg-[var(--foreground)]">
+      <section id="marketing" className="w-full py-16 bg-[var(--foreground)] text-[var(--background)]">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -196,7 +196,7 @@ export default function Services() {
       </section>
 
       {/* قسم علم النفس التسويقي */}
-      <section id="marketing-psychology" className="w-full py-16 bg-[var(--neutral-light)]">
+      <section id="marketing-psychology" className="w-full py-16 bg-[var(--neutral-light)] text-[var(--background)]">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -267,7 +267,7 @@ export default function Services() {
       </section>
 
       {/* قسم تحليل البيانات */}
-      <section id="data-analysis" className="w-full py-16 bg-[var(--foreground)]">
+      <section id="data-analysis" className="w-full py-16 bg-[var(--foreground)] text-[var(--background)]">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1 bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -338,7 +338,7 @@ export default function Services() {
       </section>
 
       {/* قسم الإنتاج الإعلامي */}
-      <section id="media-production" className="w-full py-16 bg-[var(--neutral-light)]">
+      <section id="media-production" className="w-full py-16 bg-[var(--neutral-light)] text-[var(--background)]">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>

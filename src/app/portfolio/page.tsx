@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import CtaSection from "@/components/CtaSection";
+import NextAcademyDashboard from "@/components/NextAcademyDashboard";
 
 export const metadata: Metadata = {
   title: "معرض الأعمال | Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي",
@@ -51,9 +52,19 @@ export default function Portfolio() {
         </div>
       </section> */}
 
+      <NextAcademyDashboard />
+
+
       {/* قسم المشاريع */}
-      <section className="w-full py-20 bg-[var(--foreground)] ">
+      <section className="w-full pb-20 bg-[var(--foreground)] ">
         <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-[var(--primary-medium)]">بعض المشاريع </h2>
+            <p className="text-[var(--neutral-medium)] max-w-3xl mx-auto">
+              استعرض مجموعة من المشاريع التي قمت بتأسيسها وتنفيذها في مجالات التسويق الاستراتيجي وتطوير الأعمال وبناء العلامات التجارية.
+              كل مشروع يمثل قصة نجاح فريدة ونتائج ملموسة.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/*next-academy مشروع 1 */}
             <div className="card">
@@ -71,10 +82,6 @@ export default function Portfolio() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">تطوير أعمال</span>
-                    <span className="text-[var(--neutral-medium)] text-sm">2025</span>
-                  </div>
                   <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Next Academy</h3>
                   <p className="text-[var(--neutral-medium)] mb-4">
                     أنشاء وتاسيس أكاديمية تعليمية متخصصة في مجال ريادة الاعمال والتسويق حيث قمت بتطوير استراتيجية شاملة للنمو والتوسع.
@@ -99,10 +106,6 @@ export default function Portfolio() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
-                    <span className="text-[var(--neutral-medium)] text-sm">2025</span>
-                  </div>
                   <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Verde Vertical</h3>
                   <p className="text-[var(--neutral-medium)] mb-4">
                     بناء علامة تجارية قوية وموثوقة، لا مجرد مبيعات
@@ -112,7 +115,33 @@ export default function Portfolio() {
               </Link>
             </div>
 
-            {/*almarsam-alawal مشروع 3 */}
+            {/*next-academy-analysis مشروع 3 */}
+            <div className="card">
+              <Link href="/portfolio/next-academy-analysis" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/4.png"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2"> Next: Situation Analysis</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    تحليل استراتيجي شامل (SWOT, PESTEL) لأكاديمية Next Academy، يهدف إلى فهم البيئة التنافسية وتحديد الفرص والتحديات.
+                    يوفر هذا التحليل أساسًا قويًا لتطوير استراتيجيات نمو فعالة.
+                  </p>
+                </div>
+              </Link>
+            </div>
+
+
+            {/*almarsam-alawal مشروع 4 */}
             <div className="card">
               <Link href="/portfolio/almarsam-alawal" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -128,10 +157,6 @@ export default function Portfolio() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
-                    <span className="text-[var(--neutral-medium)] text-sm">2025</span>
-                  </div>
                   <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">المرسم الأول</h3>
                   <p className="text-[var(--neutral-medium)] mb-4">
                     صممت وأشرفت على تنفيذ حملة تسويق رقمي متكاملة لعلامة تجارية في قطاع الخدمات مما أدى إلى زيادة المبيعات عبر الإنترنت بنسبة 25%.
@@ -140,7 +165,7 @@ export default function Portfolio() {
               </Link>
             </div>
 
-            {/*top-guide مشروع 4 */}
+            {/*top-guide مشروع 5 */}
             <div className="card">
               <Link href="/portfolio/top-guide" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -156,10 +181,6 @@ export default function Portfolio() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
-                    <span className="text-[var(--neutral-medium)] text-sm">2025</span>
-                  </div>
                   <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Top Guide</h3>
                   <p className="text-[var(--neutral-medium)] mb-4">
                     صممت وأشرفت على تنفيذ استراتيجية تسويق رقمي متكاملة لعلامة تجارية في قطاع السياحة التعليمية، مما أدى إلى زيادة الظهور الرقمي والمبيعات عبر الإنترنت بنسبة 30%.
@@ -168,7 +189,7 @@ export default function Portfolio() {
               </Link>
             </div>
 
-            {/* exs-agency مشروع 5 */}
+            {/* exs-agency مشروع 6 */}
             <div className="card">
               <Link href="/portfolio/exs-agency" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -184,10 +205,6 @@ export default function Portfolio() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">الإنتاج الإعلامي</span>
-                    <span className="text-[var(--neutral-medium)] text-sm">2024</span>
-                  </div>
                   <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Exs Agency</h3>
                   <p className="text-[var(--neutral-medium)] mb-4">
                     صممت وأشرفت على تنفيذ استراتيجية اختراق السوق السعودي،  لوكالة Exs، مما ساعدها على التميز في السوق وزيادة الوعي بالعلامة التجارية.
@@ -196,7 +213,7 @@ export default function Portfolio() {
               </Link>
             </div>
 
-            {/*impact-interiors مشروع 6 */}
+            {/*impact-interiors مشروع 7 */}
             <div className="card">
               <Link href="/portfolio/impact-interiors" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -212,10 +229,6 @@ export default function Portfolio() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">بناء علامة تجارية</span>
-                    <span className="text-[var(--neutral-medium)] text-sm">2024</span>
-                  </div>
                   <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Impact Interiors</h3>
                   <p className="text-[var(--neutral-medium)] mb-4">
                     صممت خطة تسويقية شاملة للنمو المستدام لعلامة تجارية في قطاع التصميم الداخلي، بهدف التميز في السوق وزيادة الوعي بالعلامة التجارية.
@@ -224,7 +237,7 @@ export default function Portfolio() {
               </Link>
             </div>
 
-            {/*winner-advertising مشروع 7 */}
+            {/*winner-advertising مشروع 8 */}
             <div className="card">
               <Link href="/portfolio/winner-advertising" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -240,10 +253,6 @@ export default function Portfolio() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق </span>
-                    <span className="text-[var(--neutral-medium)] text-sm">2024</span>
-                  </div>
                   <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Winner Advertising</h3>
                   <p className="text-[var(--neutral-medium)] mb-4">
                     صياغة النمو الاستراتيجي لخدمات الدعاية والفعاليات
@@ -253,7 +262,7 @@ export default function Portfolio() {
               </Link>
             </div>
 
-            {/*ajyal-academy مشروع 8 */}
+            {/*ajyal-academy مشروع 9 */}
             <div className="card">
               <Link href="/portfolio/ajyal-academy" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -269,10 +278,6 @@ export default function Portfolio() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">بناء علامة تجارية</span>
-                    <span className="text-[var(--neutral-medium)] text-sm">2024</span>
-                  </div>
                   <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">أجيال أكاديمي</h3>
                   <p className="text-[var(--neutral-medium)] mb-4">
                     صممت وأشرفت على تنفيذ دراسة جدوى وخطة تسويقية للنمو المستدام لعلامة تجارية في قطاع التعليم، بهدف التميز في السوق وزيادة الوعي بالعلامة التجارية.
@@ -281,7 +286,7 @@ export default function Portfolio() {
               </Link>
             </div>
 
-            {/*pixel-hd مشروع 9 */}
+            {/*pixel-hd مشروع 10 */}
             <div className="card">
               <Link href="/portfolio/pixel-hd" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -297,10 +302,6 @@ export default function Portfolio() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">بناء علامة تجارية</span>
-                    <span className="text-[var(--neutral-medium)] text-sm">2023</span>
-                  </div>
                   <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Pixel HD</h3>
                   <p className="text-[var(--neutral-medium)] mb-4">
                     صممت وأشرفت على تنفيذ دراسة جدوى وخطة تسويقية للنمو المستدام لعلامة تجارية في قطاع التعليم، بهدف التميز في السوق وزيادة الوعي بالعلامة التجارية.
@@ -308,14 +309,64 @@ export default function Portfolio() {
                 </div>
               </Link>
             </div>
-          </div>
 
-          {/* زر تحميل المزيد */}
-          {/* <div className="text-center mt-12">
+            {/*Next Academy: The Operational Blueprint مشروع 11 */}
+            <div className="card">
+              <Link href="/portfolio/next-academy-operations" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/4.png"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">The Operational Blueprint</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    تصميم خطة تشغيلية لأكاديمية Next Academy، تتضمن هيكل الفريق والأدوات اللازمة لتحقيق الكفاءة والفعالية في العمليات.
+                    يهدف هذا الداشبورد إلى تحسين الأداء التشغيلي وضمان تحقيق الأهداف الاستراتيجية.
+                  </p>
+                </div>
+              </Link>
+            </div>
+
+            {/*Dor.com: The Financial Blueprint مشروع 12 */}
+            <div className="card">
+              <Link href="/portfolio/dor-com-financial" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/4.png"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">دور دوت كوم: من الفكرة إلى الجدوى المالية </h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    دراسة جدوى مشروع (SWOT, PESTEL)  دور دوت كوم، يهدف إلى فهم البيئة التنافسية وتحديد الفرص والتحديات.
+                    يوفر هذا التحليل أساسًا قويًا لتطوير استراتيجيات نمو فعالة.
+                  </p>
+                </div>
+              </Link>
+            </div>
+
+            {/* زر تحميل المزيد */}
+            {/* <div className="text-center mt-12">
             <button className="btn-primary">
               تحميل المزيد من المشاريع
             </button>
           </div> */}
+          </div>
         </div>
       </section>
 

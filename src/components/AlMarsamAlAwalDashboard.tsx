@@ -74,7 +74,7 @@ const AlMarsamAlAwalDashboard = () => {
         </header>
 
         {/* Navigation Tabs */}
-        <nav className="flex overflow-x-auto pb-2 mb-6 md:mb-8 gap-2 md:gap-4 bg-white p-2 rounded-lg md:rounded-xl shadow-sm">
+        <nav className="flex flex-wrap justify-center gap-2 mb-8 bg-white p-2 rounded-xl shadow-sm">
           <TabButton id="overview" label="نظرة عامة" active={activeTab === 'overview'} onClick={setActiveTab} />
           <TabButton id="platforms" label="المنصات الرقمية" active={activeTab === 'platforms'} onClick={setActiveTab} />
           <TabButton id="campaigns" label="الحملات الإعلانية" active={activeTab === 'campaigns'} onClick={setActiveTab} />

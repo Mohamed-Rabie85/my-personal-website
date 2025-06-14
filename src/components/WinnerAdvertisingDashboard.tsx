@@ -71,7 +71,7 @@ const WinnerAdvertisingDashboard = () => {
         </header>
 
         {/* Navigation Tabs */}
-        <nav className="flex overflow-x-auto pb-2 mb-6 md:mb-8 gap-2 md:gap-4 bg-white p-2 rounded-lg md:rounded-xl shadow-sm">
+        <nav className="flex flex-wrap justify-center gap-2 mb-8 bg-white p-2 rounded-xl shadow-sm">
           <TabButton id="overview" label="نظرة عامة" active={activeTab === 'overview'} onClick={setActiveTab} />
           <TabButton id="transformation" label="مراحل التحول" active={activeTab === 'transformation'} onClick={setActiveTab} />
           <TabButton id="services" label="الخدمات" active={activeTab === 'services'} onClick={setActiveTab} />

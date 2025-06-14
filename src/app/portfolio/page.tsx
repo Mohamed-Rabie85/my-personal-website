@@ -51,22 +51,48 @@ export default function Portfolio() {
           </div>
         </div>
       </section> */}
-
-      <NextAcademyDashboard />
-
+      <section className="w-full py-12 bg-gradient-to-br from-gray-50 to-slate-100">
+        <div className="section-container">
+          <NextAcademyDashboard />
+        </div>
+      </section>
 
       {/* قسم المشاريع */}
       <section className="w-full pb-20 bg-[var(--foreground)] ">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="text-[var(--primary-medium)]">بعض المشاريع </h2>
+        <div className="section-container ">
+          <div className="text-center my-12">
+            <h2 className="text-[var(--primary-medium)] p-4">بعض المشاريع </h2>
             <p className="text-[var(--neutral-medium)] max-w-3xl mx-auto">
               استعرض مجموعة من المشاريع التي قمت بتأسيسها وتنفيذها في مجالات التسويق الاستراتيجي وتطوير الأعمال وبناء العلامات التجارية.
               كل مشروع يمثل قصة نجاح فريدة ونتائج ملموسة.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/*next-academy مشروع 1 */}
+            {/* exs-agency مشروع 1 */}
+            <div className="card">
+              <Link href="/portfolio/exs-agency" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/6.png"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Exs Agency</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    صممت وأشرفت على تنفيذ استراتيجية اختراق السوق السعودي،  لوكالة Exs، مما ساعدها على التميز في السوق وزيادة الوعي بالعلامة التجارية.
+                  </p>
+                </div>
+              </Link>
+            </div>
+            
+            {/*next-academy مشروع 2 */}
             <div className="card">
               <Link href="/portfolio/next-academy" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium cursor-pointer">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -86,30 +112,6 @@ export default function Portfolio() {
                   <p className="text-[var(--neutral-medium)] mb-4">
                     أنشاء وتاسيس أكاديمية تعليمية متخصصة في مجال ريادة الاعمال والتسويق حيث قمت بتطوير استراتيجية شاملة للنمو والتوسع.
                     من خلال تحليل السوق وتحديد الفرص، تمكنا من تحقيق نتائج ملموسة في زيادة وتوسيع قاعدة العملاء.
-                  </p>
-                </div>
-              </Link>
-            </div>
-            {/*verde-vertical مشروع 2 */}
-            <div className="card">
-              <Link href="/portfolio/verde-vertical" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
-                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                  {/* هنا يمكن إضافة صورة المشروع */}
-                  <Image
-                    src="/portfolio/2.png"
-                    alt="الإنتاج الإعلامي"
-                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                    className="object-cover w-full h-full"
-                    quality={100}
-                    priority
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Verde Vertical</h3>
-                  <p className="text-[var(--neutral-medium)] mb-4">
-                    بناء علامة تجارية قوية وموثوقة، لا مجرد مبيعات
-                    صممت وأعددت خطة تسويق رقمي متكاملة لعلامة تجارية في قطاع اللاند سكيب، لزيادة الظهور الرقمي والمبيعات عبر الإنترنت.
                   </p>
                 </div>
               </Link>
@@ -140,8 +142,32 @@ export default function Portfolio() {
               </Link>
             </div>
 
+            {/*verde-vertical مشروع 4 */}
+            <div className="card">
+              <Link href="/portfolio/verde-vertical" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
+                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/portfolio/2.png"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover w-full h-full"
+                    quality={100}
+                    priority
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Verde Vertical</h3>
+                  <p className="text-[var(--neutral-medium)] mb-4">
+                    بناء علامة تجارية قوية وموثوقة، لا مجرد مبيعات
+                    صممت وأعددت خطة تسويق رقمي متكاملة لعلامة تجارية في قطاع اللاند سكيب، لزيادة الظهور الرقمي والمبيعات عبر الإنترنت.
+                  </p>
+                </div>
+              </Link>
+            </div>
 
-            {/*almarsam-alawal مشروع 4 */}
+            {/*almarsam-alawal مشروع 5 */}
             <div className="card">
               <Link href="/portfolio/almarsam-alawal" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -165,7 +191,7 @@ export default function Portfolio() {
               </Link>
             </div>
 
-            {/*top-guide مشروع 5 */}
+            {/*top-guide مشروع 6 */}
             <div className="card">
               <Link href="/portfolio/top-guide" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
                 <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
@@ -184,30 +210,6 @@ export default function Portfolio() {
                   <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Top Guide</h3>
                   <p className="text-[var(--neutral-medium)] mb-4">
                     صممت وأشرفت على تنفيذ استراتيجية تسويق رقمي متكاملة لعلامة تجارية في قطاع السياحة التعليمية، مما أدى إلى زيادة الظهور الرقمي والمبيعات عبر الإنترنت بنسبة 30%.
-                  </p>
-                </div>
-              </Link>
-            </div>
-
-            {/* exs-agency مشروع 6 */}
-            <div className="card">
-              <Link href="/portfolio/exs-agency" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] font-medium">
-                <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                  {/* هنا يمكن إضافة صورة المشروع */}
-                  <Image
-                    src="/portfolio/6.png"
-                    alt="الإنتاج الإعلامي"
-                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                    className="object-cover w-full h-full"
-                    quality={100}
-                    priority
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[var(--primary-medium)] mb-2">Exs Agency</h3>
-                  <p className="text-[var(--neutral-medium)] mb-4">
-                    صممت وأشرفت على تنفيذ استراتيجية اختراق السوق السعودي،  لوكالة Exs، مما ساعدها على التميز في السوق وزيادة الوعي بالعلامة التجارية.
                   </p>
                 </div>
               </Link>

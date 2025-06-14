@@ -18,14 +18,17 @@ export default function HeroSection() {
 
       <div className="section-container text-center md:text-right relative z-10">
         <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          تحويل الرؤى إلى <span className="text-[var(--secondary-medium)]">نجاحات استثنائية</span>
+          وضوح في الخطة.<span className="text-[var(--secondary-medium)]"> قوة في التنفيذ </span>
         </h1>
         <p className="mb-8 text-xl md:text-2xl max-w-3xl mx-auto md:mx-0">
-          مستشار تطوير أعمال وتسويق استراتيجي متخصص في بناء علامات تجارية مؤثرة وتحقيق نمو مستدام للشركات الناشئة والصغيرة والمتوسطة.
+          النجاح لا يأتي من النظريات. بخبرة عملية في تأسيس وإعادة هيكلة الشركات، مهمتي هي تحقيق نتائج ملموسة لمشروعك على أرض الواقع
+        </p>
+        <p className="mb-8 text-xl md:text-2xl max-w-3xl mx-auto md:mx-0">
+          أنا محمد ربيع .. بخلاصة خبرة 20 عامًا في تأسيس وبناء الشركات، شريكك التنفيذي الذي يحول رؤيتك إلى أرقام حقيقية
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
           <Link href="/consultation" className="btn-secondary">
-            احجز استشارة مجانية
+            لنتحدث عن مشروعك
           </Link>
           <Link href="/about" className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-[var(--primary-dark)] transition-colors duration-300">
             تعرف علي أكثر

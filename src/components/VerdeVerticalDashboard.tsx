@@ -58,7 +58,7 @@ const VerdeVerticalDashboard = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4 md:p-6" dir="rtl">
+    <div className="min-h-screen bg-[var(--neutral-light)] p-4 md:p-6" dir="rtl">
       <div className="section-container">
         {/* Header */}
         <header className="mb-6 md:mb-8">
@@ -74,7 +74,7 @@ const VerdeVerticalDashboard = () => {
         </header>
 
         {/* Navigation Tabs */}
-        <nav className="flex overflow-x-auto pb-2 mb-6 md:mb-8 gap-2 md:gap-4 bg-white p-2 rounded-lg md:rounded-xl shadow-sm">
+        <nav className="flex flex-wrap justify-center gap-2 mb-8 bg-white p-2 rounded-xl shadow-sm">
           <TabButton id="overview" label="نظرة عامة" active={activeTab === 'overview'} onClick={setActiveTab} />
           <TabButton id="strategy" label="الاستراتيجية" active={activeTab === 'strategy'} onClick={setActiveTab} />
           <TabButton id="platforms" label="المنصات الرقمية" active={activeTab === 'platforms'} onClick={setActiveTab} />
@@ -251,7 +251,7 @@ const VerdeVerticalDashboard = () => {
                           className="w-4 h-4 rounded-full ml-3"
                           style={{ backgroundColor: pillar.color }}
                         ></div>
-                        <span className="font-medium text-sm">{pillar.name}</span>
+                        <span className="font-medium text-[var(--neutral-dark)] text-sm">{pillar.name}</span>
                       </div>
                       <span className="text-lg font-bold" style={{ color: pillar.color }}>
                         {pillar.percentage}%
@@ -331,7 +331,7 @@ const VerdeVerticalDashboard = () => {
                       {platform.name === 'Instagram' && <Instagram className="w-6 h-6" style={{ color: platform.color }} />}
                       {platform.name === 'Facebook' && <Facebook className="w-6 h-6" style={{ color: platform.color }} />}
                       {platform.name === 'LinkedIn' && <Linkedin className="w-6 h-6" style={{ color: platform.color }} />}
-                      {platform.name === 'TikTok' && <div className="w-6 h-6 bg-black rounded"></div>}
+                      {platform.name === 'TikTok' && <div className="w-12 h-6 bg-gray-300 rounded flex items-center justify-center text-xs" style={{ color: platform.color }}>TikTok</div>}
                       <span className="font-bold mr-3">{platform.name}</span>
                     </div>
                   </div>
@@ -374,26 +374,25 @@ const VerdeVerticalDashboard = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-6">تحسين أمازون</h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
-                    <span className="font-medium">تحليل الكلمات المفتاحية</span>
+                    <span className="font-medium text-[var(--neutral-dark)]">تحليل الكلمات المفتاحية</span>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
                   <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
-                    <span className="font-medium">تحسين العناوين والوصف</span>
+                    <span className="font-medium text-[var(--neutral-dark)]">تحسين العناوين والوصف</span>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
                   <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
-                    <span className="font-medium">المحتوى المرئي</span>
+                    <span className="font-medium text-[var(--neutral-dark)]">المحتوى المرئي</span>
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   </div>
                   <div className="flex items-center justify-between p-3 bg-orange-50 rounded-lg">
-                    <span className="font-medium">استراتيجية المراجعات</span>
+                    <span className="font-medium text-[var(--neutral-dark)]">استراتيجية المراجعات</span>
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          </div>)}
 
         {/* Campaigns Tab */}
         {activeTab === 'campaigns' && (

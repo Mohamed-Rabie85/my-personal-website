@@ -51,7 +51,7 @@ const OperationalBlueprintDashboard = () => {
   );
 
   return (
-    <section className="w-full bg-[var(--foreground)] py-12 md:py-16">
+    <section className="w-full bg-[var(--foreground)] pt-12 md:pt-16">
       {/* Header */}
       <header className="mb-6 md:mb-8">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
@@ -66,8 +66,8 @@ const OperationalBlueprintDashboard = () => {
 
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-indigo-50 p-2 md:p-6 rounded-lg" dir="rtl">
         <div className="flex flex-wrap justify-center gap-2 mb-8 bg-white p-2 rounded-xl shadow-sm">
-          <TabButton id="journey" label="رحلة الطالب" active={activeTab === 'journey'} onClick={setActiveTab} />
           <TabButton id="operations" label="الهيكل التشغيلي" active={activeTab === 'operations'} onClick={setActiveTab} />
+          <TabButton id="journey" label="رحلة الطالب" active={activeTab === 'journey'} onClick={setActiveTab} />
           <TabButton id="solutions" label="مصفوفة المشاكل والحلول" active={activeTab === 'solutions'} onClick={setActiveTab} />
         </div>
 
@@ -147,6 +147,10 @@ const OperationalBlueprintDashboard = () => {
             </table>
           </div>
         )}
+        <div className="mt-12 text-center text-gray-500">
+          <p>2025 Next Academy: المخطط التشغيلي</p>
+          <p>Mohamed Rabie - Business Strategy Consultant</p>
+        </div>
       </div>
     </section>
   );

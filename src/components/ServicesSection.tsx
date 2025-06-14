@@ -7,10 +7,10 @@ export default function ServicesSection() {
     <section className="w-full py-16 bg-[var(--foreground)]">
       <div className="section-container">
         <div className="text-center mb-12">
-          <h2 className="text-[var(--primary-medium)]">خدمات استشارية متخصصة</h2>
-          <p className="max-w-3xl mx-auto text-[var(--neutral-medium)]">
+          <h2 className="text-[var(--primary-medium)]">خدماتي</h2>
+          {/* <p className="max-w-3xl mx-auto text-[var(--neutral-medium)]">
             خبرة عملية تمتد لأكثر من 20 عاماً في طليعة التحولات التسويقية، تطوير الأعمال، والابتكار التشغيلي
-          </p>
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -29,9 +29,9 @@ export default function ServicesSection() {
                   priority
                 />
               </div>
-              <h3 className="text-[var(--primary-medium)] text-xl font-semibold my-2 mx-2">التخطيط الاستراتيجي</h3>
+              <h3 className="text-[var(--primary-medium)] text-xl font-semibold my-2 mx-2">تأسيس مشروعك من الصفر</h3>
               <p className="text-[var(--neutral-medium)] my-2 mx-2">
-                تحليل الأسواق المعقدة، تحديد الفرص الكامنة، بناء نماذج أعمال مبتكرة، ووضع خرائط طريق واضحة لتحقيق النمو.
+                عندك فكرة؟ سنحولها معًا إلى شركة حقيقية. ندرس السوق، نحدد نموذج الربح، ونضع خطة عمل واضحة لتبدأ بداية صحيحة وتتجنب أخطاء البدايات
               </p>
             </Link>
           </div>
@@ -51,9 +51,9 @@ export default function ServicesSection() {
                   priority
                 />
               </div>
-              <h3 className="text-[var(--primary-medium)] text-xl font-semibold my-2 mx-2">التسويق المتكامل</h3>
+              <h3 className="text-[var(--primary-medium)] text-xl font-semibold my-2 mx-2">إعادة هيكلة شركتك للنمو</h3>
               <p className="text-[var(--neutral-medium)] my-2 mx-2">
-                تصميم استراتيجيات تسويقية متكاملة تعتمد على علم النفس التسويقي، مع التركيز على بناء العلامة التجارية، تحسين تجربة العملاء، وزيادة العائد على الاستثمار.
+                هل شركتك متوقفة عن النمو أو تواجه صعوبات؟ نقوم بتقييم كامل للوضع، ونعيد هيكلة التسويق والعمليات لتعود الشركة إلى الربحية والنمو من جديد
               </p>
             </Link>
           </div>
@@ -73,17 +73,17 @@ export default function ServicesSection() {
                   priority
                 />
               </div>
-              <h3 className="text-[var(--primary-medium)] text-xl font-semibold my-2 mx-2">تحليل البيانات لدعم القرار</h3>
+              <h3 className="text-[var(--primary-medium)] text-xl font-semibold my-2 mx-2">شريكك التنفيذي</h3>
               <p className="text-[var(--neutral-medium)] my-2 mx-2">
-                الاستفادة من مهارات تحليل البيانات لاستخلاص رؤى قيمة تدعم اتخاذ القرارات التسويقية والاستراتيجية وتحسين الأداء.
+                ليست مجرد استشارات. سأكون معك في الصورة بشكل كامل، أشرف على التنفيذ وأشارك في القرارات الصعبة، لأضمن وصولنا للأهداف التي خططنا لها
               </p>
             </Link>
           </div>
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/services" className="btn-primary ">
-            استعرض جميع الخدمات
+          <Link href="/services" className="btn-secondary">
+              خدماتي الكاملة
           </Link>
         </div>
       </div>

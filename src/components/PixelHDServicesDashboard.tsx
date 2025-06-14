@@ -76,7 +76,7 @@ const PixelHDServicesDashboard = () => {
         </header>
 
         {/* Navigation Tabs */}
-        <nav className="flex overflow-x-auto pb-2 mb-6 md:mb-8 gap-2 md:gap-4 bg-white p-2 rounded-lg md:rounded-xl shadow-sm">
+        <nav className="flex flex-wrap justify-center gap-2 mb-8 bg-white p-2 rounded-xl shadow-sm">
           <TabButton id="overview" label="نظرة عامة" active={activeTab === 'overview'} onClick={setActiveTab} />
           <TabButton id="businessModel" label="نموذج العمل (Canvas)" active={activeTab === 'businessModel'} onClick={setActiveTab} />
           <TabButton id="needs" label="الاحتياجات وخطة الإطلاق" active={activeTab === 'needs'} onClick={setActiveTab} />
@@ -147,17 +147,18 @@ const PixelHDServicesDashboard = () => {
               {/* Right Column */}
               <div className="space-y-4">
                 <CanvasCard title="شرائح العملاء" icon={Users} items={['الشركات الكبيرة والمتوسطة', 'مصانع الأدوية والتجميل', 'الشركات الغذائية والمطاعم']} />
-                <CanvasCard title="علاقات العملاء" icon={Briefcase} items={['خدمة عملاء احترافية', 'برامج ولاء وعروض ترويجية', 'علاقات شخصية وتقارير مفصلة']} />
+                
               </div>
               {/* Left Column */}
               <div className="space-y-4">
                 <CanvasCard title="الشراكات الرئيسية" icon={Users} items={['موردون في الطباعة والتغليف والفعاليات', 'شركات تصميم وإعلان وتسويق']} />
-                <CanvasCard title="الأنشطة الرئيسية" icon={Wrench} items={['تخطيط وتنفيذ الفعاليات', 'خدمات تغليف وطباعة عالية الجودة', 'تطوير هدايا مبتكرة', 'إدارة الحملات التسويقية']} />
+                
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
               <CanvasCard title="الموارد الرئيسية" icon={Package} items={['شبكة موردين مؤهلين', 'فريق عمل مؤهل', 'قاعدة عملاء Pixel HD', 'نظم إدارية وتقنية']} />
               <CanvasCard title="القنوات" icon={Target} items={['فريق مبيعات مباشر', 'وسائل التواصل وموقع إلكتروني', 'شبكة عملاء Pixel HD', 'شراكات ومعارض ومؤتمرات']} />
+              <CanvasCard title="الأنشطة الرئيسية" icon={Wrench} items={['تخطيط وتنفيذ الفعاليات', 'خدمات تغليف وطباعة عالية الجودة', 'تطوير هدايا مبتكرة', 'إدارة الحملات التسويقية']} />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
               <div className="bg-green-50 p-4 rounded-lg shadow">
@@ -217,11 +218,11 @@ const PixelHDServicesDashboard = () => {
         )}
 
         {/* Footer */}
+      </div>
         <div className="mt-12 text-center text-gray-500">
           <p>2023 Pixel HD - خطة تأسيس شركة الخدمات المتكاملة</p>
           <p>Mohamed Rabie - Business Strategy Consultant</p>
         </div>
-      </div>
     </div>
   );
 };

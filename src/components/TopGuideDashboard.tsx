@@ -60,7 +60,7 @@ const TopGuideDashboard = () => {
         </header>
 
         {/* Navigation Tabs */}
-        <nav className="flex overflow-x-auto pb-2 mb-6 md:mb-8 gap-2 md:gap-4 bg-white p-2 rounded-lg md:rounded-xl shadow-sm">
+        <nav className="flex flex-wrap justify-center gap-2 mb-8 bg-white p-2 rounded-xl shadow-sm">
           <TabButton id="overview" label="نظرة عامة" active={activeTab === 'overview'} onClick={setActiveTab} />
           <TabButton id="strategy" label="الاستراتيجية والجمهور" active={activeTab === 'strategy'} onClick={setActiveTab} />
           <TabButton id="execution" label="خطة التنفيذ والنتائج" active={activeTab === 'execution'} onClick={setActiveTab} />

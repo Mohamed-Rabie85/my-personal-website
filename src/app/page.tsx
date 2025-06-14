@@ -1,10 +1,11 @@
 // src/app/page.tsx
 import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import ClientsSection from '@/components/ClientsSection';
-import TestimonialsSection from "@/components/TestimonialsSection";
-import WhyChooseMeSection from "@/components/WhyChooseMeSection";
+import PortfolioSection from "@/components/PortfolioSection";
+// import TestimonialsSection from "@/components/TestimonialsSection";
 import BlogSection from "@/components/BlogSection";
 import CtaSection from "@/components/CtaSection";
 
@@ -20,18 +21,19 @@ export default function Home() {
       <HeroSection />
 
       {/* قسم من أنا (About Section) */}
+      <AboutSection />
 
       {/* قسم الخدمات المميزة */}
       <ServicesSection />
+
+      {/* قسم المشاريع (Portfolio Section) */}
+      <PortfolioSection />
 
       {/* قسم شعارات العملاء (Logo Clouds) - جديد */}
       <ClientsSection />
 
       {/* قسم شهادات العملاء (Testimonials) - جديد */}
-      <TestimonialsSection />
-
-      {/* قسم لماذا تختارني */}
-      <WhyChooseMeSection />
+      {/* <TestimonialsSection /> */}
 
       {/* قسم المدونة (Blog Sections) - جديد */}
       <BlogSection />

@@ -59,7 +59,7 @@ const NextAcademyDashboard = () => {
   );
 
   return (
-    <section className="w-full bg-[var(--foreground)] py-12 md:py-16">
+    <section className="w-full bg-[var(--foreground)] ">
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4 md:p-6" dir="rtl">
         <div className="section-container">
           {/* Header */}
@@ -75,7 +75,7 @@ const NextAcademyDashboard = () => {
           </header>
 
           {/* Navigation Tabs */}
-          <nav className="flex overflow-x-auto pb-2 mb-6 md:mb-8 gap-2 md:gap-4 bg-white p-2 rounded-lg md:rounded-xl shadow-sm">
+          <nav className="flex flex-wrap justify-center gap-2 mb-8 bg-white p-2 rounded-xl shadow-sm">
             <TabButton id="overview" label="نظرة عامة" active={activeTab === 'overview'} onClick={setActiveTab} />
             <TabButton id="audience" label="تحليل الجمهور" active={activeTab === 'audience'} onClick={setActiveTab} />
             <TabButton id="strategy" label="الاستراتيجية التسويقية" active={activeTab === 'strategy'} onClick={setActiveTab} />

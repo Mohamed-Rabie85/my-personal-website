@@ -107,7 +107,7 @@ export default function BlogSection() {
         </div>
 
         <div className="text-center mt-12 ">
-          <Link href="/blog" className="btn-primary ">
+          <Link href="/blog" className="btn-secondary">
             تصفح المدونة
           </Link>
         </div>

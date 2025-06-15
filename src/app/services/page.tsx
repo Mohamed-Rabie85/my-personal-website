@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from 'next/image';
 import CtaSection from "@/components/CtaSection";
+import { GiAngelWings } from "react-icons/gi";
+
 
 export const metadata: Metadata = {
   title: "الخدمات |  Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي   ",
@@ -14,410 +16,244 @@ export default function Services() {
       {/* قسم العنوان الرئيسي */}
       <section className="w-full bg-gradient-to-b from-[var(--primary-dark)] to-[var(--primary-medium)] text-white py-16">
         <div className="section-container text-center">
-          <h1 className="mb-4">خدماتي الاستشارية</h1>
+          <h1 className="mb-8">حلول عملية لمشروعك: من الفكرة إلى النمو</h1>
+          <p className="text-xl max-w-3xl mx-auto mb-8">
+            أقدم لك خططًا قابلة للتنفيذ مبنية على 20 عامًا من الخبرة في بناء الشركات وإعادة هيكلتها. مهمتي هي مساعدتك في تحويل تحدياتك إلى نجاح حقيقي
+          </p>
           <p className="text-xl max-w-3xl mx-auto">
-            حلول متكاملة ومخصصة لتحقيق النمو المستدام وبناء علامات تجارية مؤثرة
+            أنا لا أقدم استشارات نظرية، بل أشاركك في التنفيذ لتحويل أهدافك إلى واقع. كل شركة تمر بمراحل مختلفة، لذلك صممت حلولي لتناسب التحدي الذي تواجهه الآن بالضبط
           </p>
         </div>
       </section>
 
-      {/* قسم مقدمة الخدمات */}
-      <section className="w-full py-16 bg-[var(--foreground)] text-[var(--background)]">
+      {/* قسم  تاسيس الشركات الناشئة */}
+      <section id="startup-formation" className="w-full py-16 bg-[var(--foreground)] ">
         <div className="section-container">
-          <div className="text-center mb-12">
-            <h2 className="text-[rgb(var(--primary-dark))]">منهجية شاملة لتحقيق النتائج</h2>
-            <p className="text-[rgb(var(--neutral-medium))] max-w-3xl mx-auto">
-              لا أقدم استشارات نظرية فقط، بل حلولاً قابلة للتطبيق على أرض الواقع. من خلال خبرتي المتنوعة، أقدم مجموعة متكاملة من الخدمات المصممة خصيصاً لتلبية احتياجات عملائي.
+          <div className="text-center mb-12 mx-auto">
+            <h2 className="text-[var(--primary-medium)] py-3">تأسيس الشركات من الصفر</h2>
+            <p className="text-[var(--primary-medium)] max-w-3xl mx-auto">
+              عندك فكرة عظيمة، لكنك مشتت ومش عارف تبدأ منين صح؟ أو محتاج خريطة طريق واضحة لخطوات إطلاق مشروعك؟
+            </p>
+            <p className="text-[var(--primary-medium)] max-w-3xl mx-auto">
+              أنا هنا لأساعدك في تحويل فكرتك الواعدة إلى خطة عمل متكاملة وقابلة للتنفيذ. من تحليل السوق وتحديد نموذج الربح، إلى صياغة الاستراتيجيات الأساسية للانطلاق بثقة، أضمن لك بداية قوية تتجنب الأخطاء المكلفة
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* قسم التخطيط الاستراتيجي */}
-      <section id="strategic-planning" className="w-full py-16 bg-[var(--neutral-light)] text-[var(--background)]">
-        <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-[var(--primary-dark)] mb-6">التخطيط الاستراتيجي</h2>
-              <p className="mb-4 text-[var(--neutral-medium)]">
-                أساعد الشركات على رسم مسار واضح للنمو من خلال تحليل دقيق للسوق والمنافسين، وتحديد الفرص الكامنة، وبناء استراتيجيات مبتكرة تحقق أهدافهم.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+              <ul className="space-y-4 mb-6 mx-auto max-w-xl">
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>تحليل السوق والمنافسين</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">دراسات جدوى شاملة</h3>
+                    <p className="text-[var(--neutral-medium)]">عشان تتأكد إن فكرتك هتنجح وتعرف فرصها وتحدياتها</p>
                   </div>
                 </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>بناء نماذج أعمال مبتكرة</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">بناء نموذج عمل مربح</h3>
+                    <p className="text-[var(--neutral-medium)]">تحديد مصادر الإيرادات وتكاليف التشغيل لضمان استدامة المشروع. نحدد مع بعض أفضل طريقة شركتك هتكسب بيها</p>
                   </div>
                 </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>وضع خرائط طريق واضحة للنمو</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">صياغة الخطة الاستراتيجية والتشغيلية</h3>
+                    <p className="text-[var(--neutral-medium)]">تحديد الأهداف، وتوزيع المهام، ووضع جداول زمنية واضحة لضمان التنفيذ الفعال. عشان تعرف كل خطوة هتعملها إزاي بالظبط</p>
                   </div>
                 </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>استراتيجيات دخول أسواق جديدة</p>
-                  </div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p>إعادة هيكلة العمليات القائمة</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">تحديد السوق المستهدف والمنتجات/الخدمات</h3>
+                    <p className="text-[var(--neutral-medium)]">تحليل السوق لفهم احتياجات العملاء وتحديد المنتجات أو الخدمات المناسبة. عشان توصل للعملاء الصح بأفضل طريقة</p>
                   </div>
                 </li>
               </ul>
-              <Link href="/consultation" className="btn-secondary">
-                استشارة في التخطيط الاستراتيجي
+              <Link href="/consultation" className="btn-secondary text-lg ">
+                لنرسم خريطة طريق مشروعك
               </Link>
             </div>
-            <div className="bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-              {/* هنا يمكن إضافة صورة توضيحية */}
-              <Image
-                src="/services/strategic-planning.png"
-                alt="التخطيط الاستراتيجي"
-                width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                className="object-cover w-full h-full"
-                quality={100}
-                priority
-              />
+            <div className="flex items-center justify-center">
+              <div className="text-center"> {/* يمكن إزالة text-gray-500 من هنا لأنه لا يؤثر على الصورة */}
+                <Image
+                  src="/services/startup-formation.png" // *مسار الصورة الفعلي داخل مجلد public*
+                  alt="صورة شخصية لمحمد ربيع mohamed rabie" // نص وصفي للصورة (مهم جداً للوصول و SEO)
+                  width={900}
+                  height={900}
+                  className="object-cover w-full h-full rounded-lg " // فئات Tailwind للتحكم في الحجم والشكل
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* قسم التسويق  */}
-      <section id="marketing" className="w-full py-16 bg-[var(--foreground)] text-[var(--background)]">
+      {/* قسم إعادة الهيكلة  */}
+      <section id="restructuring" className="w-full py-16 bg-[var(--neutral-light)] text-[var(--background)]">
         <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-              {/* هنا يمكن إضافة صورة توضيحية */}
+          <div className="text-center mb-12 mx-auto">
+            <h2 className="text-[var(--primary-medium)] py-3">إعادة الهيكلة</h2>
+            <p className="text-[var(--primary-medium)] max-w-3xl mx-auto">
+              هل شركتك قائمة لكنها بتواجه تحديات في النمو، أو الكفاءة، أو محتاجة دفعة جديدة؟
+            </p>
+            <p className="text-[var(--primary-medium)] max-w-3xl mx-auto">
+              أقدم لك خبرتي في تحليل الوضع الحالي لشركتك وإعادة هيكلة العمليات الداخلية واستراتيجيات التسويق. نهدف إلى تحديد المشاكل الخفية، وتحويلها إلى فرص حقيقية لزيادة الربحية وتحقيق نمو مستدام
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="flex items-center justify-center">
               <Image
-                src="/services/marketing.png"
-                alt="التسويق "
+                src="/services/restructuring.png" // *مسار الصورة الفعلي داخل مجلد public*
+                alt="إعادة الهيكلة"
                 width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                 height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full rounded-lg"
                 quality={100}
                 priority
               />
             </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-[var(--primary-medium)] mb-6">التسويق المتكامل</h2>
-              <p className="mb-4 text-[var(--neutral-medium)]">
-                أقدم استراتيجيات تسويقية شاملة تجمع بين مختلف قنوات التسويق الرقمي لتحقيق أقصى تأثير وأفضل عائد على الاستثمار.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p>إدارة وسائل التواصل الاجتماعي</p>
-                  </div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p>تحسين محركات البحث (SEO)</p>
-                  </div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p>التسويق بالمحتوى</p>
-                  </div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p>إعلانات الدفع لكل نقرة (PPC)</p>
-                  </div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p>التسويق عبر البريد الإلكتروني</p>
-                  </div>
-                </li>
-              </ul>
-              <Link href="/consultation" className="btn-secondary">
-                استشارة في التسويق الرقمي
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* قسم علم النفس التسويقي */}
-      <section id="marketing-psychology" className="w-full py-16 bg-[var(--neutral-light)] text-[var(--background)]">
-        <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-[var(--primary-medium)] mb-6">علم النفس التسويقي التطبيقي</h2>
-              <p className="mb-4 text-[var(--neutral-medium)]">
-                أستخدم فهمي العميق لسلوك المستهلك ودوافعه لبناء حملات تسويقية أكثر تأثيراً وتصميم تجارب عملاء لا تُنسى، مع الالتزام الكامل بالمبادئ الأخلاقية والشفافية.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+              <ul className="space-y-4 mb-6 mx-auto max-w-xl">
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>فهم دوافع المستهلك وعمليات اتخاذ القرار</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">تحليل وتقييم شامل</h3>
+                    <p className="text-[var(--neutral-medium)]">تقييم الوضع الحالي لشركتك وتحديد نقاط القوة والضعف. عشان نعرف بالظبط إيه اللي محتاج يتظبط</p>
                   </div>
                 </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>صياغة رسائل تخاطب العقل والقلب</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">إعادة هيكلة العمليات التشغيلية</h3>
+                    <p className="text-[var(--neutral-medium)]">
+                      تحليل العمليات الحالية وتحديد نقاط التحسين. لزيادة الكفاءة وتقليل التكاليف
+                    </p>
                   </div>
                 </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>تصميم تجارب عملاء لا تُنسى</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">تطوير وتنفيذ استراتيجيات تسويقية جديدة</h3>
+                    <p className="text-[var(--neutral-medium)]">
+                      تحليل السوق وتحديد الفرص الجديدة.
+                      عشان تجذب عملاء أكتر وتزود مبيعاتك
+                    </p>
                   </div>
                 </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>بناء علاقات قوية مع العملاء</p>
-                  </div>
-                </li>
-              </ul>
-              <Link href="/consultation" className="btn-secondary">
-                استشارة في علم النفس التسويقي
-              </Link>
-            </div>
-            <div className="bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-              {/* هنا يمكن إضافة صورة توضيحية */}
-              <Image
-                src="/services/marketing-psychology.png"
-                alt="علم النفس التسويقي"
-                width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                height={300} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                className="object-cover w-full"
-                quality={100}
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* قسم تحليل البيانات */}
-      <section id="data-analysis" className="w-full py-16 bg-[var(--foreground)] text-[var(--background)]">
-        <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-              {/* هنا يمكن إضافة صورة توضيحية */}
-              <Image
-                src="/services/data-analysis.png"
-                alt="تحليل البيانات"
-                width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                className="object-cover w-full h-full"
-                quality={100}
-                priority
-              />
-            </div>
-            <div className="order-1 md:order-2">
-              <h2 className="text-[var(--primary-medium)] mb-6">تحليل البيانات لدعم القرار</h2>
-              <p className="mb-4 text-[var(--neutral-medium)]">
-                أستفيد من مهارات تحليل البيانات لاستخلاص رؤى قيمة تدعم اتخاذ القرارات التسويقية والاستراتيجية وتحسين الأداء.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p>تحليل أداء الحملات التسويقية</p>
-                  </div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p>تحليل سلوك المستخدم وتجربة العملاء</p>
-                  </div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p>تحليل اتجاهات السوق والمنافسين</p>
-                  </div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p>إعداد تقارير أداء وتوصيات قابلة للتنفيذ</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">تحسين الأداء المالي</h3>
+                    <p className="text-[var(--neutral-medium)]">
+                      نعمل على وضع استراتيجيات لزيادة الإيرادات وتقليل التكاليف. عشان تضمن ربحية واستدامة مشروعك
+                    </p>
                   </div>
                 </li>
               </ul>
-              <Link href="/consultation" className="btn-secondary">
-                استشارة في تحليل البيانات
+              <Link href="/consultation" className="btn-secondary text-lg ">
+                لنعيد شركتك لمسار النمو
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* قسم الإنتاج الإعلامي */}
-      <section id="media-production" className="w-full py-16 bg-[var(--neutral-light)] text-[var(--background)]">
+      {/* قسم شريكك التنفيذي  */}
+      <section id="executive-partner" className="w-full py-16 bg-[var(--foreground)] ">
         <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="text-center mb-12 mx-auto">
+            <h2 className="text-[var(--primary-medium)] py-3">شريكك التنفيذي</h2>
+            <p className="text-[var(--primary-medium)] max-w-3xl mx-auto">
+              أنت كرائد أعمال، بتحتاج أحيانا عقل استراتيجي وخبرة تنفيذية بجانبك بشكل مستمر، للمساعدة في القرارات الكبيرة أو الإشراف على المشاريع المهمة
+            </p>
+            <p className="text-[var(--primary-medium)] max-w-3xl mx-auto">
+              أنا هنا لأكون شريكك التنفيذي، أقدم لك الدعم الاستراتيجي والتنفيذي اللي تحتاجه. سواء كنت بتخطط لإطلاق منتج جديد، أو إعادة هيكلة فريقك، أو حتى توسيع نطاق عملك، هكون معاك في كل خطوة
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-[var(--primary-medium)] mb-6">الإنتاج الإعلامي والإعلاني</h2>
-              <p className="mb-4 text-[var(--neutral-medium)]">
-                أقدم خدمات إنتاج إعلامي وإعلاني متكاملة من خلال إدارة وكالات متخصصة في مختلف مجالات الإنتاج الإعلامي.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+              <ul className="space-y-4 mb-6 mx-auto max-w-xl">
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>تصميم وتصنيع الحروف البارزة والكلادينج</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">استشارات وتوجيه مستمر</h3>
+                    <p className="text-[var(--neutral-medium)]">
+                      أنا هنا لأقدم لك الدعم والتوجيه المستمر، عشان تقدر تتخذ قرارات استراتيجية صحيحة وتواجه التحديات بثقة.
+                      بكون معاك خطوة بخطوة في رحلة شركتك
+                    </p>
                   </div>
                 </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>تصميم وتنفيذ أجنحة المعارض والمؤتمرات</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">المشاركة في التخطيط والتنفيذ</h3>
+                    <p className="text-[var(--neutral-medium)]">
+                      أشاركك في وضع الخطط الاستراتيجية والتشغيلية، وأساعدك في تنفيذها بشكل فعال. عشان تضمن إن كل شيء بيتنفذ على أكمل وجه
+                    </p>
                   </div>
                 </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>خدمات الطباعة الرقمية والورقية</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">الإشراف على المشاريع</h3>
+                    <p className="text-[var(--neutral-medium)]">
+                      أتابع تنفيذ المشاريع بشكل دوري، وأضمن إن كل شيء ماشي حسب الخطة. لو ظهرت أي تحديات، هكون معاك لحلها بسرعة وفعالية
+                    </p>
                   </div>
                 </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
+                <li className="flex gap-3">
+                  <div className="text-[var(--secondary-medium)]">
+                    <GiAngelWings size={24} />
                   </div>
                   <div>
-                    <p>حلول التغليف المبتكرة</p>
-                  </div>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <div className="text-[var(--secondary-medium)] mt-1">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.97 4.7a.75.75 0 0 1 .993.455l4.5 11.5a.75.75 0 0 1-1.385.577L9.575 5.732A.75.75 0 0 1 9.97 4.7ZM14.47 7.03a.75.75 0 0 1 0 1.06L11.53 11l2.94 2.91a.75.75 0 0 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.44a.75.75 0 0 1 1.06 0ZM4.5 5.25c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75ZM5.25 11a.75.75 0 0 1 0-1.5h5a.75.75 0 0 1 0 1.5h-5ZM4.5 16.75c0 .414.336.75.75.75h5a.75.75 0 0 0 0-1.5h-5a.75.75 0 0 0-.75.75Z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p>إعداد وتطوير محتوى للبرامج التلفزيونية</p>
+                    <h3 className="font-semibold text-[var(--primary-medium)]">تحديد فرص النمو الجديدة</h3>
+                    <p className="text-[var(--neutral-medium)]">
+                      أساعدك في اكتشاف فرص جديدة للنمو والتوسع، سواء من خلال دخول أسواق جديدة أو تطوير منتجات مبتكرة. عشان تضمن إن شركتك دايمًا في المقدمة.
+                    </p>
                   </div>
                 </li>
               </ul>
-              <Link href="/consultation" className="btn-secondary">
-                استشارة في الإنتاج الإعلامي
+              <Link href="/consultation" className="btn-secondary text-lg ">
+                لنتحدث عن استراتيجيات النمو
               </Link>
             </div>
-            <div className="bg-gray-200 h-80 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-              {/* هنا يمكن إضافة صورة توضيحية */}
-              <Image
-                src="/services/media.png"
-                alt="الإنتاج الإعلامي"
-                width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                className="object-cover w-full h-full"
-                quality={100}
-                priority
-              />
+            <div className="flex items-center justify-center">
+              <div className="text-center"> {/* يمكن إزالة text-gray-500 من هنا لأنه لا يؤثر على الصورة */}
+                <Image
+                  src="/services/executive-partner.png" // *مسار الصورة الفعلي داخل مجلد public*
+                  alt="صورة شخصية لمحمد ربيع mohamed rabie" // نص وصفي للصورة (مهم جداً للوصول و SEO)
+                  width={900}
+                  height={900}
+                  className="object-cover w-full h-full rounded-lg " // فئات Tailwind للتحكم في الحجم والشكل
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* قسم دعوة للعمل */}
       <CtaSection />
     </main>

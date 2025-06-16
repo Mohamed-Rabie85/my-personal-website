@@ -20,7 +20,7 @@ export default function HeroSection() {
       {/* وتوسيط المحتوى بالكامل داخل section-container */}
       <div className="section-container text-center relative z-10 flex flex-col items-center justify-center h-full"> {/* أضفنا flex-col, items-center, justify-center, h-full */}
         <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          وضوح في الخطة<span className="text-[var(--secondary-medium)]">.. قوة في التنفيذ</span>
+          وضوح في الخطة .<span className="text-[var(--secondary-medium)]">. قوة في التنفيذ</span>
         </h1>
         <p className="mb-8 text-xl md:text-2xl max-w-3xl mx-auto"> {/* حافظنا على mx-auto للتوسيط الأفقي للنص */}
           بخبرة عملية في تأسيس وإعادة هيكلة الشركات، مهمتي هي تحقيق نتائج ملموسة لمشروعك على أرض الواقع

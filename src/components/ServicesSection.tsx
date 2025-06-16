@@ -20,7 +20,7 @@ export default function ServicesSection() {
               <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
-                  src="/services/startup-formation.png"
+                  src="/services/startup-formation.PNG"
                   alt="التخطيط الاستراتيجي"
                   width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                   height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
@@ -42,7 +42,7 @@ export default function ServicesSection() {
               <div className="bg-gray-200 h-48 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المشروع */}
                 <Image
-                  src="/services/restructuring.png"
+                  src="/services/restructuring.PNG"
                   alt="التسويق المتكامل"
                   width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                   height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)

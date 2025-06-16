@@ -142,17 +142,18 @@ export default function Consultation() {
                   <label htmlFor="consultation_type" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">نوع الاستشارة</label>
                   <select id="consultation_type" name="consultation_type" value={formData.consultation_type} onChange={handleChange} required className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" autoComplete="off">
                     <option value="">اختر نوع الاستشارة</option>
-                    <option value="strategic_planning">التخطيط الاستراتيجي</option>
-                    <option value="digital_marketing">التسويق</option>
-                    <option value="marketing_psychology">علم النفس التسويقي</option>
-                    <option value="data_analysis">تحليل البيانات</option>
-                    <option value="media_production">الإنتاج الإعلامي</option>
+                    <option value="startup_formation">تأسيس مشروع جديد</option>
+                    <option value="restructuring">إعادة هيكلة ونمو الأعمال</option>
+                    <option value="marketing_strategy">شراكة تنفيذية (دعم مستمر)</option>
+                    <option value="business_development">تطوير الأعمال</option>
+                    <option value="operations_optimization">تحسين العمليات</option>
+                    <option value="strategy_planning">تخطيط استراتيجي</option>
                     <option value="other">أخرى</option>
                   </select>
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">رسالتك</label>
-                  <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="اشرح باختصار ما هي احتياجاتك وأهدافك" autoComplete="off"></textarea>
+                  <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="اشرح ما هي احتياجاتك وأهدافك" autoComplete="off"></textarea>
                 </div>
                 <div>
                   <label htmlFor="preferred_date" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">التاريخ المفضل</label>
@@ -162,9 +163,8 @@ export default function Consultation() {
                   <label htmlFor="preferred_time" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">الوقت المفضل</label>
                   <select id="preferred_time" name="preferred_time" value={formData.preferred_time} onChange={handleChange} className="text-[var(--neutral-medium)] w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" autoComplete="off">
                     <option value="">اختر الوقت المفضل</option>
-                    <option value="morning">صباحًا (11:00 - 12:00)</option>
-                    <option value="afternoon">ظهرًا (4:00 - 5:00)</option>
-                    <option value="evening">مساءً (6:00 - 7:00)</option>
+                    <option value="afternoon">ظهرًا (12:00 - 2:00)</option>
+                    <option value="evening">مساءً (6:00 - 8:00)</option>
                   </select>
                 </div>
                 <div>

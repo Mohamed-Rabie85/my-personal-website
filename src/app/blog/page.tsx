@@ -24,7 +24,7 @@ export default function Blog() {
       <section className="w-full py-8 bg-white ">
         <div className="section-container">
           {/* <div className="flex flex-col md:flex-row gap-4 justify-between items-center"> */}
-            {/* <div className="relative w-full md:w-1/3">
+          {/* <div className="relative w-full md:w-1/3">
               <input
                 type="text"
                 placeholder="ابحث في المدونة..."
@@ -36,20 +36,20 @@ export default function Blog() {
                 </svg>
               </div>
             </div> */}
-            <div className="flex flex-wrap justify-center items-center gap-4">
-              <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
-                جميع المقالات
-              </button>
-              <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
-                التسويق الرقمي
-              </button>
-              <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
-                تطوير الأعمال
-              </button>
-              <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
-                علم النفس التسويقي
-              </button>
-            </div>
+          <div className="flex flex-wrap justify-center items-center gap-4">
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
+              جميع المقالات
+            </button>
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
+              التسويق الرقمي
+            </button>
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
+              تطوير الأعمال
+            </button>
+            <button className="cursor-pointer px-4 py-2 bg-[var(--secondary-medium)]  font-bold rounded-md hover:bg-[var(--secondary-dark)] transition-colors duration-300">
+              علم النفس التسويقي
+            </button>
+          </div>
           {/* </div> */}
         </div>
       </section>
@@ -92,10 +92,10 @@ export default function Blog() {
                 </div>
               </div>
             </div>
-            
+
             {/* المقال المميز الثاني */}
             <div className="card">
-            <div className="bg-[var(--neutral-light)] h-64 rounded-t-lg flex items-center justify-center">
+              <div className="bg-[var(--neutral-light)] h-64 rounded-t-lg flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المقال */}
                 <div className="bg-gray-200 relative rounded-lg overflow-hidden w-full h-full flex items-center justify-center">
                   {/* هنا يمكن إضافة صورة المشروع */}
@@ -134,25 +134,25 @@ export default function Blog() {
       <section className="w-full py-12 bg-[var(--neutral-light)]">
         <div className="section-container">
           <h2 className="text-[var(--primary-dark)] text-center mb-8">جميع المقالات</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* مقال 1 */}
             <div className="card">
-            <div className="bg-[var(--neutral-light)] h-48 rounded-t-lg flex items-center justify-center">
-              {/* هنا يمكن إضافة صورة المقال */}
-              <div className="bg-gray-200 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                {/* هنا يمكن إضافة صورة المشروع */}
-                <Image
-                  src="/blog/3.jpg"
-                  alt="الإنتاج الإعلامي"
-                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                  className="object-cover"
-                  quality={100}
-                  priority
-                />
+              <div className="bg-[var(--neutral-light)] h-48 rounded-t-lg flex items-center justify-center">
+                {/* هنا يمكن إضافة صورة المقال */}
+                <div className="bg-gray-200 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/blog/3.jpg"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover"
+                    quality={100}
+                    priority
+                  />
+                </div>
               </div>
-            </div>
               <div className="p-6">
                 <div className="flex justify-between items-center mb-3">
                   <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full">التسويق الرقمي</span>
@@ -167,23 +167,23 @@ export default function Blog() {
                 </Link>
               </div>
             </div>
-            
+
             {/* مقال 2 */}
             <div className="card">
               <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
                 {/* هنا يمكن إضافة صورة المقال */}
-              <div className="bg-gray-200 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
-                {/* هنا يمكن إضافة صورة المشروع */}
-                <Image
-                  src="/blog/4.png"
-                  alt="الإنتاج الإعلامي"
-                  width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
-                  height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
-                  className="object-cover"
-                  quality={100}
-                  priority
-                />
-              </div>
+                <div className="bg-gray-200 relative rounded-lg overflow-hidden w-full flex items-center justify-center">
+                  {/* هنا يمكن إضافة صورة المشروع */}
+                  <Image
+                    src="/blog/4.png"
+                    alt="الإنتاج الإعلامي"
+                    width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
+                    height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)
+                    className="object-cover"
+                    quality={100}
+                    priority
+                  />
+                </div>
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-center mb-3">
@@ -199,7 +199,7 @@ export default function Blog() {
                 </Link>
               </div>
             </div>
-            
+
             {/* مقال 3 */}
             <div className="card">
               <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
@@ -231,7 +231,7 @@ export default function Blog() {
                 </Link>
               </div>
             </div>
-            
+
             {/* مقال 4 */}
             <div className="card">
               <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
@@ -263,7 +263,7 @@ export default function Blog() {
                 </Link>
               </div>
             </div>
-            
+
             {/* مقال 5 */}
             <div className="card">
               <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
@@ -295,7 +295,7 @@ export default function Blog() {
                 </Link>
               </div>
             </div>
-            
+
             {/* مقال 6 */}
             <div className="card">
               <div className="bg-gray-200 h-48 rounded-t-lg flex items-center justify-center">
@@ -328,10 +328,10 @@ export default function Blog() {
               </div>
             </div>
           </div>
-          
+
           {/* زر تحميل المزيد */}
           <div className="text-center mt-12">
-            <button className="btn-primary">
+            <button className="btn-secondary">
               تحميل المزيد من المقالات
             </button>
           </div>

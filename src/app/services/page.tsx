@@ -85,7 +85,7 @@ export default function Services() {
             <div className="flex items-center justify-center">
               <div className="text-center"> {/* يمكن إزالة text-gray-500 من هنا لأنه لا يؤثر على الصورة */}
                 <Image
-                  src="/services/startup-formation.png" // *مسار الصورة الفعلي داخل مجلد public*
+                  src="/services/startup-formation.PNG" // *مسار الصورة الفعلي داخل مجلد public*
                   alt="صورة شخصية لمحمد ربيع mohamed rabie" // نص وصفي للصورة (مهم جداً للوصول و SEO)
                   width={900}
                   height={900}
@@ -112,7 +112,7 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="flex items-center justify-center">
               <Image
-                src="/services/restructuring.png" // *مسار الصورة الفعلي داخل مجلد public*
+                src="/services/restructuring.PNG" // *مسار الصورة الفعلي داخل مجلد public*
                 alt="إعادة الهيكلة"
                 width={600} // عرض الصورة الأصلي (اضبطه حسب الحاجة)
                 height={400} // ارتفاع الصورة الأصلي (اضبطه حسب الحاجة)

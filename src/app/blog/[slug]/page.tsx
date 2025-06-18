@@ -23,10 +23,14 @@ export async function generateStaticParams() {
 
 // دالة لجلب بيانات الـ Metadata في Next.js (Server Component)
 // التعديل هنا: استخدام Destructuring مباشرة للمعاملات
-export async function generateMetadata({ params }: { params: { slug: string } }) { // <--- أبقِ على هذا النوع
-  const article = getArticleBySlug(params.slug); // <--- استخدم params.slug مباشرة
-  // لأن الخطأ السابق تم حله بالفعل في تحديث سابق
-  // وهذا الخطأ الجديد مختلف يتعلق بالنوع وليس ب await
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  // حل المشكلة بدون تغيير كبير في البنية
+  const article = getArticleBySlug(params.slug);
+
   if (!article) {
     return {
       title: "المقال غير موجود",

@@ -17,7 +17,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.mohamedrabie.vercel.app'),
+  metadataBase: new URL('https://mohamedrabie.vercel.app/'),
   title: {
     template: '%s | Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي',
     default: 'Mohamed Rabie | مستشار تطوير أعمال وتسويق استراتيجي | خبرة أكثر من 20 عاماً',

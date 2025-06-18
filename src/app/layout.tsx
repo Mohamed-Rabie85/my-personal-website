@@ -1,24 +1,25 @@
+// src/app/layout.tsx
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+// استيراد خط Cairo بدلاً من Inter
+import { Cairo } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+// تهيئة خط Cairo
+const cairo = Cairo({
+  subsets: ['arabic', 'latin'], // تحميل الحروف العربية واللاتينية
+  display: 'swap', // يسمح للمتصفح باستخدام خط احتياطي حتى يتم تحميل الخط الرئيسي
+  weight: ['400', '500', '700', '900'], // يمكنك تحديد الأوزان التي تحتاجها لتقليل حجم الخط المحمل
+  variable: '--font-cairo', // اسم لمتغير CSS سنستخدمه في Tailwind
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.mohamedrabie.vercel.app'),
   title: {
     template: '%s | Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي',
-    // content: 'مستشار تطوير أعمال وتسويق استراتيجي | خبرة أكثر من 20 عاماً',
-    // يمكن استخدام template لتحديد تنسيق العنوان
-    // حيث يتم استبدال %s بمحتوى العنوان الرئيسي
-    // مثال: title: { template: '%s | مستشار تطوير أعمال وتسويق استراتيجي' },
-    // إذا كنت تريد استخدام عنوان ثابت يمكنك استخدام content فقط
-    // مثال: title: { content: 'مستشار تطوير أعمال وتسويق استراتيجي | خبرة أكثر من 20 عاماً' },
-    // إذا كنت تريد استخدام عنوان ديناميكي يمكنك استخدام template
-    // مثال: title: { template: '%s | مستشار تطوير أعمال وتسويق استراتيجي', content: 'عنوان ديناميكي' },
     default: 'Mohamed Rabie | مستشار تطوير أعمال وتسويق استراتيجي | خبرة أكثر من 20 عاماً',
   },
   description: 'خدمات استشارية متخصصة في التخطيط الاستراتيجي، التسويق الرقمي، علم النفس التسويقي، تحليل البيانات، والإنتاج الإعلامي للشركات الناشئة والصغيرة والمتوسطة.',
@@ -34,9 +35,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'مستشار تطوير أعمال وتسويق استراتيجي | خبرة أكثر من 20 عاماً',
     description: 'خدمات استشارية متخصصة في التخطيط الاستراتيجي، التسويق الرقمي، علم النفس التسويقي، تحليل البيانات، والإنتاج الإعلامي للشركات الناشئة والصغيرة والمتوسطة.',
-    url: 'https://www.example.com',
+    url: 'https://www.example.com', // يرجى تحديث هذا URL عند النشر
     siteName: 'الاستشاري',
-    locale: 'ar_SA',
+    locale: 'ar_SA', // تحديد المنطقة الجغرافية للغة العربية
     type: 'website',
   },
   robots: {
@@ -54,16 +55,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'مستشار تطوير أعمال وتسويق استراتيجي | خبرة أكثر من 20 عاماً',
     description: 'خدمات استشارية متخصصة في التخطيط الاستراتيجي، التسويق الرقمي، علم النفس التسويقي، تحليل البيانات، والإنتاج الإعلامي.',
-    creator: '@consultant',
+    creator: '@consultant', // تأكد من تحديث هذا لاسم حسابك على تويتر
   },
-  // تم نقل viewport من هنا
   verification: {
-    google: 'google-site-verification-code',
+    google: 'google-site-verification-code', // استبدل هذا بكود التحقق الخاص بك من Google Search Console
   },
   category: 'business',
 };
 
-// هنا يتم تعريف Viewport بشكل منفصل
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -76,8 +75,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ar" dir="rtl">
-      <body className={inter.className}>
+    // تطبيق الخط Cairo ومتغيره على عنصر <html>
+    <html lang="ar" dir="rtl" className={`${cairo.className} ${cairo.variable}`}>
+      <body>
         <Header />
         {children}
         <Footer />

@@ -11,17 +11,17 @@ import html from 'remark-html';
 
 // استيراد Metadata من Next.js
 import type { Metadata } from "next";
-// import type { PageProps } from "next"; // <--- قم بإزالة هذا السطر
+// تم إزالة: import type { PageProps } from "next"; // <--- هذا السطر تم إزالته
 
-// تعريف نوع المعاملات (props) الخاص بهذه الصفحة بشكل صريح
-// هذا يحل مشكلة الـ Type Error التي تظهر
-interface ArticlePageProps { // <--- لم تعد تمتد من PageProps
+// تعريف نوع المعاملات (props) الخاص بهذه الصفحة بشكل مباشر
+// هذا يتجاوز مشكلة توافق Type 'ArticlePageProps' مع 'PageProps'
+type SingleArticlePageProps = { // <--- تم تغيير الاسم ليصبح أكثر وضوحاً
   params: {
     slug: string;
   };
-  // إذا احتجت searchParams في المستقبل، أضفها هنا:
+  // searchParams يمكن إضافتها هنا إذا احتجت إليها لاحقاً:
   // searchParams?: { [key: string]: string | string[] | undefined };
-}
+};
 
 // دالة لتحويل Markdown إلى HTML
 async function markdownToHtml(markdown: string) {
@@ -36,8 +36,8 @@ export async function generateStaticParams() {
 }
 
 // دالة لجلب بيانات الـ Metadata في Next.js (Server Component)
-// استخدام ArticlePageProps كنوع لـ params
-export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> { // <--- استخدم ArticlePageProps هنا
+// استخدام النوع الجديد SingleArticlePageProps
+export async function generateMetadata({ params }: SingleArticlePageProps): Promise<Metadata> { // <--- استخدام SingleArticlePageProps
   const article = getArticleBySlug(params.slug);
 
   if (!article) {
@@ -69,8 +69,8 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 }
 
 // مكون الصفحة
-// استخدام ArticlePageProps كنوع لـ params
-export default async function SingleArticlePage({ params }: ArticlePageProps) { // <--- استخدم ArticlePageProps هنا
+// استخدام النوع الجديد SingleArticlePageProps
+export default async function SingleArticlePage({ params }: SingleArticlePageProps) { // <--- استخدام SingleArticlePageProps
   const article = getArticleBySlug(params.slug);
 
   if (!article) {

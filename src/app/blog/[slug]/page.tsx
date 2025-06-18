@@ -9,6 +9,17 @@ import ArticleCard from '@/components/ArticleCard';
 import { remark } from 'remark';
 import html from 'remark-html';
 
+// استيراد Metadata من Next.js
+import type { Metadata } from "next";
+
+// تعريف نوع المعاملات (props) الخاص بهذه الصفحة
+// هذا يحل مشكلة الـ Type Error التي تظهر
+interface ArticlePageProps { // <--- تعريف نوع جديد
+  params: {
+    slug: string;
+  };
+}
+
 // دالة لتحويل Markdown إلى HTML
 async function markdownToHtml(markdown: string) {
   const result = await remark().use(html, { sanitize: false }).process(markdown);
@@ -21,39 +32,44 @@ export async function generateStaticParams() {
   return slugs;
 }
 
-// export async function generateMetadata({ params }: { params: { slug: string } }) { 
-//   const article = getArticleBySlug(params.slug); 
-//   if (!article) {
-//     return {
-//       title: "المقال غير موجود",
-//       description: "الصفحة التي تبحث عنها غير موجودة.",
-//     };
-//   }
-
-//   return {
-//     title: `${article.title} | المدونة | محمد ربيع`,
-//     description: article.excerpt,
-//     openGraph: {
-//       title: article.title,
-//       description: article.excerpt,
-//       images: [{ url: article.image }],
-//       type: 'article',
-//       locale: 'ar_SA',
-//       siteName: 'الاستشاري',
-//     },
-//     twitter: {
-//       card: 'summary_large_image',
-//       title: article.title,
-//       description: article.excerpt,
-//       images: [article.image],
-//       creator: '@consultant',
-//     },
-//   };
-// }
-
-
-export default async function SingleArticlePage({ params }: { params: { slug: string } }) {
+// دالة لجلب بيانات الـ Metadata في Next.js (Server Component)
+// استخدام ArticlePageProps كنوع لـ params
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> { // <--- تم التعديل هنا
   const article = getArticleBySlug(params.slug);
+
+  if (!article) {
+    return {
+      title: "المقال غير موجود",
+      description: "الصفحة التي تبحث عنها غير موجودة.",
+    };
+  }
+
+  return {
+    title: `${article.title} | المدونة | محمد ربيع`,
+    description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      images: [{ url: article.image }],
+      type: 'article',
+      locale: 'ar_SA',
+      siteName: 'الاستشاري',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      images: [article.image],
+      creator: '@consultant',
+    },
+  };
+}
+
+// مكون الصفحة
+// استخدام ArticlePageProps كنوع لـ params
+export default async function SingleArticlePage({ params }: ArticlePageProps) { // <--- تم التعديل هنا
+  const article = getArticleBySlug(params.slug);
+
   if (!article) {
     notFound();
   }

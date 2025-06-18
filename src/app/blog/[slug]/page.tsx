@@ -13,7 +13,8 @@ import html from 'remark-html';
 import type { Metadata } from "next";
 
 // تعريف نوع المعاملات (props) الخاص بهذه الصفحة
-interface ArticlePageProps {
+// هذا يحل مشكلة الـ Type Error التي تظهر
+type ArticlePageProps = {
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }

@@ -41,7 +41,7 @@ export default function Footer() {
               </a>
 
               {/* LinkedIn Icon */}
-              <a href="https://www.linkedin.com/in/mohamedrabie85" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[var(--secondary-medium)] transition-colors">
+              <a href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mohamedrabie85" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[var(--secondary-medium)] transition-colors">
                 <IoLogoLinkedin size={30} />
               </a>
             </div>

@@ -12,13 +12,6 @@ import html from 'remark-html';
 // استيراد Metadata من Next.js
 import type { Metadata } from "next";
 
-// تعريف نوع المعاملات (props) الخاص بهذه الصفحة
-// هذا يحل مشكلة الـ Type Error التي تظهر
-type ArticlePageProps = {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-}
-
 // دالة لتحويل Markdown إلى HTML
 async function markdownToHtml(markdown: string) {
   const result = await remark().use(html, { sanitize: false }).process(markdown);
@@ -32,8 +25,7 @@ export async function generateStaticParams() {
 }
 
 // دالة لجلب بيانات الـ Metadata في Next.js (Server Component)
-// استخدام ArticlePageProps كنوع لـ params
-export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const article = getArticleBySlug(params.slug);
 
   if (!article) {
@@ -65,8 +57,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 }
 
 // مكون الصفحة
-// استخدام ArticlePageProps كنوع لـ params
-export default async function SingleArticlePage({ params }: ArticlePageProps) {
+export default async function SingleArticlePage({ params }: { params: { slug: string } }) {
   const article = getArticleBySlug(params.slug);
 
   if (!article) {
@@ -174,3 +165,4 @@ export default async function SingleArticlePage({ params }: ArticlePageProps) {
     </main>
   );
 }
+

@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 }
 
 // دالة لجلب بيانات الـ Metadata في Next.js (Server Component)
-export async function generateMetadata({ params, searchParams }: { params: { slug: string }; searchParams?: { [key: string]: string | string[] | undefined }; }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const article = getArticleBySlug(params.slug);
 
   if (!article) {
@@ -57,7 +57,7 @@ export async function generateMetadata({ params, searchParams }: { params: { slu
 }
 
 // مكون الصفحة
-export default async function SingleArticlePage({ params, searchParams }: { params: { slug: string }; searchParams?: { [key: string]: string | string[] | undefined }; }) {
+export default async function SingleArticlePage({ params }: { params: { slug: string } }) {
   const article = getArticleBySlug(params.slug);
 
   if (!article) {

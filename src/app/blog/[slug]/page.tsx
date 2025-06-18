@@ -9,8 +9,9 @@ import ArticleCard from '@/components/ArticleCard';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-// استيراد Metadata من Next.js
+// استيراد Metadata و PageProps من Next.js
 import type { Metadata } from "next";
+import type { PageProps } from "next"; // <--- سطر جديد وهام
 
 // تعريف نوع المعاملات (props) الخاص بهذه الصفحة
 // هذا يحل مشكلة الـ Type Error التي تظهر

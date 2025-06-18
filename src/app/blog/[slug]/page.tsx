@@ -21,48 +21,39 @@ export async function generateStaticParams() {
   return slugs;
 }
 
-// دالة لجلب بيانات الـ Metadata في Next.js (Server Component)
-// التعديل هنا: استخدام Destructuring مباشرة للمعاملات
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  // حل المشكلة بدون تغيير كبير في البنية
+// export async function generateMetadata({ params }: { params: { slug: string } }) { 
+//   const article = getArticleBySlug(params.slug); 
+//   if (!article) {
+//     return {
+//       title: "المقال غير موجود",
+//       description: "الصفحة التي تبحث عنها غير موجودة.",
+//     };
+//   }
+
+//   return {
+//     title: `${article.title} | المدونة | محمد ربيع`,
+//     description: article.excerpt,
+//     openGraph: {
+//       title: article.title,
+//       description: article.excerpt,
+//       images: [{ url: article.image }],
+//       type: 'article',
+//       locale: 'ar_SA',
+//       siteName: 'الاستشاري',
+//     },
+//     twitter: {
+//       card: 'summary_large_image',
+//       title: article.title,
+//       description: article.excerpt,
+//       images: [article.image],
+//       creator: '@consultant',
+//     },
+//   };
+// }
+
+
+export default async function SingleArticlePage({ params }: { params: { slug: string } }) {
   const article = getArticleBySlug(params.slug);
-
-  if (!article) {
-    return {
-      title: "المقال غير موجود",
-      description: "الصفحة التي تبحث عنها غير موجودة.",
-    };
-  }
-
-  return {
-    title: `${article.title} | المدونة | محمد ربيع`,
-    description: article.excerpt,
-    openGraph: {
-      title: article.title,
-      description: article.excerpt,
-      images: [{ url: article.image }],
-      type: 'article',
-      locale: 'ar_SA',
-      siteName: 'الاستشاري',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: article.title,
-      description: article.excerpt,
-      images: [article.image],
-      creator: '@consultant',
-    },
-  };
-}
-
-// التعديل هنا: استخدام Destructuring مباشرة للمعاملات
-export default async function SingleArticlePage({ params }: { params: { slug: string } }) { // <--- أبقِ على هذا النوع
-  const article = getArticleBySlug(params.slug); // <--- استخدم params.slug مباشرة
-  // ... بقية الكود بدون تغيير
   if (!article) {
     notFound();
   }

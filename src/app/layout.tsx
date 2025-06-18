@@ -12,8 +12,8 @@ import Footer from '@/components/Footer';
 const cairo = Cairo({
   subsets: ['arabic', 'latin'], // تحميل الحروف العربية واللاتينية
   display: 'swap', // يسمح للمتصفح باستخدام خط احتياطي حتى يتم تحميل الخط الرئيسي
-  weight: ['400', '500', '700', '900'], // يمكنك تحديد الأوزان التي تحتاجها لتقليل حجم الخط المحمل
-  variable: '--font-cairo', // اسم لمتغير CSS سنستخدمه في Tailwind
+  weight: ['400', '500', '700'], // يمكنك تحديد الأوزان التي تحتاجها لتقليل حجم الخط المحمل
+  variable: '--font-cairo',
 });
 
 export const metadata: Metadata = {

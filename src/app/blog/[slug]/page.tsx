@@ -11,17 +11,8 @@ import html from 'remark-html';
 
 // استيراد Metadata من Next.js
 import type { Metadata } from "next";
-// تم إزالة: import type { PageProps } from "next"; // <--- هذا السطر تم إزالته
 
-// تعريف نوع المعاملات (props) الخاص بهذه الصفحة بشكل مباشر
-// هذا يتجاوز مشكلة توافق Type 'ArticlePageProps' مع 'PageProps'
-type SingleArticlePageProps = { // <--- تم تغيير الاسم ليصبح أكثر وضوحاً
-  params: {
-    slug: string;
-  };
-  // searchParams يمكن إضافتها هنا إذا احتجت إليها لاحقاً:
-  // searchParams?: { [key: string]: string | string[] | undefined };
-};
+// تم إزالة تعريف الواجهة SingleArticlePageProps
 
 // دالة لتحويل Markdown إلى HTML
 async function markdownToHtml(markdown: string) {
@@ -36,9 +27,23 @@ export async function generateStaticParams() {
 }
 
 // دالة لجلب بيانات الـ Metadata في Next.js (Server Component)
-// استخدام النوع الجديد SingleArticlePageProps
-export async function generateMetadata({ params }: SingleArticlePageProps): Promise<Metadata> { // <--- استخدام SingleArticlePageProps
-  const article = getArticleBySlug(params.slug);
+// استخدام Record<string, string | string[]> لتعريف params
+export async function generateMetadata({
+  params
+}: {
+  params: Record<string, string | string[]> // <--- التعديل الجذري هنا
+}): Promise<Metadata> {
+  // يجب التأكد أن slug موجود ونوعه string قبل استخدامه
+  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
+  if (!slug) {
+    // يجب التعامل مع هذه الحالة إذا كان slug غير موجود بشكل غير متوقع
+    return {
+      title: "المقال غير موجود",
+      description: "الصفحة التي تبحث عنها غير موجودة.",
+    };
+  }
+
+  const article = getArticleBySlug(slug);
 
   if (!article) {
     return {
@@ -69,9 +74,19 @@ export async function generateMetadata({ params }: SingleArticlePageProps): Prom
 }
 
 // مكون الصفحة
-// استخدام النوع الجديد SingleArticlePageProps
-export default async function SingleArticlePage({ params }: SingleArticlePageProps) { // <--- استخدام SingleArticlePageProps
-  const article = getArticleBySlug(params.slug);
+// استخدام Record<string, string | string[]> لتعريف params
+export default async function SingleArticlePage({
+  params
+}: {
+  params: Record<string, string | string[]> // <--- التعديل الجذري هنا
+}) {
+  // يجب التأكد أن slug موجود ونوعه string قبل استخدامه
+  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
+  if (!slug) {
+    notFound(); // أو التعامل مع الحالة بشكل آخر إذا كان slug غير موجود بشكل غير متوقع
+  }
+
+  const article = getArticleBySlug(slug);
 
   if (!article) {
     notFound();

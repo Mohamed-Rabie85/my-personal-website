@@ -32,7 +32,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params
 }: {
-  params: { slug: string }
+  params: any // <--- التعديل الجذري هنا
 }): Promise<Metadata> {
   // لا يزال من المهم التحقق من slug في حال كان مصفوفة (لمزيد من الأمان)
   const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
@@ -78,7 +78,7 @@ export async function generateMetadata({
 export default async function SingleArticlePage({
   params
 }: {
-  params: { slug: string }
+  params: any // <--- التعديل الجذري هنا
 }) {
   // لا يزال من المهم التحقق من slug في حال كان مصفوفة (لمزيد من الأمان)
   const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;

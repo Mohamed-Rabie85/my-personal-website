@@ -7,7 +7,7 @@ import ArticleCard from '@/components/ArticleCard';
 
 // استيراد المكتبات لتحويل Markdown
 import { remark } from 'remark';
-import html from 'remark-html'; // هذا هو للتحويل البسيط من Markdown إلى HTML
+import html from 'remark-html';
 
 // دالة لتحويل Markdown إلى HTML
 async function markdownToHtml(markdown: string) {
@@ -22,15 +22,15 @@ export async function generateStaticParams() {
 }
 
 // دالة لجلب بيانات الـ Metadata في Next.js (Server Component)
-// تم التعديل هنا: { params: { slug } } بدلاً من { params }
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
-  const article = getArticleBySlug(slug); // استخدام slug مباشرة
-
+// التعديل هنا: استخدام Destructuring مباشرة للمعاملات
+export async function generateMetadata({ params }: { params: { slug: string } }) { // <--- أبقِ على هذا النوع
+  const article = getArticleBySlug(params.slug); // <--- استخدم params.slug مباشرة
+  // لأن الخطأ السابق تم حله بالفعل في تحديث سابق
+  // وهذا الخطأ الجديد مختلف يتعلق بالنوع وليس ب await
   if (!article) {
     return {
-      title: "المقالة غير موجودة",
-      metadataBase: new URL('https://mohamedrabie.vercel.app/'), // أضف هذا السطر
+      title: "المقال غير موجود",
+      description: "الصفحة التي تبحث عنها غير موجودة.",
     };
   }
 
@@ -55,16 +55,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function SingleArticlePage({ params }: { params: { slug: string } }) {
-  // تم التعديل هنا: فكيك slug من params
-  const { slug } = await params;
-  const article = getArticleBySlug(slug); // استخدام slug مباشرة
-
+// التعديل هنا: استخدام Destructuring مباشرة للمعاملات
+export default async function SingleArticlePage({ params }: { params: { slug: string } }) { // <--- أبقِ على هذا النوع
+  const article = getArticleBySlug(params.slug); // <--- استخدم params.slug مباشرة
+  // ... بقية الكود بدون تغيير
   if (!article) {
     notFound();
   }
 
-  // تحويل محتوى المقال من Markdown إلى HTML
   const contentHtml = await markdownToHtml(article.content);
 
   const allArticles = getArticles();
@@ -80,9 +78,9 @@ export default async function SingleArticlePage({ params }: { params: { slug: st
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-white">
-      <section className="section-container w-full py-12 md:py-16 ">
-        <div className="max-w-4xl mx-auto px-4">
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <section className="w-full py-12 md:py-16 bg-white">
+        <div className="section-container max-w-4xl mx-auto">
           <nav className="text-sm mb-4 text-[var(--neutral-medium)]">
             <Link href="/" className="hover:underline">الرئيسية</Link>
             <span className="mx-2">/</span>
@@ -117,9 +115,8 @@ export default async function SingleArticlePage({ params }: { params: { slug: st
             </span>
           </div>
 
-          {/* محتوى المقال - سيتم عرض الـ HTML المحول من Markdown */}
           <div
-            className="prose prose-lg max-w-none text-[var(--neutral-dark)] leading-relaxed mb-12"
+            className="prose prose-lg prose-custom max-w-none me-10 text-[var(--neutral-dark)] leading-relaxed "
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
 

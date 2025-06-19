@@ -1,30 +1,49 @@
 // src/app/blog/page.tsx
-'use client'; // <--- مهم جداً لأننا سنستخدم useState
+'use client';
 
-import { useState } from 'react'; // استيراد useState
+import { useState, useEffect, useMemo } from 'react';
 // import Link from "next/link";
 import ArticleCard from '@/components/ArticleCard';
-import { getArticles, getFeaturedArticles } from '@/lib/articles';
+import { getArticles, getAllCategories } from '@/lib/articles';
 
+const ARTICLES_PER_LOAD = 6; // عدد المقالات التي يتم تحميلها في كل مرة
 
 export default function Blog() {
-  const [activeCategory, setActiveCategory] = useState<string>('جميع المقالات'); // حالة لتتبع التصنيف النشط
+  const [activeCategory, setActiveCategory] = useState<string>('جميع المقالات');
+  const [articlesToShow, setArticlesToShow] = useState(ARTICLES_PER_LOAD); // عدد المقالات المعروضة حالياً
 
-  // جلب المقالات بناءً على التصنيف النشط
-  const featuredArticles = getFeaturedArticles();
-  const allArticles = getArticles(undefined, activeCategory); // استخدام activeCategory للتصفية
+  const availableCategories = useMemo(() => {
+    const categories = getAllCategories();
+    // تأكد من ترتيب التصنيفات الأبجدية، مع بقاء "جميع المقالات" أولاً
+    const sortedCategories = categories.sort((a, b) => a.localeCompare(b, 'ar'));
+    return [{ name: 'جميع المقالات', value: 'جميع المقالات' }, ...sortedCategories.map(cat => ({ name: cat, value: cat }))];
+  }, []);
 
-  // تصفية المقالات لإزالة المميزة من قائمة "جميع المقالات"
-  const nonFeaturedArticles = allArticles.filter(
-    (article) => !featuredArticles.some((feat) => feat.id === article.id)
-  );
+  // جلب المقالات المفلترة بناءً على التصنيف النشط
+  const filteredArticles = useMemo(() => {
+    // getArticles ترجع المقالات مرتبة حسب التاريخ افتراضياً
+    return getArticles(undefined, activeCategory);
+  }, [activeCategory]);
 
-  const categories = [ // تعريف التصنيفات والأزرار هنا
-    { name: 'جميع المقالات', value: 'جميع المقالات' },
-    { name: 'ابدأ صح', value: 'ابدأ صح' },
-    { name: 'تسريع النمو', value: 'تسريع النمو' },
-    { name: 'من مطبخ البيزنس', value: 'من مطبخ البيزنس' },
-  ];
+  // تحديد المقالات التي سيتم عرضها بناءً على articlesToShow
+  const displayedArticles = useMemo(() => {
+    return filteredArticles.slice(0, articlesToShow);
+  }, [filteredArticles, articlesToShow]);
+
+  // لتحديد ما إذا كان زر "تحميل المزيد" يجب أن يظهر
+  const hasMoreArticles = displayedArticles.length < filteredArticles.length;
+
+  const handleLoadMore = () => {
+    setArticlesToShow(prevCount => prevCount + ARTICLES_PER_LOAD);
+  };
+
+  // إعادة تعيين عدد المقالات المعروضة عند تغيير التصنيف
+  useEffect(() => {
+    setArticlesToShow(ARTICLES_PER_LOAD);
+  }, [activeCategory]);
+
+  // لم نعد نحتاج لجلب المقالات المميزة بشكل منفصل هنا لأنها لن تُعرض في قسم خاص
+  // const featuredArticles = getFeaturedArticles();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
@@ -38,18 +57,18 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* قسم البحث والتصفية */}
-      <section className="w-full py-8 bg-white ">
+      {/* قسم أزرار التصنيف الديناميكية */}
+      <section className="w-full py-8 bg-white">
         <div className="section-container">
           <div className="flex flex-wrap justify-center items-center gap-4">
-            {categories.map((category) => (
+            {availableCategories.map((category) => (
               <button
                 key={category.value}
                 onClick={() => setActiveCategory(category.value)}
                 className={`cursor-pointer px-4 py-2 font-bold rounded-md transition-colors duration-300
                   ${activeCategory === category.value
-                    ? 'bg-[var(--secondary-medium)] text-white' // اللون عندما يكون نشطاً
-                    : 'bg-gray-200 text-[var(--neutral-dark)] hover:bg-gray-300' // اللون عندما لا يكون نشطاً
+                    ? 'bg-[var(--secondary-medium)] text-white'
+                    : 'bg-gray-200 text-[var(--neutral-dark)] hover:bg-gray-300'
                   }`}
               >
                 {category.name}
@@ -59,34 +78,7 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* قسم المقالات المميزة */}
-      {/* عرض المقالات المميزة فقط إذا كان التصنيف "جميع المقالات" أو كان هناك مقالات مميزة في التصنيف المختار */}
-      {activeCategory === 'جميع المقالات' && featuredArticles.length > 0 && (
-        <section className="w-full py-12 bg-white ">
-          <div className="section-container gap-8">
-            <h2 className="text-[var(--primary-dark)] text-center mb-8">المقالات المميزة</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {featuredArticles.map((article) => (
-                <ArticleCard key={article.id} article={article} large={true} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-      {/* إذا كان هناك تصنيف محدد، اعرض المقالات المميزة لهذا التصنيف فقط ضمن قسم "جميع المقالات" */}
-      {activeCategory !== 'جميع المقالات' && featuredArticles.filter(f => f.category === activeCategory).length > 0 && (
-        <section className="w-full py-12 bg-white ">
-          <div className="section-container">
-            <h2 className="text-[var(--primary-dark)] text-center mb-8">المقالات المميزة في {activeCategory}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {featuredArticles.filter(f => f.category === activeCategory).map((article) => (
-                <ArticleCard key={article.id} article={article} large={true} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
+      {/* *** تم إزالة قسم المقالات المميزة من هنا *** */}
 
       {/* قسم جميع المقالات / المقالات المصنفة */}
       <section className="w-full py-12 bg-[var(--neutral-light)]">
@@ -96,24 +88,25 @@ export default function Blog() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {nonFeaturedArticles.length > 0 ? (
-              nonFeaturedArticles.map((article) => (
+            {displayedArticles.length > 0 ? (
+              displayedArticles.map((article) => (
                 <ArticleCard key={article.id} article={article} />
               ))
             ) : (
               <p className="col-span-full text-center text-[var(--neutral-medium)]">
-                لا توجد مقالات في هذا التصنيف بعد.
+                لا توجد مقالات في هذا التصنيف حاليًا.
               </p>
             )}
           </div>
 
-          {/* زر تحميل المزيد - يمكن إضافة منطق تحميل المزيد من المقالات هنا */}
-          {/* سنناقش هذا في النقطة التالية */}
-          <div className="text-center mt-12">
-            <button className="btn-secondary">
-              تحميل المزيد من المقالات
-            </button>
-          </div>
+          {/* زر تحميل المزيد */}
+          {hasMoreArticles && (
+            <div className="text-center mt-12">
+              <button onClick={handleLoadMore} className="btn-secondary">
+                تحميل المزيد من المقالات
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </main>

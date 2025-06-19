@@ -526,7 +526,7 @@ export const articles: Article[] = [
     category: 'ابدأ صح', // <--- تم التعديل
     date: '2025-06-01',
     readTime: '7 دقائق',
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     id: '2',
@@ -538,7 +538,7 @@ export const articles: Article[] = [
     category: 'تسريع النمو', // <--- تم التعديل
     date: '2025-06-10',
     readTime: '8 دقائق',
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     id: '3',
@@ -639,25 +639,34 @@ export const articles: Article[] = [
 ];
 
 // وظائف مساعدة لجلب المقالات
-export function getArticles(limit?: number, category?: string): Article[] { // <--- تم إضافة category
+export function getArticles(limit?: number, category?: string): Article[] {
   let filteredArticles = articles;
   if (category && category !== 'جميع المقالات') {
     filteredArticles = articles.filter(article => article.category === category);
   }
-  // يمكننا هنا تطبيق منطق للفرز، التصفية، أو تحديد عدد المقالات
-  // حالياً، نرجع جميع المقالات أو عدد محدود منها
+  // يمكننا هنا تطبيق منطق للفرز (مثلاً حسب التاريخ تنازلياً) قبل تحديد العدد
+  filteredArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   return limit ? filteredArticles.slice(0, limit) : filteredArticles;
 }
 
 export function getFeaturedArticles(): Article[] {
-  return articles.filter(article => article.isFeatured);
+  // يمكننا هنا تحديد عدد معين للمقالات المميزة إذا أردت
+  return articles.filter(article => article.isFeatured).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export function getArticleBySlug(slug: string): Article | undefined {
   return articles.find(article => article.slug === slug);
 }
 
-// دالة لجلب جميع slugs للمقالات (مفيدة لـ generateStaticParams)
 export function getAllArticleSlugs(): { slug: string }[] {
   return articles.map(article => ({ slug: article.slug }));
+}
+
+// (جديد) دالة لجلب جميع التصنيفات الفريدة
+export function getAllCategories(): string[] {
+    const categoriesSet = new Set<string>();
+    articles.forEach(article => {
+        categoriesSet.add(article.category);
+    });
+    return Array.from(categoriesSet);
 }

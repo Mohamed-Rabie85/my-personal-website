@@ -11,9 +11,6 @@ import html from 'remark-html';
 
 // استيراد Metadata من Next.js
 import type { Metadata } from "next";
-// تم إزالة: import type { PageProps } from "next";
-
-// لا توجد واجهة مخصصة لـ params هنا
 
 // دالة لتحويل Markdown إلى HTML
 async function markdownToHtml(markdown: string) {
@@ -28,14 +25,15 @@ export async function generateStaticParams() {
 }
 
 // دالة لجلب بيانات الـ Metadata في Next.js (Server Component)
-// استخدام 'any' لـ params لتجاوز خطأ Type Error
 export async function generateMetadata({
   params
 }: {
-  params: any // <--- التعديل الجذري هنا
+  params: { slug: string | string[] } // استخدام النوع الصحيح لـ params
 }): Promise<Metadata> {
-  // لا يزال من المهم التحقق من slug في حال كان مصفوفة (لمزيد من الأمان)
-  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
+  // تطبيق 'await' على 'params' كما تقترح رسالة الخطأ.
+  // نستخدم Promise.resolve لضمان أن 'params' يمكن عمل 'await' عليه حتى لو لم يكن وعداً فعلياً.
+  const resolvedParams = await Promise.resolve(params); // <--- التعديل هنا
+  const slug = Array.isArray(resolvedParams.slug) ? resolvedParams.slug[0] : resolvedParams.slug;
   if (!slug) {
     return {
       title: "المقال غير موجود",
@@ -74,14 +72,15 @@ export async function generateMetadata({
 }
 
 // مكون الصفحة
-// استخدام 'any' لـ params لتجاوز خطأ Type Error
 export default async function SingleArticlePage({
   params
 }: {
-  params: any // <--- التعديل الجذري هنا
+  params: { slug: string | string[] } // استخدام النوع الصحيح لـ params
 }) {
-  // لا يزال من المهم التحقق من slug في حال كان مصفوفة (لمزيد من الأمان)
-  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
+  // تطبيق 'await' على 'params' كما تقترح رسالة الخطأ.
+  // نستخدم Promise.resolve لضمان أن 'params' يمكن عمل 'await' عليه حتى لو لم يكن وعداً فعلياً.
+  const resolvedParams = await Promise.resolve(params); // <--- التعديل هنا
+  const slug = Array.isArray(resolvedParams.slug) ? resolvedParams.slug[0] : resolvedParams.slug;
   if (!slug) {
     notFound();
   }
@@ -126,6 +125,7 @@ export default async function SingleArticlePage({
               style={{ objectFit: 'cover' }}
               quality={80}
               priority
+              sizes="(max-width: 768px) 100vw, 800px" // <--- تم إضافة هذا لحل تحذير الصورة
             />
           </div>
 
@@ -145,7 +145,7 @@ export default async function SingleArticlePage({
           </div>
 
           <div
-            className="prose prose-lg prose-custom max-w-none me-10 text-[var(--neutral-dark)] leading-relaxed "
+            className="prose prose-lg max-w-none text-[var(--neutral-dark)] leading-relaxed mb-12"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
 
@@ -172,7 +172,7 @@ export default async function SingleArticlePage({
               <p className="text-[var(--neutral-medium)] mb-3">
                 مستشار تطوير أعمال وتسويق استراتيجي بخبرة تزيد عن 20 عاماً، متخصص في مساعدة رواد الأعمال وقادة الشركات على تحقيق النمو المستدام، تحسين العمليات، وتفعيل استراتيجيات التسويق.
               </p>
-              <Link href="/about" className="text-[var(--primary-medium)] hover:border-b- border-[var(--secondary-medium)] transition-colors duration-300">
+              <Link href="/about" className="text-[var(--primary-medium)] hover:underline transition-colors duration-300">
                 تعرف على المزيد →
               </Link>
             </div>

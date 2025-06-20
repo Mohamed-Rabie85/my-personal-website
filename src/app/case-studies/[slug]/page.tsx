@@ -6,16 +6,17 @@ import { getCaseStudyBySlug, getAllCaseStudiesMeta } from '@/lib/caseStudies';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import type { Metadata } from 'next';
 
-type PageProps = { params: { slug: string } };
-
+// دالة لإنشاء الصفحات بشكل ثابت عند البناء
 export function generateStaticParams() {
   const studies = getAllCaseStudiesMeta();
-  return studies.map((study) => ({ slug: study.slug }));
+  return studies.map((study) => ({
+    slug: study.slug,
+  }));
 }
 
-// <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const study = await getCaseStudyBySlug(params.slug);
+// <<<--- استخدام any هنا كما في الكود الأصلي الناجح ---<<<
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+  const study = getCaseStudyBySlug(params.slug);
   if (!study) return { title: 'دراسة حالة غير موجودة' };
 
   return {
@@ -25,9 +26,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-// <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
-export default async function CaseStudyDetailPage({ params }: PageProps) {
-  const study = await getCaseStudyBySlug(params.slug);
+// <<<--- استخدام any هنا كما في الكود الأصلي الناجح ---<<<
+export default function CaseStudyDetailPage({ params }: { params: any }) {
+  const study = getCaseStudyBySlug(params.slug);
   if (!study) notFound();
 
   return (

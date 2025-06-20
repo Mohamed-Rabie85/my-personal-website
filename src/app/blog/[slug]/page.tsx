@@ -2,26 +2,26 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getArticleBySlug, getAllArticlesMeta } from '@/lib/articles';
+import { getArticleBySlug, getAllArticlesMeta, getAllArticleSlugs } from '@/lib/articles'; // تأكد من استيراد getAllArticleSlugs
 import ArticleCard from '@/components/ArticleCard';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import type { Metadata } from "next";
 
+// استيراد المكونات المخصصة
 import Callout from '@/components/Callout';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import Accordion from '@/components/Accordion';
 import AccordionItem from '@/components/AccordionItem';
 
-type PageProps = { params: { slug: string } };
-
+// هذه الدالة يجب أن تبقى متزامنة
 export function generateStaticParams() {
-  const articles = getAllArticlesMeta();
-  return articles.map((article) => ({ slug: article.slug }));
+  const slugs = getAllArticleSlugs();
+  return slugs;
 }
 
-// <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const article = await getArticleBySlug(params.slug);
+// <<<--- استخدام any هنا كما في الكود الأصلي الناجح ---<<<
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+  const article = getArticleBySlug(params.slug);
   if (!article) return { title: "المقال غير موجود" };
 
   return {
@@ -32,9 +32,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-// <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
-export default async function SingleArticlePage({ params }: PageProps) {
-  const article = await getArticleBySlug(params.slug);
+// <<<--- استخدام any هنا كما في الكود الأصلي الناجح ---<<<
+export default function SingleArticlePage({ params }: { params: any }) {
+  const article = getArticleBySlug(params.slug);
   if (!article) notFound();
 
   const allArticles = getAllArticlesMeta();

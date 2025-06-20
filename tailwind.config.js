@@ -31,5 +31,5 @@ module.exports = {
       },
     },
   },
-  plugins: [], // <-- تأكد من أن هذه المصفوفة فارغة
+  plugins: ['@tailwindcss/typography' ],
 };

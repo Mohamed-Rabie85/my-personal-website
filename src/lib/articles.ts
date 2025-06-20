@@ -2,6 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { cache } from 'react';
 
 const articlesDirectory = path.join(process.cwd(), '_articles');
 
@@ -41,21 +42,16 @@ export function getAllArticlesMeta(): ArticleMeta[] {
   }
 }
 
-// <<<--- التغيير الجوهري هنا: الدالة أصبحت متزامنة (بدون async) ---<<<
-export function getArticleBySlug(slug: string): Article | null {
+export const getArticleBySlug = cache((slug: string): Article | null => {
+  console.log(`Reading article: ${slug}`); // سنضيف هذا السطر لنرى في الطرفية أنها تُستدعى مرة واحدة
   const fullPath = path.join(articlesDirectory, `${slug}.mdx`);
   try {
-    if (!fs.existsSync(fullPath)) {
-        return null;
-    }
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
     return { slug, ...(data as Omit<ArticleMeta, 'slug'>), content };
-  } catch (error) {
-    console.error(`خطأ أثناء قراءة المقال "${slug}":`, error);
-    return null;
-  }
-}
+  } catch (error) { return null; }
+});
+
 
 export function getArticles(limit?: number, category?: string): ArticleMeta[] {
   let allArticles = getAllArticlesMeta();

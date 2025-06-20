@@ -20,8 +20,8 @@ export function generateStaticParams() {
 }
 
 // <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
-export function generateMetadata({ params }: PageProps): Metadata {
-  const article = getArticleBySlug(params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const article = await getArticleBySlug(params.slug);
   if (!article) return { title: "المقال غير موجود" };
 
   return {
@@ -33,8 +33,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
 }
 
 // <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
-export default function SingleArticlePage({ params }: PageProps) {
-  const article = getArticleBySlug(params.slug);
+export default async function SingleArticlePage({ params }: PageProps) {
+  const article = await getArticleBySlug(params.slug);
   if (!article) notFound();
 
   const allArticles = getAllArticlesMeta();

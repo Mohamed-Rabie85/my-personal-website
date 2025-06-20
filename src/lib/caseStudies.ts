@@ -2,6 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { cache } from 'react';
 
 const caseStudiesDirectory = path.join(process.cwd(), '_case-studies');
 
@@ -38,18 +39,12 @@ export function getAllCaseStudiesMeta(): CaseStudyMeta[] {
   }
 }
 
-// <<<--- التغيير الجوهري هنا: الدالة أصبحت متزامنة (بدون async) ---<<<
-export function getCaseStudyBySlug(slug: string): CaseStudy | null {
+export const getCaseStudyBySlug = cache((slug: string): CaseStudy | null => {
+  console.log(`Reading case study: ${slug}`);
   const fullPath = path.join(caseStudiesDirectory, `${slug}.mdx`);
   try {
-    if (!fs.existsSync(fullPath)) {
-        return null;
-    }
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
     return { ...(data as CaseStudyMeta), content };
-  } catch (error) {
-    console.error(`خطأ أثناء قراءة دراسة الحالة "${slug}":`, error);
-    return null;
-  }
-}
+  } catch (error) { return null; }
+});

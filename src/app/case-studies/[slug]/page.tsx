@@ -14,8 +14,8 @@ export function generateStaticParams() {
 }
 
 // <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
-export function generateMetadata({ params }: PageProps): Metadata {
-  const study = getCaseStudyBySlug(params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const study = await getCaseStudyBySlug(params.slug);
   if (!study) return { title: 'دراسة حالة غير موجودة' };
 
   return {
@@ -26,8 +26,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
 }
 
 // <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
-export default function CaseStudyDetailPage({ params }: PageProps) {
-  const study = getCaseStudyBySlug(params.slug);
+export default async function CaseStudyDetailPage({ params }: PageProps) {
+  const study = await getCaseStudyBySlug(params.slug);
   if (!study) notFound();
 
   return (

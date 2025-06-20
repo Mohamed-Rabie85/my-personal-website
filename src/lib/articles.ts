@@ -28,7 +28,7 @@ export function getArticleBySlug(slug: string): Article | null {
   try {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
-    return { slug, ...(data as ArticleMeta), content };
+    return { ...(data as ArticleMeta), content };
   } catch (error) { return null; }
 }
 

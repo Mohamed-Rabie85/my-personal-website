@@ -5,87 +5,42 @@ import matter from 'gray-matter';
 
 const articlesDirectory = path.join(process.cwd(), '_articles');
 
-export type ArticleMeta = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  image: string;
-  category: 'ابدأ صح' | 'تسريع النمو' | 'من مطبخ البيزنس';
-  date: string;
-  readTime: string;
-  isFeatured: boolean;
-};
-
-export type Article = ArticleMeta & {
-  content: string;
-};
+export type ArticleMeta = { slug: string; title: string; excerpt: string; image: string; category: 'ابدأ صح' | 'تسريع النمو' | 'من مطبخ البيزنس'; date: string; readTime: string; isFeatured: boolean; };
+export type Article = ArticleMeta & { content: string; };
 
 export function getAllArticlesMeta(): ArticleMeta[] {
-  try {
-    const fileNames = fs.readdirSync(articlesDirectory);
-    const allArticlesData = fileNames
-      .filter(fileName => fileName.endsWith('.mdx'))
-      .map(fileName => {
-        const slug = fileName.replace(/\.mdx$/, '');
-        const fullPath = path.join(articlesDirectory, fileName);
-        const fileContents = fs.readFileSync(fullPath, 'utf8');
-        const { data } = matter(fileContents);
-        
-        if (!data.title || !data.date) {
-            console.warn(`تحذير: المقال "${fileName}" يفتقد العنوان أو التاريخ.`);
-            return null;
-        }
-
-        return { slug, ...data } as ArticleMeta;
-      });
-
-    const validArticles = allArticlesData.filter((article): article is ArticleMeta => article !== null);
-    
-    validArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-    
-    return validArticles;
-
-  } catch (error) {
-    console.error("خطأ أثناء قراءة ملفات المقالات:", error);
-    return [];
-  }
+    try {
+        const fileNames = fs.readdirSync(articlesDirectory);
+        const allArticlesData = fileNames.filter(fileName => fileName.endsWith('.mdx')).map(fileName => {
+            const slug = fileName.replace(/\.mdx$/, '');
+            const fullPath = path.join(articlesDirectory, fileName);
+            const fileContents = fs.readFileSync(fullPath, 'utf8');
+            const { data } = matter(fileContents);
+            return { slug, ...data } as ArticleMeta;
+        });
+        return allArticlesData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    } catch (error) { return []; }
 }
 
-// تعديل الدالة لتكون async بشكل صريح
+// <<<--- التغيير الجوهري هنا: الدالة أصبحت متزامنة ---<<<
 export function getArticleBySlug(slug: string): Article | null {
-  // ... (باقي الكود يبقى كما هو، بدون try/catch إذا لم تكن ضرورية)
   const fullPath = path.join(articlesDirectory, `${slug}.mdx`);
-  if (!fs.existsSync(fullPath)) return null;
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-  const { slug: _slug, ...restOfData } = data as ArticleMeta;
-  return { slug, ...restOfData, content };
+  try {
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const { data, content } = matter(fileContents);
+    return { slug, ...(data as ArticleMeta), content };
+  } catch (error) { return null; }
 }
 
-// باقي الدوال تبقى كما هي
 export function getArticles(limit?: number, category?: string): ArticleMeta[] {
-  let allArticles = getAllArticlesMeta();
-  if (category && category !== 'جميع المقالات') {
-    allArticles = allArticles.filter(article => article.category === category);
-  }
-  return limit ? allArticles.slice(0, limit) : allArticles;
-}
-
-export function getFeaturedArticles(): ArticleMeta[] {
-  const allArticles = getAllArticlesMeta();
-  return allArticles.filter(article => article.isFeatured);
-}
-
-export function getAllArticleSlugs(): { slug: string }[] {
-    const allArticles = getAllArticlesMeta();
-    return allArticles.map(article => ({ slug: article.slug }));
+    let allArticles = getAllArticlesMeta();
+    if (category && category !== 'جميع المقالات') {
+        allArticles = allArticles.filter(article => article.category === category);
+    }
+    return limit ? allArticles.slice(0, limit) : allArticles;
 }
 
 export function getAllCategories(): string[] {
-    const allArticles = getAllArticlesMeta();
-    const categoriesSet = new Set<string>();
-    allArticles.forEach(article => {
-        categoriesSet.add(article.category);
-    });
+    const categoriesSet = new Set<string>(getAllArticlesMeta().map(a => a.category));
     return Array.from(categoriesSet);
 }

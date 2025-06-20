@@ -1,3 +1,4 @@
+// src/app/blog/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -5,32 +6,39 @@ import { getArticleBySlug, getAllArticlesMeta } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import type { Metadata } from "next";
+
 import Callout from '@/components/Callout';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import Accordion from '@/components/Accordion';
 import AccordionItem from '@/components/AccordionItem';
 
-// لا حاجة لتعريف Props هنا، Next.js سيفهمها تلقائيًا
+type PageProps = { params: { slug: string } };
 
 export function generateStaticParams() {
   const articles = getAllArticlesMeta();
   return articles.map((article) => ({ slug: article.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+// <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
+export function generateMetadata({ params }: PageProps): Metadata {
   const article = getArticleBySlug(params.slug);
   if (!article) return { title: "المقال غير موجود" };
+
   return {
     title: `${article.title} | المدونة | محمد ربيع`,
     description: article.excerpt,
+    openGraph: { title: article.title, description: article.excerpt, images: [article.image] },
+    twitter: { card: 'summary_large_image', title: article.title, description: article.excerpt, images: [article.image] },
   };
 }
 
-export default function SingleArticlePage({ params }: { params: { slug: string } }) {
+// <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
+export default function SingleArticlePage({ params }: PageProps) {
   const article = getArticleBySlug(params.slug);
   if (!article) notFound();
 
-  const relatedArticles = getAllArticlesMeta().filter(a => a.slug !== article.slug && a.category === article.category).slice(0, 3);
+  const allArticles = getAllArticlesMeta();
+  const relatedArticles = allArticles.filter(a => a.slug !== article.slug && a.category === article.category).slice(0, 3);
 
   return (
     <main>

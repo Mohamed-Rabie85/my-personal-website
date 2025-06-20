@@ -1,3 +1,4 @@
+// src/app/case-studies/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -5,21 +6,27 @@ import { getCaseStudyBySlug, getAllCaseStudiesMeta } from '@/lib/caseStudies';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import type { Metadata } from 'next';
 
+type PageProps = { params: { slug: string } };
+
 export function generateStaticParams() {
   const studies = getAllCaseStudiesMeta();
   return studies.map((study) => ({ slug: study.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+// <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
+export function generateMetadata({ params }: PageProps): Metadata {
   const study = getCaseStudyBySlug(params.slug);
   if (!study) return { title: 'دراسة حالة غير موجودة' };
+
   return {
     title: study.title,
     description: study.excerpt,
+    openGraph: { title: study.title, description: study.excerpt, images: [study.image] },
   };
 }
 
-export default function CaseStudyDetailPage({ params }: { params: { slug: string } }) {
+// <<<--- التغيير الجوهري هنا: أزلنا async ---<<<
+export default function CaseStudyDetailPage({ params }: PageProps) {
   const study = getCaseStudyBySlug(params.slug);
   if (!study) notFound();
 

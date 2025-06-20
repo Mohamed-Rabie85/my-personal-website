@@ -13,16 +13,13 @@ import AccordionItem from '@/components/AccordionItem';
 import Callout from '@/components/Callout';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 
-type SingleArticlePageProps = {
-  params: { slug: string; };
-};
 
 export function generateStaticParams() {
   const articles = getAllArticlesMeta();
   return articles.map((article) => ({ slug: article.slug }));
 }
 
-export async function generateMetadata({ params }: SingleArticlePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const article = await getArticleBySlug(params.slug); // استخدام await
 
   if (!article) {
@@ -46,7 +43,7 @@ export async function generateMetadata({ params }: SingleArticlePageProps): Prom
   };
 }
 
-export default async function SingleArticlePage({ params }: SingleArticlePageProps) {
+export default async function SingleArticlePage({ params }: { params: { slug: string } }) {
   const article = await getArticleBySlug(params.slug); // استخدام await
 
   if (!article) {

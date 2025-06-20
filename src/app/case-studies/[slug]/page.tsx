@@ -6,9 +6,7 @@ import { getCaseStudyBySlug, getAllCaseStudiesMeta } from '@/lib/caseStudies';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import type { Metadata } from 'next';
 
-type CaseStudyDetailPageProps = {
-  params: { slug: string; };
-};
+
 
 // دالة لإنشاء الصفحات بشكل ثابت عند البناء
 export function generateStaticParams() {
@@ -19,7 +17,7 @@ export function generateStaticParams() {
 }
 
 // دالة لتوليد البيانات الوصفية (metadata)
-export async function generateMetadata({ params }: CaseStudyDetailPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const study = await getCaseStudyBySlug(params.slug);
   if (!study) {
     return { title: 'دراسة حالة غير موجودة' };
@@ -36,7 +34,7 @@ export async function generateMetadata({ params }: CaseStudyDetailPageProps): Pr
 }
 
 
-export default async function CaseStudyDetailPage({ params }: CaseStudyDetailPageProps) {
+export default async function CaseStudyDetailPage({ params }: { params: { slug: string } }) {
   const study = await getCaseStudyBySlug(params.slug);
 
   if (!study) {

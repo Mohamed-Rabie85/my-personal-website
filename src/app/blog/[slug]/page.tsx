@@ -1,4 +1,3 @@
-// src/app/blog/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,33 +10,27 @@ import YouTubeEmbed from '@/components/YouTubeEmbed';
 import Accordion from '@/components/Accordion';
 import AccordionItem from '@/components/AccordionItem';
 
-type PageProps = { params: { slug: string } };
+// لا حاجة لتعريف Props هنا، Next.js سيفهمها تلقائيًا
 
 export function generateStaticParams() {
   const articles = getAllArticlesMeta();
   return articles.map((article) => ({ slug: article.slug }));
 }
 
-// <<<--- التغيير الجوهري هنا: أزلنا async لأن الدالة التي تستدعيها متزامنة ---<<<
-export function generateMetadata({ params }: PageProps): Metadata {
+export async function generateMetadata({ params }: { params: { slug: string } }) {
   const article = getArticleBySlug(params.slug);
   if (!article) return { title: "المقال غير موجود" };
-
   return {
     title: `${article.title} | المدونة | محمد ربيع`,
     description: article.excerpt,
-    openGraph: { title: article.title, description: article.excerpt, images: [article.image] },
-    twitter: { card: 'summary_large_image', title: article.title, description: article.excerpt, images: [article.image] },
   };
 }
 
-// <<<--- التغيير الجوهري هنا: أزلنا async لأن الدالة التي تستدعيها متزامنة ---<<<
-export default function SingleArticlePage({ params }: PageProps) {
+export default function SingleArticlePage({ params }: { params: { slug: string } }) {
   const article = getArticleBySlug(params.slug);
   if (!article) notFound();
 
-  const allArticles = getAllArticlesMeta();
-  const relatedArticles = allArticles.filter(a => a.slug !== article.slug && a.category === article.category).slice(0, 3);
+  const relatedArticles = getAllArticlesMeta().filter(a => a.slug !== article.slug && a.category === article.category).slice(0, 3);
 
   return (
     <main>

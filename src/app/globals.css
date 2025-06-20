@@ -154,11 +154,11 @@ html {
 }
 
 .content-container p {
-  @apply leading-relaxed my-4;
+  @apply leading-relaxed my-4 text-[var(--neutral-dark)];
 }
 
 .content-container ul {
-  @apply list-disc list-inside my-4 space-y-2;
+  @apply list-disc list-inside my-4 space-y-2 text-[var(--neutral-dark)];
 }
 
 .content-container ul li {
@@ -170,7 +170,7 @@ html {
 }
 
 .content-container ol {
-  @apply list-decimal list-inside my-4 space-y-2;
+  @apply list-decimal list-inside my-4 space-y-2 text-[var(--neutral-dark)];
 }
 
 .content-container ol li {

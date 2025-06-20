@@ -20,7 +20,7 @@ export default function AccordionItem({ title, children }: AccordionItemProps) {
     <div className="border border-gray-200 rounded-lg overflow-hidden">
       <button
         onClick={toggleOpen}
-        className="w-full flex justify-between items-center p-4 text-right bg-gray-50 hover:bg-gray-100 focus:outline-none"
+        className="w-full flex justify-between items-center p-4 text-right bg-gray-50 hover:bg-gray-200 focus:outline-none"
       >
         <span className="font-semibold text-[var(--primary-dark)]">{title}</span>
         <ChevronDown

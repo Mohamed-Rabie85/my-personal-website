@@ -2,11 +2,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Article } from '@/lib/articles'; // استيراد نوع Article
+import { ArticleMeta } from '@/lib/articles'; // استيراد نوع ArticleMeta
 
 type ArticleCardProps = {
-  article: Article;
-  large?: boolean; // خاصية اختيارية لجعل البطاقة أكبر للمقالات المميزة
+  article: ArticleMeta; // التأكد من استخدام ArticleMeta هنا
+  large?: boolean;
 };
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ article, large = false }) => {

@@ -2,54 +2,31 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getArticleBySlug, getAllArticleSlugs, getArticles } from '@/lib/articles';
+import { getArticleBySlug, getAllArticlesMeta } from '@/lib/articles';
 import ArticleCard from '@/components/ArticleCard';
-
-// استيراد المكتبات لتحويل Markdown
-import { remark } from 'remark';
-import html from 'remark-html';
-
-// استيراد Metadata من Next.js
+import { MDXRemote } from 'next-mdx-remote/rsc';
 import type { Metadata } from "next";
-// تم إزالة: import type { PageProps } from "next";
+import Accordion from '@/components/Accordion';
+import AccordionItem from '@/components/AccordionItem';
 
-// لا توجد واجهة مخصصة لـ params هنا
+// استيراد المكونات المخصصة
+import Callout from '@/components/Callout';
+import YouTubeEmbed from '@/components/YouTubeEmbed';
 
-// دالة لتحويل Markdown إلى HTML
-async function markdownToHtml(markdown: string) {
-  const result = await remark().use(html, { sanitize: false }).process(markdown);
-  return result.toString();
+type SingleArticlePageProps = {
+  params: { slug: string; };
+};
+
+export function generateStaticParams() {
+  const articles = getAllArticlesMeta();
+  return articles.map((article) => ({ slug: article.slug }));
 }
 
-// هذه الدالة مهمة لـ Next.js لإنشاء صفحات ثابتة لكل مقال عند البناء (SSG)
-export async function generateStaticParams() {
-  const slugs = getAllArticleSlugs();
-  return slugs;
-}
-
-// دالة لجلب بيانات الـ Metadata في Next.js (Server Component)
-// استخدام 'any' لـ params لتجاوز خطأ Type Error
-export async function generateMetadata({
-  params
-}: {
-  params: any // <--- التعديل الجذري هنا
-}): Promise<Metadata> {
-  // لا يزال من المهم التحقق من slug في حال كان مصفوفة (لمزيد من الأمان)
-  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
-  if (!slug) {
-    return {
-      title: "المقال غير موجود",
-      description: "الصفحة التي تبحث عنها غير موجودة.",
-    };
-  }
-
-  const article = getArticleBySlug(slug);
+export async function generateMetadata({ params }: SingleArticlePageProps): Promise<Metadata> {
+  const article = await getArticleBySlug(params.slug); // استخدام await
 
   if (!article) {
-    return {
-      title: "المقال غير موجود",
-      description: "الصفحة التي تبحث عنها غير موجودة.",
-    };
+    return { title: "المقال غير موجود" };
   }
 
   return {
@@ -59,49 +36,31 @@ export async function generateMetadata({
       title: article.title,
       description: article.excerpt,
       images: [{ url: article.image }],
-      type: 'article',
-      locale: 'ar_SA',
-      siteName: 'الاستشاري',
     },
     twitter: {
       card: 'summary_large_image',
       title: article.title,
       description: article.excerpt,
       images: [article.image],
-      creator: '@consultant',
     },
   };
 }
 
-// مكون الصفحة
-// استخدام 'any' لـ params لتجاوز خطأ Type Error
-export default async function SingleArticlePage({
-  params
-}: {
-  params: any // <--- التعديل الجذري هنا
-}) {
-  // لا يزال من المهم التحقق من slug في حال كان مصفوفة (لمزيد من الأمان)
-  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
-  if (!slug) {
-    notFound();
-  }
-
-  const article = getArticleBySlug(slug);
+export default async function SingleArticlePage({ params }: SingleArticlePageProps) {
+  const article = await getArticleBySlug(params.slug); // استخدام await
 
   if (!article) {
     notFound();
   }
 
-  const contentHtml = await markdownToHtml(article.content);
-
-  const allArticles = getArticles();
+  const allArticles = getAllArticlesMeta();
   let relatedArticles = allArticles
-    .filter(a => a.id !== article.id && a.category === article.category)
+    .filter(a => a.slug !== article.slug && a.category === article.category)
     .slice(0, 3);
 
   if (relatedArticles.length < 3) {
     const additionalArticles = allArticles
-      .filter(a => a.id !== article.id && !relatedArticles.some(ra => ra.id === a.id))
+      .filter(a => a.slug !== article.slug && !relatedArticles.some(ra => ra.slug === a.slug))
       .slice(0, 3 - relatedArticles.length);
     relatedArticles = [...relatedArticles, ...additionalArticles];
   }
@@ -123,16 +82,17 @@ export default async function SingleArticlePage({
               src={article.image}
               alt={article.title}
               fill
+              sizes="(max-width: 768px) 100vw, 896px"
               style={{ objectFit: 'cover' }}
               quality={80}
               priority
             />
           </div>
 
-          <h1 className="text-[var(--primary-dark)] text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-[var(--primary-dark)] mb-4">
             {article.title}
           </h1>
-          <div className="flex items-center text-[var(--neutral-medium)] text-sm mb-8">
+          <div className="flex items-center text-[var(--neutral-medium)] text-sm mb-8 flex-wrap">
             <span>بقلم: محمد ربيع</span>
             <span className="mx-2">|</span>
             <span>نشر في: {article.date}</span>
@@ -144,19 +104,18 @@ export default async function SingleArticlePage({
             </span>
           </div>
 
-          <div
-            className="prose prose-lg prose-custom max-w-none me-10 text-[var(--neutral-dark)] leading-relaxed "
-            dangerouslySetInnerHTML={{ __html: contentHtml }}
-          />
+          <div className="content-container text-[var(--neutral-dark)] leading-relaxed mb-12">
+            <MDXRemote
+              source={article.content}
+              components={{ Callout, YouTubeEmbed, Accordion, AccordionItem }}
+            />
+          </div>
 
-          <div className="bg-[var(--neutral-light)] p-6 rounded-lg text-center mb-12">
+          {/* ... باقي الكود يبقى كما هو ... */}
+          <div className="bg-[var(--neutral-light)] p-6 rounded-lg text-center my-12">
             <h3 className="text-[var(--primary-medium)] mb-4">هل مشروعك يواجه تحديات؟</h3>
-            <p className="text-[var(--neutral-medium)] mb-6">
-              دعنا نكتشف كيف يمكنني مساعدتك في تجاوزها
-            </p>
-            <Link href="/consultation" className="btn-secondary">
-              احجز جلستك الاستكشافية المجانية
-            </Link>
+            <p className="text-[var(--neutral-medium)] mb-6">دعنا نكتشف كيف يمكنني مساعدتك في تجاوزها</p>
+            <Link href="/consultation" className="btn-secondary">احجز جلستك الاستكشافية المجانية</Link>
           </div>
 
           <div className="bg-[var(--neutral-light)] p-6 rounded-lg flex flex-col md:flex-row items-center gap-6 mb-12">
@@ -169,12 +128,8 @@ export default async function SingleArticlePage({
             />
             <div>
               <h3 className="text-[var(--primary-dark)] font-bold mb-2">محمد ربيع</h3>
-              <p className="text-[var(--neutral-medium)] mb-3">
-                مستشار تطوير أعمال وتسويق استراتيجي بخبرة تزيد عن 20 عاماً، متخصص في مساعدة رواد الأعمال وقادة الشركات على تحقيق النمو المستدام، تحسين العمليات، وتفعيل استراتيجيات التسويق.
-              </p>
-              <Link href="/about" className="text-[var(--primary-medium)] hover:border-b- border-[var(--secondary-medium)] transition-colors duration-300">
-                تعرف على المزيد →
-              </Link>
+              <p className="text-[var(--neutral-medium)] mb-3">مستشار تطوير أعمال وتسويق استراتيجي بخبرة تزيد عن 20 عاماً، متخصص في مساعدة رواد الأعمال وقادة الشركات على تحقيق النمو المستدام، تحسين العمليات، وتفعيل استراتيجيات التسويق.</p>
+              <Link href="/about" className="text-[var(--primary-medium)] hover:border-b- border-[var(--secondary-medium)] transition-colors duration-300">تعرف على المزيد →</Link>
             </div>
           </div>
 
@@ -182,8 +137,8 @@ export default async function SingleArticlePage({
             <div className="mt-12">
               <h2 className="text-[var(--primary-dark)] text-center mb-8">مقالات قد تهمك</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {relatedArticles.map((article) => (
-                  <ArticleCard key={article.id} article={article} />
+                {relatedArticles.map((relatedArticle) => (
+                  <ArticleCard key={relatedArticle.slug} article={relatedArticle} />
                 ))}
               </div>
             </div>

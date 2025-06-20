@@ -43,18 +43,6 @@ html {
     @apply bg-[var(--background)] text-[var(--foreground)];
   }
 
-  h1 {
-    @apply text-4xl md:text-5xl font-bold;
-  }
-
-  h2 {
-    @apply text-3xl md:text-4xl font-bold;
-  }
-
-  h3 {
-    @apply text-2xl font-semibold;
-  }
-
   a {
     @apply transition-colors duration-300;
   }
@@ -91,6 +79,7 @@ html {
   textarea {
     @apply focus:ring-[var(--primary-medium)] focus:border-[var(--primary-medium)];
   }
+
 }
 
 /* في ملف globals.css أو module.css */
@@ -153,4 +142,45 @@ html {
   .no-print {
     display: none;
   }
+}
+
+
+.content-container h2 {
+  @apply text-3xl font-bold mt-12 mb-6 text-[var(--primary-dark)];
+}
+
+.content-container h3 {
+  @apply text-2xl font-bold mt-8 mb-4 text-[var(--primary-dark)];
+}
+
+.content-container p {
+  @apply leading-relaxed my-4;
+}
+
+.content-container ul {
+  @apply list-disc list-inside my-4 space-y-2;
+}
+
+.content-container ul li {
+  @apply pl-4;
+}
+
+.content-container ul li::marker {
+  color: var(--secondary-medium);
+}
+
+.content-container ol {
+  @apply list-decimal list-inside my-4 space-y-2;
+}
+
+.content-container ol li {
+  @apply pl-4;
+}
+
+.content-container a {
+  @apply text-[var(--primary-medium)] underline hover:text-[var(--primary-dark)];
+}
+
+.content-container strong {
+  @apply font-bold text-[var(--neutral-dark)];
 }

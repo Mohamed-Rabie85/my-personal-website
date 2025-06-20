@@ -38,6 +38,9 @@ export default function Header() {
             <Link href="/portfolio" className="px-3 py-2 border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300">
               معرض الأعمال
             </Link>
+            <Link href="/case-studies" className="px-3 py-2 border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300">
+              دراسات الحالة
+            </Link>
             <Link href="/blog" className="px-3 py-2 border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300">
               المدونة
             </Link>
@@ -101,6 +104,13 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 معرض الأعمال
+              </Link>
+              <Link
+                href="/case-studies"
+                className="px-3 py-2 border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                دراسات الحالة
               </Link>
               <Link
                 href="/blog"

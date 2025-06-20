@@ -1,13 +1,9 @@
-// tailwind.config.js
-/* --- START OF FILE tailwind.config.js --- */
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    // أضف أي مسارات أخرى لمجلدات تحتوي على ملفات JSX/TSX/HTML تستخدم Tailwind
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -21,10 +17,9 @@ module.exports = {
         "neutral-dark": "var(--neutral-dark)",
         "neutral-medium": "var(--neutral-medium)",
         "neutral-light": "var(--neutral-light)",
-        background: "var(--background)", // الخلفية للوضع الفاتح
-        foreground: "var(--foreground)", // النص للوضع الفاتح
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
-      // هنا تكمن الإضافة الحاسمة لتعريف الـ keyframes والـ animation
       keyframes: {
         "marquee-rtl": {
           "0%": { transform: "translateX(0%)" },
@@ -32,10 +27,9 @@ module.exports = {
         },
       },
       animation: {
-        "marquee-rtl": "marquee-rtl 60s linear infinite", // المدة 60 ثانية، يمكن تعديلها
+        "marquee-rtl": "marquee-rtl 60s linear infinite",
       },
     },
   },
-  plugins: [],
+  plugins: [], // <-- تأكد من أن هذه المصفوفة فارغة
 };
-/* --- END OF FILE tailwind.config.js --- */

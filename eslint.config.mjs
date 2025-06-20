@@ -1,27 +1,31 @@
 // eslint.config.mjs
+import nextPlugin from "@next/eslint-plugin-next";
+import typescriptParser from "@typescript-eslint/parser";
+import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+import globals from "globals";
 
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-  // إضافة إعدادات القواعد المخصصة هنا
+/** @type {import('eslint').Linter.FlatConfig[]} */
+const config = [
   {
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    plugins: {
+      "@next/next": nextPlugin,
+      "@typescript-eslint": typescriptPlugin,
+    },
+    languageOptions: {
+      parser: typescriptParser,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
     rules: {
-      // تعطيل قاعدة no-explicit-any
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs["core-web-vitals"].rules,
+      "@typescript-eslint/no-var-requires": "off",
       "@typescript-eslint/no-explicit-any": "off",
-      // أو لجعلها تحذيراً فقط (لن يوقف البناء ولكنها ستظهر في الـ console):
-      // "@typescript-eslint/no-explicit-any": "warn"
     },
   },
 ];
 
-export default eslintConfig;
+export default config;

@@ -42,19 +42,11 @@ export function getAllCaseStudiesMeta(): CaseStudyMeta[] {
 }
 
 // دالة لجلب دراسة حالة كاملة بناءً على الـ slug
-export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
+export function getCaseStudyBySlug(slug: string): CaseStudy | null {
   const fullPath = path.join(caseStudiesDirectory, `${slug}.mdx`);
-  try {
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data, content } = matter(fileContents);
-    const { slug: _slug, ...restOfData } = data as CaseStudyMeta; // استخراج slug وتجاهله
-      return {
-        slug, // استخدام slug من اسم الملف
-        ...restOfData, // استخدام باقي البيانات
-        content,
-      };
-  } catch (error) {
-    console.error(`خطأ أثناء قراءة دراسة الحالة "${slug}":`, error);
-    return null;
-  }
+  if (!fs.existsSync(fullPath)) return null;
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(fileContents);
+  const { slug: _slug, ...restOfData } = data as CaseStudyMeta;
+  return { slug, ...restOfData, content };
 }

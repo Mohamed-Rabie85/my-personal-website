@@ -52,26 +52,14 @@ export function getAllArticlesMeta(): ArticleMeta[] {
 }
 
 // تعديل الدالة لتكون async بشكل صريح
-export async function getArticleBySlug(slug: string): Promise<Article | null> {
+export function getArticleBySlug(slug: string): Article | null {
+  // ... (باقي الكود يبقى كما هو، بدون try/catch إذا لم تكن ضرورية)
   const fullPath = path.join(articlesDirectory, `${slug}.mdx`);
-  try {
-    if (!fs.existsSync(fullPath)) {
-        console.warn(`لم يتم العثور على المقال بالـ slug: ${slug}`);
-        return null;
-    }
-
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data, content } = matter(fileContents);
-
-    return {
-      slug,
-      ...(data as Omit<ArticleMeta, 'slug'>),
-      content,
-    };
-  } catch (error) {
-    console.error(`خطأ أثناء قراءة المقال "${slug}":`, error);
-    return null;
-  }
+  if (!fs.existsSync(fullPath)) return null;
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const { data, content } = matter(fileContents);
+  const { slug: _slug, ...restOfData } = data as ArticleMeta;
+  return { slug, ...restOfData, content };
 }
 
 // باقي الدوال تبقى كما هي

@@ -13,32 +13,53 @@ import YouTubeEmbed from '@/components/YouTubeEmbed';
 import Accordion from '@/components/Accordion';
 import AccordionItem from '@/components/AccordionItem';
 
-// تعريف النوع الكامل والصحيح لخصائص الصفحة
+// تعريف النوع الكامل والصحيح لخصائص الصفحة، بما في ذلك searchParams
 type PageProps = {
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
+// هذه الدالة يجب أن تبقى متزامنة
 export function generateStaticParams() {
   const articles = getAllArticlesMeta();
-  return articles.map((article) => ({ slug: article.slug }));
+  return articles.map((article) => ({
+    slug: article.slug,
+  }));
 }
 
+// هذه الدالة يجب أن تكون غير متزامنة لأنها تجلب بيانات
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  // استخدام await لأن الدالة التي تجلب البيانات أصبحت async
   const article = await getArticleBySlug(params.slug);
-  if (!article) return { title: "المقال غير موجود" };
+
+  if (!article) {
+    return { title: "المقال غير موجود" };
+  }
 
   return {
     title: `${article.title} | المدونة | محمد ربيع`,
     description: article.excerpt,
-    openGraph: { title: article.title, description: article.excerpt, images: [article.image] },
-    twitter: { card: 'summary_large_image', title: article.title, description: article.excerpt, images: [article.image] },
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      images: [{ url: article.image }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      images: [article.image],
+    },
   };
 }
 
+// مكون الصفحة يجب أن يكون غير متزامن لأنه يجلب بيانات
 export default async function SingleArticlePage({ params }: PageProps) {
   const article = await getArticleBySlug(params.slug);
-  if (!article) notFound();
+
+  if (!article) {
+    notFound();
+  }
 
   const allArticles = getAllArticlesMeta();
   let relatedArticles = allArticles
@@ -57,23 +78,50 @@ export default async function SingleArticlePage({ params }: PageProps) {
       <section className="w-full py-12 md:py-16 bg-white">
         <div className="section-container max-w-4xl mx-auto">
           <nav className="text-sm mb-4 text-[var(--neutral-medium)]">
-            <Link href="/" className="hover:underline">الرئيسية</Link> / <Link href="/blog" className="hover:underline">المدونة</Link> / <span className="text-[var(--primary-medium)]">{article.title}</span>
+            <Link href="/" className="hover:underline">الرئيسية</Link>
+            <span className="mx-2">/</span>
+            <Link href="/blog" className="hover:underline">المدونة</Link>
+            <span className="mx-2">/</span>
+            <span className="text-[var(--primary-medium)]">{article.title}</span>
           </nav>
+
           <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden mb-8">
-            <Image src={article.image} alt={article.title} fill sizes="(max-width: 768px) 100vw, 896px" style={{ objectFit: 'cover' }} quality={80} priority />
+            <Image
+              src={article.image}
+              alt={article.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 896px"
+              style={{ objectFit: 'cover' }}
+              quality={80}
+              priority
+            />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-[var(--primary-dark)] mb-4">{article.title}</h1>
+
+          <h1 className="text-3xl md:text-4xl font-bold text-[var(--primary-dark)] mb-4">{article.title}</h1>
+
           <div className="flex items-center text-[var(--neutral-medium)] text-sm mb-8 flex-wrap">
-            <span>بقلم: محمد ربيع</span><span className="mx-2">|</span><span>نشر في: {article.date}</span><span className="mx-2">|</span><span>وقت القراءة: {article.readTime}</span><span className="mx-2">|</span><span className="bg-[var(--secondary-medium)] text-white text-xs px-2 py-1 rounded-full whitespace-nowrap">{article.category}</span>
+            <span>بقلم: محمد ربيع</span>
+            <span className="mx-2">|</span>
+            <span>نشر في: {article.date}</span>
+            <span className="mx-2">|</span>
+            <span>وقت القراءة: {article.readTime}</span>
+            <span className="mx-2">|</span>
+            <span className="bg-[var(--secondary-medium)] text-white text-xs px-2 py-1 rounded-full whitespace-nowrap">{article.category}</span>
           </div>
+
           <div className="content-container">
-            <MDXRemote source={article.content} components={{ Callout, YouTubeEmbed, Accordion, AccordionItem }} />
+            <MDXRemote
+              source={article.content}
+              components={{ Callout, YouTubeEmbed, Accordion, AccordionItem }}
+            />
           </div>
+
           <div className="bg-[var(--neutral-light)] p-6 rounded-lg text-center my-12">
             <h3 className="text-xl font-bold text-[var(--primary-medium)] mb-4">هل مشروعك يواجه تحديات؟</h3>
             <p className="text-[var(--neutral-medium)] mb-6">دعنا نكتشف كيف يمكنني مساعدتك في تجاوزها</p>
             <Link href="/consultation" className="btn-secondary">احجز جلستك الاستكشافية المجانية</Link>
           </div>
+
           <div className="bg-[var(--neutral-light)] p-6 rounded-lg flex flex-col md:flex-row items-center gap-6 mb-12">
             <Image src="/images/mohamed-profile.jpg" alt="محمد ربيع" width={100} height={100} className="rounded-full object-cover border-2 border-[var(--secondary-medium)]" />
             <div>
@@ -82,6 +130,7 @@ export default async function SingleArticlePage({ params }: PageProps) {
               <Link href="/about" className="text-[var(--primary-medium)] hover:text-[var(--primary-dark)] transition-colors duration-300">تعرف على المزيد →</Link>
             </div>
           </div>
+
           {relatedArticles.length > 0 && (
             <div className="mt-12">
               <h2 className="text-2xl font-bold text-[var(--primary-dark)] text-center mb-8">مقالات قد تهمك</h2>

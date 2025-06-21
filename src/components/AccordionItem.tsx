@@ -24,11 +24,11 @@ export default function AccordionItem({ title, children }: AccordionItemProps) {
       >
         <span className="font-semibold text-[var(--primary-dark)]">{title}</span>
         <ChevronDown
-          className={`h-6 w-6 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          className={`h-6 w-6 text-[var(--secondary-medium)] transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
       {isOpen && (
-        <div className="p-4 bg-white border-t border-gray-200">
+        <div className="p-4 bg-white border-t border-[var(--secondary-medium)] ">
           <div className="prose max-w-none text-gray-700">
             {children}
           </div>

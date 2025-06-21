@@ -77,7 +77,7 @@ html {
   input,
   select,
   textarea {
-    @apply focus:ring-[var(--primary-medium)] focus:border-[var(--primary-medium)];
+    @apply focus:ring-[var(--primary-medium)] focus:border-[var(--secondary-medium)];
   }
 
 }

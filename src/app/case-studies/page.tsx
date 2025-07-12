@@ -17,7 +17,7 @@ export default function CaseStudiesPage() {
         <div className="section-container text-center">
           <h1 className="mb-4">دراسات الحالة</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            قصص نجاح حقيقية ونتائج ملموسة. شاهد كيف نترجم الاستراتيجيات إلى نمو لأعمال عملائنا.
+            قصص نجاح حقيقية ونتائج ملموسة. شاهد كيف نترجم الاستراتيجيات إلى نمو لأعمال عملائنا
           </p>
         </div>
       </section>

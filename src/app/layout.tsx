@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'مستشار تطوير أعمال وتسويق استراتيجي | خبرة أكثر من 20 عاماً',
     description: 'خدمات استشارية متخصصة في التخطيط الاستراتيجي، التسويق الرقمي، علم النفس التسويقي، تحليل البيانات، والإنتاج الإعلامي.',
-    creator: '@consultant', // تأكد من تحديث هذا لاسم حسابك على تويتر
+    creator: '@mohamedrabie85', // تأكد من تحديث هذا لاسم حسابك على تويتر
   },
   verification: {
     google: 'google-site-verification-code', // استبدل هذا بكود التحقق الخاص بك من Google Search Console

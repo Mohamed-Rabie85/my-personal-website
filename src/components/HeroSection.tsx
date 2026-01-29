@@ -7,8 +7,8 @@ export default function HeroSection() {
     <section className="relative w-full h-[calc(100vh-80px)] flex items-center justify-center text-white py-20 md:py-32 overflow-hidden">
       {/* صورة الخلفية */}
       <Image
-        src="/images/hero-bg.png" // **تأكد أن هذا المسار صحيح لصورتك في مجلد public**
-        alt="Mohamed Rabie Background"
+        src="/images/hero-bg.png"
+        alt="Mohamed Rabie - خبير تطوير الأعمال"
         fill
         priority
         className="object-cover -z-10"
@@ -16,26 +16,66 @@ export default function HeroSection() {
       {/* تراكب لضمان وضوح النص فوق الصورة */}
       <div className="absolute inset-0 bg-[var(--primary-dark)]/50 z-0"></div>
 
-      {/* التعديل الرئيسي هنا: إزالة محاذاة md:text-right و md:mx-0 لترك كل شيء في المنتصف */}
-      {/* وتوسيط المحتوى بالكامل داخل section-container */}
-      <div className="section-container text-center relative z-10 flex flex-col items-center justify-center h-full"> {/* أضفنا flex-col, items-center, justify-center, h-full */}
-        <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          وضوح في الخطة .<span className="text-[var(--secondary-medium)]">. قوة في التنفيذ</span>
+      {/* المحتوى الرئيسي */}
+      <div className="section-container text-center relative z-10 flex flex-col items-center justify-center h-full">
+        {/* شارة الخبرة (Badge) */}
+        <div className="mb-6 inline-block px-6 py-2 bg-[var(--secondary-medium)]/20 border border-[var(--secondary-medium)] rounded-full font-semibold text-sm md:text-base animate-fadeIn">
+          🏆 خبرة +20 عاماً في السوق المصري والعربي
+        </div>
+
+        {/* العنوان الرئيسي (H1) */}
+        <h1 className="mb-6 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight max-w-5xl">
+          حول شركتك من{" "}
+          <span className="text-[var(--secondary-medium)]">مجهود فردي</span>{" "}
+          مرهق..
+          <br />
+          إلى{" "}
+          <span className="text-[var(--secondary-medium)]">كيان مؤسسي</span>{" "}
+          ينمو ذاتياً
         </h1>
-        <p className="mb-8 text-xl md:text-2xl max-w-3xl mx-auto"> {/* حافظنا على mx-auto للتوسيط الأفقي للنص */}
-          بخبرة عملية في تأسيس وإعادة هيكلة الشركات، مهمتي هي تحقيق نتائج ملموسة لمشروعك على أرض الواقع
+
+        {/* النص الفرعي (Sub-Headline) */}
+        <p className="mb-8 text-base md:text-lg lg:text-xl max-w-4xl mx-auto text-white/90 leading-relaxed">
+          بصفتي مؤسس لـ{" "}
+          <span className="font-bold text-[var(--secondary-medium)]">ريو للحلول التسويقية</span>{" "}
+          ومستشار لأكثر من <span className="font-bold">50+ شركة</span>، أساعدك
+          في بناء <span className="text-[var(--secondary-medium)]">الأنظمة (Systems)</span> التي
+          تخرجك من فخ التشغيل اليومي، وتضاعف أرباحك وعملائك.
         </p>
-        <p className="mb-8 text-xl md:text-2xl max-w-3xl mx-auto"> {/* حافظنا على mx-auto للتوسيط الأفقي للنص */}
-          أنا محمد ربيع .. بخلاصة خبرة 20 عامًا في تأسيس وبناء الشركات، شريكك التنفيذي الذي يحول رؤيتك إلى أرقام حقيقية
-        </p>
-        {/* تعديل هنا: لجعل الأزرار تتوسط أفقياً في جميع الأحجام */}
-        <div className="flex flex-col md:flex-row gap-4 justify-center"> {/* غيرنا md:justify-start إلى justify-center */}
-          <Link href="/consultation" className="btn-secondary">
-            لنتحدث عن مشروعك
+
+        {/* أزرار الـ CTA */}
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+          {/* Primary CTA */}
+          <Link
+            href="/diagnosis"
+            className="btn-secondary text-lg px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+          >
+            🔍 اكتشف صحة شركتك (مجاناً)
           </Link>
-          <Link href="/about" className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-md hover:bg-white hover:text-[var(--primary-dark)] transition-colors duration-300">
-            تعرف علي أكثر
+
+          {/* Secondary CTA */}
+          <Link
+            href="/about"
+            className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-md text-lg hover:bg-white hover:text-[var(--primary-dark)] transition-all duration-300 transform hover:-translate-y-1"
+          >
+            تعرف على خبراتي
           </Link>
+        </div>
+
+        {/* عنصر Social Proof اختياري */}
+        <div className="mt-12 flex flex-wrap justify-center gap-8 text-sm md:text-base text-white/80">
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🏆</span>
+            <span>+20 عاماً خبرة</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🏭</span>
+            <span>+50 مشروع ناجح</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🎯</span>
+            <span>مؤسس Rio Marketing</span>
+          </div>
         </div>
       </div>
     </section>

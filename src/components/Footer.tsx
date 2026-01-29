@@ -16,12 +16,12 @@ export default function Footer() {
               <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-white">
                 <Image
                   src="/logo.png"
-                  alt="شعار الاستشاري"
+                  alt="شعار محمد ربيع"
                   width={40}
                   height={40}
                   className="object-contain"
                 />
-                الاستشاري
+                محمد ربيع
               </Link>
             </div>
             <div className="flex gap-4 mb-6 justify-center">
@@ -109,7 +109,9 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p>© {new Date().getFullYear()} جميع الحقوق محفوظة</p>
-          <p>Designd By Mohamed Rabie</p>
+          <p> <Link href="https://rio-marketing-solutions.vercel.app/" target="_blank" rel="noopener noreferrer" className="border-2 border-transparent hover:text-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
+            ريـو للحلول التسويقية
+          </Link> Designd By</p>
         </div>
       </div>
     </footer>

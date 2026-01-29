@@ -15,12 +15,12 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-white">
               <Image
                 src="/logo.png"
-                alt="شعار الاستشاري"
+                alt="شعار محمد ربيع"
                 width={40}
                 height={40}
                 className="object-contain"
               />
-              الاستشاري
+              محمد ربيع
             </Link>
           </div>
 

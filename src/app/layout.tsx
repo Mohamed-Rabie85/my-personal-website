@@ -19,25 +19,36 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   metadataBase: new URL('https://mohamedrabie.vercel.app/'),
   title: {
-    template: '%s | Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي',
-    default: 'Mohamed Rabie | مستشار تطوير أعمال وتسويق استراتيجي | خبرة أكثر من 20 عاماً',
+    default: 'محمد ربيع | استراتيجي تطوير أعمال وبناء أنظمة للشركات',
+    template: '%s | محمد ربيع',
   },
-  description: 'خدمات استشارية متخصصة في التخطيط الاستراتيجي، التسويق الرقمي، علم النفس التسويقي، تحليل البيانات، والإنتاج الإعلامي للشركات الناشئة والصغيرة والمتوسطة.',
-  keywords: ['استشارات تسويقية', 'تطوير أعمال', 'تسويق استراتيجي', 'علم النفس التسويقي', 'تحليل البيانات', 'الإنتاج الإعلامي'],
-  authors: [{ name: 'الاستشاري' }],
-  creator: 'الاستشاري',
-  publisher: 'الاستشاري',
+  description: 'أساعد أصحاب الشركات على الخروج من فخ التشغيل اليومي وبناء أنظمة نمو مستدامة. خبرة +20 عاماً، ومؤسس شركة Rio للحلول التسويقية.',
+  keywords: [
+    'تطوير أعمال',
+    'استشارات إدارية',
+    'بناء أنظمة',
+    'محمد ربيع',
+    'ريو للحلول التسويقية',
+    'Rio Marketing',
+    'إدارة عمليات',
+    'Scale Up',
+    'تسويق استراتيجي',
+    'Mohamed Rabie',
+  ],
+  authors: [{ name: 'محمد ربيع' }],
+  creator: 'محمد ربيع',
+  publisher: 'محمد ربيع',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'مستشار تطوير أعمال وتسويق استراتيجي | خبرة أكثر من 20 عاماً',
-    description: 'خدمات استشارية متخصصة في التخطيط الاستراتيجي، التسويق الرقمي، علم النفس التسويقي، تحليل البيانات، والإنتاج الإعلامي للشركات الناشئة والصغيرة والمتوسطة.',
-    url: 'https://www.example.com', // يرجى تحديث هذا URL عند النشر
-    siteName: 'الاستشاري',
-    locale: 'ar_SA', // تحديد المنطقة الجغرافية للغة العربية
+    title: 'محمد ربيع | من الفوضى إلى النظام المؤسسي',
+    description: 'خبرة 20 عاماً في السوق. أشاركك خلاصة تجاربي في إدارة الشركات والتسويق (من 2009) وتأسيس ريو (من 2015) لمساعدتك في بناء بيزنس حقيقي.',
+    url: 'https://mohamedrabie.vercel.app',
+    siteName: 'Mohamed Rabie',
+    locale: 'ar_EG', // تحديد المنطقة الجغرافية: مصر
     type: 'website',
   },
   robots: {
@@ -53,12 +64,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'مستشار تطوير أعمال وتسويق استراتيجي | خبرة أكثر من 20 عاماً',
-    description: 'خدمات استشارية متخصصة في التخطيط الاستراتيجي، التسويق الرقمي، علم النفس التسويقي، تحليل البيانات، والإنتاج الإعلامي.',
-    creator: '@mohamedrabie85', // تأكد من تحديث هذا لاسم حسابك على تويتر
+    title: 'محمد ربيع | من الفوضى إلى النظام المؤسسي',
+    description: 'خبرة 20 عاماً في السوق المصري والعربي. أساعدك في بناء أنظمة تخرجك من فخ التشغيل اليومي وتضاعف أرباحك.',
+    creator: '@mohamedrabie85',
   },
   verification: {
-    google: 'google-site-verification-code', // استبدل هذا بكود التحقق الخاص بك من Google Search Console
+    google: 'google-site-verification-code', // سيتم تحديثه بعد التحقق من Google Search Console
   },
   category: 'business',
 };

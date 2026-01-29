@@ -2,116 +2,122 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaSquareGithub, FaSquareFacebook, FaSquareWhatsapp } from "react-icons/fa6";
-import { IoLogoLinkedin } from "react-icons/io5";
-
+import { IoLogoLinkedin, IoMail, IoCall, IoLocationSharp } from "react-icons/io5";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-medium text-white pb-4 pt-8">
+    <footer className="bg-primary-medium text-white pt-12 pb-8 border-t border-white/10">
       <div className="section-container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-start text-center">
-          {/* القسم الأول - معلومات الاتصال */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-between items-start">
+
+          {/* العمود الأول: نبذة استراتيجية */}
           <div className="space-y-6">
-            <div className="flex items-center justify-center">
-              <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-white">
-                <Image
-                  src="/logo.png"
-                  alt="شعار محمد ربيع"
-                  width={40}
-                  height={40}
-                  className="object-contain"
-                />
-                محمد ربيع
-              </Link>
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/logo.png"
+                alt="شعار محمد ربيع"
+                width={50}
+                height={50}
+                className="object-contain"
+              />
+              <span className="text-2xl font-bold text-white">محمد ربيع</span>
             </div>
-            <div className="flex gap-4 mb-6 justify-center">
-              {/* WhatsApp Icon */}
-              <a href="https://wa.me/+201503000790" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[var(--secondary-medium)] transition-colors">
-                <FaSquareWhatsapp size={30} />
-              </a>
 
-              {/* GitHub Icon */}
-              <a href="https://github.com/Mohamed-Rabie85" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[var(--secondary-medium)] transition-colors">
-                <FaSquareGithub size={30} />
-              </a>
+            <p className="text-gray-300 leading-relaxed text-sm">
+              استراتيجي تطوير أعمال وبناء أنظمة. مؤسس شركة Rio Marketing Solutions. أساعد الشركات الناشئة على التحول من الفوضى إلى النظام لتحقيق نمو مستدام.
+            </p>
 
-              {/* Facebook Icon */}
-              <a href="https://www.facebook.com/mohamedrabie85" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[var(--secondary-medium)] transition-colors">
-                <FaSquareFacebook size={30} />
+            {/* أيقونات التواصل الاجتماعي */}
+            <div className="flex gap-4 pt-2">
+              <a href="https://wa.me/+201503000790" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[var(--secondary-medium)] transition-colors transform hover:scale-110">
+                <FaSquareWhatsapp size={24} />
               </a>
-
-              {/* LinkedIn Icon */}
-              <a href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mohamedrabie85" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[var(--secondary-medium)] transition-colors">
-                <IoLogoLinkedin size={30} />
+              <a href="https://www.linkedin.com/in/mohamedrabie85" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[var(--secondary-medium)] transition-colors transform hover:scale-110">
+                <IoLogoLinkedin size={24} />
+              </a>
+              <a href="https://www.facebook.com/mohamedrabie85" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[var(--secondary-medium)] transition-colors transform hover:scale-110">
+                <FaSquareFacebook size={24} />
+              </a>
+              <a href="https://github.com/Mohamed-Rabie85" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[var(--secondary-medium)] transition-colors transform hover:scale-110">
+                <FaSquareGithub size={24} />
               </a>
             </div>
           </div>
 
-          {/* القسم الثاني - روابط سريعة */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">روابط سريعة</h3>
-            <ul className="space-y-2">
+          {/* العمود الثاني: روابط سريعة */}
+          <div className="md:mx-auto">
+            <h3 className="text-lg font-bold mb-6 text-[var(--secondary-medium)] relative inline-block after:content-[''] after:absolute after:bottom-[-8px] after:right-0 after:w-1/2 after:h-0.5 after:bg-[var(--secondary-medium)]">
+              روابط سريعة
+            </h3>
+            <ul className="space-y-3">
               <li>
-                <Link href="/" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/" className="text-gray-300 hover:text-[var(--secondary-medium)] hover:translate-x-[-5px] transition-all duration-300 inline-block">
                   الرئيسية
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
-                  نبذة عني
+                <Link href="/about" className="text-gray-300 hover:text-[var(--secondary-medium)] hover:translate-x-[-5px] transition-all duration-300 inline-block">
+                  منهجيتي
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
+                <Link href="/services" className="text-gray-300 hover:text-[var(--secondary-medium)] hover:translate-x-[-5px] transition-all duration-300 inline-block">
                   الخدمات
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
-                  معرض الأعمال
+                <Link href="/blog" className="text-gray-300 hover:text-[var(--secondary-medium)] hover:translate-x-[-5px] transition-all duration-300 inline-block">
+                  مطبخ البيزنس
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
-                  المدونة
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
-                  تواصل معنا
+                <Link href="/diagnosis" className="text-[#F59E0B] font-semibold hover:text-[var(--secondary-medium)] hover:translate-x-[-5px] transition-all duration-300 inline-block">
+                  التشخيص المجاني
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* القسم الثالث - الخدمات */}
+          {/* العمود الثالث: معلومات التواصل */}
           <div>
-            <h3 className="text-xl font-bold mb-4">الخدمات</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/services#startup-formation" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
-                  تأسيس الشركات
-                </Link>
+            <h3 className="text-lg font-bold mb-6 text-[var(--secondary-medium)] relative inline-block after:content-[''] after:absolute after:bottom-[-8px] after:right-0 after:w-1/2 after:h-0.5 after:bg-[var(--secondary-medium)]">
+              تواصل معي
+            </h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-gray-300">
+                <IoMail className="text-[var(--secondary-medium)] mt-1 flex-shrink-0" size={18} />
+                <a href="mailto:mohamedrabie.consultant@gmail.com" className="hover:text-white transition-colors dir-ltr">
+                  mohamedrabie.consultant@gmail.com
+                </a>
               </li>
-              <li>
-                <Link href="/services#restructuring" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
-                  إعادة هيكلة الشركات
-                </Link>
+              <li className="flex items-start gap-3 text-gray-300">
+                <IoCall className="text-[var(--secondary-medium)] mt-1 flex-shrink-0" size={18} />
+                <a href="tel:+201503000790" className="hover:text-white transition-colors dir-ltr">
+                  +20 150 300 0790
+                </a>
               </li>
-              <li>
-                <Link href="/services#executive-partner" className="border-2 border-transparent hover:border-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
-                  شريك تنفيذي
-                </Link>
+              <li className="flex items-start gap-3 text-gray-300">
+                <IoLocationSharp className="text-[var(--secondary-medium)] mt-1 flex-shrink-0" size={18} />
+                <span>القاهرة، جمهورية مصر العربية</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p>© {new Date().getFullYear()} جميع الحقوق محفوظة</p>
-          <p> <Link href="https://rio-marketing-solutions.vercel.app/" target="_blank" rel="noopener noreferrer" className="border-2 border-transparent hover:text-[var(--secondary-medium)] rounded-md transition-colors duration-300 px-3 py-1">
-            ريـو للحلول التسويقية
-          </Link> Designd By</p>
+        {/* حقوق الملكية */}
+        <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
+          <p>© 2025 Mohamed Rabie. جميع الحقوق محفوظة.</p>
+          <div className="flex items-center gap-1">
+            <span>Designed by</span>
+            <Link
+              href="https://rio-marketing-solutions.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--secondary-medium)] hover:underline font-semibold"
+            >
+              Rio Marketing Solutions
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

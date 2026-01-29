@@ -1,45 +1,46 @@
 // src/app/page.tsx
 import type { Metadata } from "next";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import ClientsSection from '@/components/ClientsSection';
 import PortfolioSection from "@/components/PortfolioSection";
-// import TestimonialsSection from "@/components/TestimonialsSection";
 import BlogSection from "@/components/BlogSection";
-import CtaSection from "@/components/CtaSection";
+import AboutSnippet from "@/components/AboutSnippet";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FinalCtaSection from "@/components/FinalCtaSection";
 
 export const metadata: Metadata = {
-  title: "Mohamed Rabie مستشار تطوير أعمال وتسويق استراتيجي",
-  description: "خبرة أكثر من 20 عاماً في تطوير الأعمال والتسويق الاستراتيجي وبناء العلامات التجارية. استشارات متخصصة للشركات الناشئة والصغيرة والمتوسطة.",
+  title: "Mohamed Rabie | مستشار تطوير أعمال وبناء أنظمة",
+  description: "حول شركتك من فوضى التشغيل اليومي إلى كيان مؤسسي ينمو ذاتياً. استشارات متخصصة للشركات الناشئة والصغيرة.",
 };
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      {/* قسم الترحيب الرئيسي (Hero Section) */}
+      {/* 1. قسم الترحيب الرئيسي (Pain & Promise) */}
       <HeroSection />
 
-      {/* قسم من أنا (About Section) */}
-      <AboutSection />
-
-      {/* قسم الخدمات المميزة */}
+      {/* 2. قسم الخدمات (Solution) */}
       <ServicesSection />
 
-      {/* قسم المشاريع (Portfolio Section) */}
-      <PortfolioSection />
+      {/* 3. نبذة عن المنهجية (Authority - Why Me?) */}
+      <AboutSnippet />
 
-      {/* قسم شعارات العملاء (Logo Clouds) - جديد */}
+      {/* 4. قسم المشاريع (Portfolio - Proof of Competence) */}
+      {/* <PortfolioSection /> */}
+
+      {/* 5. شهادات العملاء (Social Proof - Testimonials) */}
+      <TestimonialsSection />
+
+      {/* 6. النداء الأخير (Final Action) */}
+      <FinalCtaSection />
+
+      {/* 7. قسم العملاء (Social Proof - Logos) */}
       <ClientsSection />
 
-      {/* قسم شهادات العملاء (Testimonials) - جديد */}
-      {/* <TestimonialsSection /> */}
-
-      {/* قسم المدونة (Blog Sections) - جديد */}
+      {/* 8. قسم المدونة (Education - Value) */}
       <BlogSection />
 
-      {/* قسم دعوة للعمل */}
-      <CtaSection />
     </main>
   );
 }

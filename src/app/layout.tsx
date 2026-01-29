@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     'ريو للحلول التسويقية',
     'Rio Marketing',
     'إدارة عمليات',
+    'مطبخ البيزنس',
     'Scale Up',
     'تسويق استراتيجي',
     'Mohamed Rabie',

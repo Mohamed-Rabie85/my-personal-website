@@ -3,6 +3,7 @@
 import { useState, FormEvent } from 'react';
 import { FaSquareGithub, FaSquareFacebook, FaSquareWhatsapp } from "react-icons/fa6";
 import { IoLogoLinkedin } from "react-icons/io5";
+import { sendContactMessage } from '../actions'; // Import server action
 
 // لم نعد بحاجة لـ Metadata هنا لأن هذا المكون أصبح 'use client'
 // من الأفضل نقل الـ Metadata إلى ملف layout.tsx الخاص بالصفحة إذا أردت ذلك
@@ -22,8 +23,6 @@ export default function Contact() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
-  import { sendContactMessage } from '../actions'; // Import server action
 
   // دالة لمعالجة إرسال الفورم
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {

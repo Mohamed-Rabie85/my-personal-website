@@ -32,9 +32,9 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, large = false }) => 
           <span className="bg-[var(--secondary-medium)] text-white text-xs px-3 py-1 rounded-full whitespace-nowrap">
             {article.category}
           </span>
-          <span className="text-[var(--neutral-medium)] text-sm whitespace-nowrap">
+          {/* <span className="text-[var(--neutral-medium)] text-sm whitespace-nowrap">
             {article.date}
-          </span>
+          </span> */}
         </div>
         <Link href={`/blog/${article.slug}`}>
           <h3 className="text-[var(--primary-medium)] text-xl font-semibold mb-2 hover:underline">

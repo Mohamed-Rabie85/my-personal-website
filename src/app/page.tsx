@@ -20,26 +20,36 @@ export default function Home() {
       {/* 1. قسم الترحيب الرئيسي (Pain & Promise) */}
       <HeroSection />
 
-      {/* 2. قسم الخدمات (Solution) */}
-      <ServicesSection />
+      {/* 2. قسم الخدمات (Solution) - خلفية فاتحة */}
+      <div className="bg-gray-50 w-full">
+        <ServicesSection />
+      </div>
 
-      {/* 3. نبذة عن المنهجية (Authority - Why Me?) */}
-      <AboutSnippet />
+      {/* 3. نبذة عن المنهجية (Authority - Why Me?) - خلفية بيضاء */}
+      <div className="bg-white w-full">
+        <AboutSnippet />
+      </div>
 
       {/* 4. قسم المشاريع (Portfolio - Proof of Competence) */}
       {/* <PortfolioSection /> */}
 
-      {/* 5. شهادات العملاء (Social Proof - Testimonials) */}
-      <TestimonialsSection />
+      {/* 5. شهادات العملاء (Social Proof - Testimonials) - خلفية مميزة */}
+      <div className="bg-gray-100 w-full">
+        <TestimonialsSection />
+      </div>
 
-      {/* 6. قسم العملاء (Social Proof - Logos) */}
-      <ClientsSection />
+      {/* 6. قسم العملاء (Social Proof - Logos) - خلفية بيضاء */}
+      <div className="bg-white w-full">
+        <ClientsSection />
+      </div>
 
       {/* 7. النداء الأخير (Final Action) */}
       <FinalCtaSection />
 
-      {/* 8. قسم المدونة (Education - Value) */}
-      <BlogSection />
+      {/* 8. قسم المدونة (Education - Value) - خلفية فاتحة */}
+      <div className="bg-gray-50 w-full">
+        <BlogSection />
+      </div>
 
     </main>
   );

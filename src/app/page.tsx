@@ -32,11 +32,11 @@ export default function Home() {
       {/* 5. شهادات العملاء (Social Proof - Testimonials) */}
       <TestimonialsSection />
 
-      {/* 6. النداء الأخير (Final Action) */}
-      <FinalCtaSection />
-
-      {/* 7. قسم العملاء (Social Proof - Logos) */}
+      {/* 6. قسم العملاء (Social Proof - Logos) */}
       <ClientsSection />
+
+      {/* 7. النداء الأخير (Final Action) */}
+      <FinalCtaSection />
 
       {/* 8. قسم المدونة (Education - Value) */}
       <BlogSection />

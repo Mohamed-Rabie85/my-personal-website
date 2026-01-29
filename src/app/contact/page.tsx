@@ -23,26 +23,23 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  import { sendContactMessage } from '../actions'; // Import server action
+
   // دالة لمعالجة إرسال الفورم
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // منع التحديث التلقائي للصفحة
     setStatus('sending'); // تحديث الحالة إلى "جار الإرسال"
 
     try {
-      const response = await fetch('/api/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // Use Server Action directly
+      const result = await sendContactMessage(formData);
 
-      if (response.ok) {
+      if (result.success) {
         setStatus('success'); // تم الإرسال بنجاح
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); // تفريغ حقول الفورم
       } else {
         setStatus('error'); // حدث خطأ من الخادم
-        console.error('Failed to send email:', await response.json());
+        console.error('Failed to send email:', result.error);
       }
     } catch (error) {
       setStatus('error'); // حدث خطأ في الشبكة أو الاتصال

@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
 
             <p className="text-gray-300 leading-relaxed text-sm">
-              استراتيجي تطوير أعمال وبناء أنظمة. مؤسس شركة Rio Marketing Solutions. أساعد الشركات الناشئة على التحول من الفوضى إلى النظام لتحقيق نمو مستدام.
+              استراتيجي تطوير أعمال وبناء أنظمة. مؤسس شركة ريو للحلول التسويقية - Rio Marketing Solutions. أساعد الشركات الناشئة على التحول من الفوضى إلى النظام لتحقيق نمو مستدام.
             </p>
 
             {/* أيقونات التواصل الاجتماعي */}
@@ -35,7 +35,7 @@ export default function Footer() {
               <a href="https://www.linkedin.com/in/mohamedrabie85" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[var(--secondary-medium)] transition-colors transform hover:scale-110">
                 <IoLogoLinkedin size={24} />
               </a>
-              <a href="https://www.facebook.com/mohamedrabie85" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[var(--secondary-medium)] transition-colors transform hover:scale-110">
+              <a href="https://www.facebook.com/MohamedRabieGrowth/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[var(--secondary-medium)] transition-colors transform hover:scale-110">
                 <FaSquareFacebook size={24} />
               </a>
               <a href="https://github.com/Mohamed-Rabie85" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[var(--secondary-medium)] transition-colors transform hover:scale-110">
@@ -108,15 +108,15 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
           <p>© 2025 Mohamed Rabie. جميع الحقوق محفوظة.</p>
           <div className="flex items-center gap-1">
-            <span>Designed by</span>
             <Link
               href="https://rio-marketing-solutions.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--secondary-medium)] hover:underline font-semibold"
-            >
-              Rio Marketing Solutions
+              >
+              ريو للحلول التسويقية - Rio Marketing Solutions
             </Link>
+            <span>Designed by</span>
           </div>
         </div>
       </div>

@@ -30,7 +30,7 @@ const AboutSnippet = () => {
                         </h3>
 
                         <p className="text-[var(--neutral-medium)] text-lg leading-relaxed">
-                            على مدار 20 سنة، أسست وأدرت شركات على أرض الواقع (بما فيها <span className="font-bold text-[var(--primary-medium)]">Rio Marketing Solutions</span>). عشت كل المشاكل اللي بتمر بيها: أزمات السيولة، مشاكل التوظيف، وفوضى التشغيل.
+                            على مدار 20 سنة، أسست وأدرت شركات على أرض الواقع (بما فيها <span className="font-bold text-[var(--primary-medium)]">ريو للحلول التسويقية - Rio Marketing Solutions</span>). عشت كل المشاكل اللي بتمر بيها: أزمات السيولة، مشاكل التوظيف، وفوضى التشغيل.
                         </p>
 
                         <p className="text-[var(--neutral-medium)] text-lg leading-relaxed">

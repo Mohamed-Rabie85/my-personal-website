@@ -37,7 +37,7 @@ export default function HeroSection() {
         {/* النص الفرعي (Sub-Headline) */}
         <p className="mb-8 text-base md:text-lg lg:text-xl max-w-4xl mx-auto text-white/90 leading-relaxed">
           بصفتي مؤسس لـ{" "}
-          <span className="font-bold text-[var(--secondary-medium)]">ريو للحلول التسويقية</span>{" "}
+          <span className="font-bold text-[var(--secondary-medium)]">ريو للحلول التسويقية - Rio Marketing Solutions</span>{" "}
           ومستشار لأكثر من <span className="font-bold">50+ شركة</span>، أساعدك
           في بناء <span className="text-[var(--secondary-medium)]">الأنظمة (Systems)</span> التي
           تخرجك من فخ التشغيل اليومي، وتضاعف أرباحك وعملائك.

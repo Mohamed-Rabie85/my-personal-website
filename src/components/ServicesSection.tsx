@@ -71,7 +71,7 @@ export default function ServicesSection() {
                 الشريك التنفيذي (Fractional COO)
               </h3>
               <p className="text-[var(--neutral-dark)] leading-relaxed px-2">
-                مش مجرد استشارة.. دي إدارة وتنفيذ. أنا وفريق (Rio Marketing) بنكون ذراعك اليمين، تنفيذ خطوة بخطوة لحد ما نوصل للهدف.
+                مش مجرد استشارة.. دي إدارة وتنفيذ. أنا وفريق (ريو للحلول التسويقية - Rio Marketing Solutions) بنكون ذراعك اليمين، تنفيذ خطوة بخطوة لحد ما نوصل للهدف.
               </p>
             </Link>
           </div>

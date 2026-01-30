@@ -86,19 +86,21 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-300">
                 <IoMail className="text-[var(--secondary-medium)] mt-1 flex-shrink-0" size={18} />
-                <a href="mailto:mohamedrabie.consultant@gmail.com" className="hover:text-white transition-colors dir-ltr">
-                  mohamedrabie.consultant@gmail.com
-                </a>
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  تواصل معنا
+                </Link>
               </li>
               <li className="flex items-start gap-3 text-gray-300">
                 <IoCall className="text-[var(--secondary-medium)] mt-1 flex-shrink-0" size={18} />
-                <a href="tel:+201503000790" className="hover:text-white transition-colors dir-ltr">
-                  +20 150 300 0790
+                <a href="https://wa.me/+201503000790" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors dir-ltr">
+                  +201503000790 (WhatsApp)
                 </a>
               </li>
               <li className="flex items-start gap-3 text-gray-300">
                 <IoLocationSharp className="text-[var(--secondary-medium)] mt-1 flex-shrink-0" size={18} />
-                <span>القاهرة، جمهورية مصر العربية</span>
+                <Link href="/consultation" className="hover:text-white transition-colors">
+                  احجز استشارة
+                </Link>
               </li>
             </ul>
           </div>
@@ -106,14 +108,14 @@ export default function Footer() {
 
         {/* حقوق الملكية */}
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
-          <p>© 2025 Mohamed Rabie. جميع الحقوق محفوظة.</p>
+          <p>© 2026 Mohamed Rabie. جميع الحقوق محفوظة.</p>
           <div className="flex items-center gap-1">
             <Link
               href="https://rio-marketing-solutions.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--secondary-medium)] hover:underline font-semibold"
-              >
+            >
               ريو للحلول التسويقية - Rio Marketing Solutions
             </Link>
             <span>Designed by</span>

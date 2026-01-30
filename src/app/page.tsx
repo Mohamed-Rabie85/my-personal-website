@@ -10,7 +10,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCtaSection from "@/components/FinalCtaSection";
 
 export const metadata: Metadata = {
-  title: "Mohamed Rabie | مستشار تطوير أعمال وبناء أنظمة",
+  title: "Mohamed Rabie | استراتيجي تطوير أعمال وبناء أنظمة الشركات",
   description: "حول شركتك من فوضى التشغيل اليومي إلى كيان مؤسسي ينمو ذاتياً. استشارات متخصصة للشركات الناشئة والصغيرة.",
 };
 

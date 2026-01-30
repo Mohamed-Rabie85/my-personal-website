@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center justify-center text-white py-12 md:py-20 overflow-hidden bg-gradient-to-br from-[var(--primary-dark)] to-[var(--primary-medium)]">
+    <section className="relative w-full min-h-[calc(100vh-80px)] flex items-center text-white overflow-hidden bg-gradient-to-br from-[var(--primary-dark)] to-[var(--primary-medium)]">
       {/* خلفية بسيطة بدون صور مشتتة - استخدام لون متدرج فقط */}
 
       {/* عناصر زخرفية بسيطة جداً (Symbols) لإضفاء لمسة جمالية بدون تشويش */}

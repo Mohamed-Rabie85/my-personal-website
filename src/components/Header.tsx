@@ -38,6 +38,9 @@ export default function Header() {
             <Link href="/blog" className="px-4 py-2 text-white hover:text-[var(--secondary-medium)] transition-colors duration-300 font-medium">
               مطبخ البيزنس
             </Link>
+            <Link href="/consultation" className="px-4 py-2 text-white hover:text-[var(--secondary-medium)] transition-colors duration-300 font-medium">
+              احجز استشارتك
+            </Link>
           </nav>
 
           {/* زر التشخيص (CTA) */}
@@ -96,6 +99,13 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 مطبخ البيزنس
+              </Link>
+              <Link
+                href="/consultation"
+                className="px-4 py-3 text-white hover:bg-white/5 rounded-md transition-colors font-medium border-r-4 border-transparent hover:border-[var(--secondary-medium)]"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                احجز استشارتك
               </Link>
               <div className="pt-2 mt-2 border-t border-white/10">
                 <Link

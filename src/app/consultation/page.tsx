@@ -2,6 +2,8 @@
 
 import React, { useState, FormEvent } from 'react';
 import { GiAngelWings } from "react-icons/gi";
+import { FaSquareGithub, FaSquareFacebook, FaSquareWhatsapp } from "react-icons/fa6";
+import { IoLogoLinkedin, IoMail } from "react-icons/io5";
 import Accordion from '@/components/Accordion';
 import AccordionItem from '@/components/AccordionItem';
 
@@ -58,20 +60,22 @@ export default function Consultation() {
   };
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      {/* قسم العنوان الرئيسي */}
+      {/* قسم العنوان الرئيسي - محدث */}
       <section className="w-full bg-gradient-to-b from-[var(--primary-dark)] to-[var(--primary-medium)] text-white py-16">
         <div className="section-container text-center">
-          <h1 className="mb-4 text-3xl font-bold">احجز استشارة مجانية</h1>
+          <h1 className="mb-4 text-3xl font-bold">طلب استشارة / تواصل</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            خطوة أولى نحو تحقيق أهدافك وتطوير أعمالك بشكل استراتيجي ومستدام
+            سواء كنت تبحث عن حل جذري لمشاكل شركتك، أو لديك استفسار عام، املأ النموذج وسنحدد الخطوة التالية المناسبة لك.
           </p>
         </div>
       </section>
 
-      {/* قسم مميزات الاستشارة */}
+      {/* قسم المحتوى والفورم */}
       <section className="w-full py-16 bg-white ">
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+            {/* الجزء الأيمن (معلوماتي) */}
             <div>
               <h2 className="text-[var(--primary-dark)] text-3xl font-bold mb-6">ماذا تتضمن الاستشارة المجانية؟</h2>
               <p className="mb-4 text-[var(--neutral-medium)]">
@@ -96,34 +100,50 @@ export default function Consultation() {
                     <p className="text-[var(--neutral-medium)]">تحديد أهدافك قصيرة وطويلة المدى، وما الذي تطمح لتحقيقه في عملك.</p>
                   </div>
                 </li>
-                <li className="flex gap-3">
-                  <div className="text-[var(--secondary-medium)]">
-                    <GiAngelWings size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[var(--primary-medium)]">استراتيجيات مقترحة</h3>
-                    <p className="text-[var(--neutral-medium)]">تقديم أفكار واستراتيجيات أولية يمكن أن تساعدك في تحقيق أهدافك.</p>
-                  </div>
-                </li>
-                <li className="flex gap-3">
-                  <div className="text-[var(--secondary-medium)]">
-                    <GiAngelWings size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[var(--primary-medium)]">خطة عمل أولية</h3>
-                    <p className="text-[var(--neutral-medium)]">مناقشة الخطوات التالية وكيف يمكننا العمل معًا لتحقيق أهدافك.</p>
-                  </div>
-                </li>
               </ul>
-              <p className="text-[var(--primary-medium)] italic mb-6">
+              <p className="text-[var(--primary-medium)] italic mb-10">
                 الاستشارة المجانية تستغرق حوالي 30 دقيقة، وتتم عبر مكالمة فيديو أو هاتفية حسب تفضيلك.
               </p>
+
+              {/* قسم بيانات التواصل المباشر - الجديد */}
+              <div className="bg-[var(--neutral-light)]/50 p-6 rounded-lg border border-[var(--neutral-medium)]/20">
+                <h3 className="text-xl font-bold text-[var(--primary-dark)] mb-4 border-b border-[var(--secondary-medium)] pb-2 inline-block">
+                  بيانات التواصل المباشر (للاستفسارات السريعة والشراكات)
+                </h3>
+                <ul className="space-y-4">
+                  <li className="flex items-center gap-3">
+                    <IoMail className="text-[var(--secondary-medium)]" size={20} />
+                    <a href="mailto:mohamedrabie.consultant@gmail.com" className="text-[var(--neutral-dark)] hover:text-[var(--primary-medium)] transition-colors dir-ltr font-medium">
+                      mohamedrabie.consultant@gmail.com
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <FaSquareWhatsapp className="text-[var(--secondary-medium)]" size={20} />
+                    <a href="https://wa.me/+201503000790" target="_blank" rel="noopener noreferrer" className="text-[var(--neutral-dark)] hover:text-[var(--primary-medium)] transition-colors dir-ltr font-medium">
+                      +20 150 300 0790
+                    </a>
+                  </li>
+                </ul>
+
+                <div className="flex gap-4 mt-6">
+                  <a href="https://www.linkedin.com/in/mohamedrabie85" target="_blank" rel="noopener noreferrer" className="text-[var(--primary-medium)] hover:text-[var(--secondary-medium)] transition-colors transform hover:scale-110">
+                    <IoLogoLinkedin size={28} />
+                  </a>
+                  <a href="https://www.facebook.com/MohamedRabieGrowth/" target="_blank" rel="noopener noreferrer" className="text-[var(--primary-medium)] hover:text-[var(--secondary-medium)] transition-colors transform hover:scale-110">
+                    <FaSquareFacebook size={28} />
+                  </a>
+                  <a href="https://wa.me/+201503000790" target="_blank" rel="noopener noreferrer" className="text-[var(--primary-medium)] hover:text-[var(--secondary-medium)] transition-colors transform hover:scale-110">
+                    <FaSquareWhatsapp size={28} />
+                  </a>
+                </div>
+              </div>
+
             </div>
+
             {/* نموذج الحجز */}
-            <div className="bg-[var(--neutral-light)] p-8 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 text-[var(--primary-dark)]">احجز موعدك الآن</h3>
+            <div className="bg-[var(--neutral-light)] p-8 rounded-lg shadow-md h-fit sticky top-24">
+              <h3 className="text-xl font-semibold mb-4 text-[var(--primary-dark)]">املأ النموذج وسأتواصل معك</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
-                {/* كل حقل الآن مربوط بـ value و onChange */}
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">الاسم الكامل</label>
                   <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="text-[var(--neutral-medium)] bg-white w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-medium)]" placeholder="أدخل اسمك الكامل" autoComplete="name" />
@@ -141,55 +161,40 @@ export default function Consultation() {
                   <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className="text-[var(--neutral-medium)] bg-white w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="أدخل اسم شركتك (اختياري)" autoComplete="organization" />
                 </div>
                 <div>
-                  <label htmlFor="consultation_type" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">نوع الاستشارة</label>
+                  <label htmlFor="consultation_type" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">نوع الاستشارة / التواصل</label>
                   <select id="consultation_type" name="consultation_type" value={formData.consultation_type} onChange={handleChange} required className="text-[var(--neutral-medium)] bg-white w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" autoComplete="off">
-                    <option value="">اختر نوع الاستشارة</option>
+                    <option value="">اختر السبب...</option>
                     <option value="startup_formation">تأسيس مشروع جديد</option>
                     <option value="restructuring">إعادة هيكلة ونمو الأعمال</option>
                     <option value="marketing_strategy">شراكة تنفيذية (دعم مستمر)</option>
                     <option value="business_development">تطوير الأعمال</option>
                     <option value="operations_optimization">تحسين العمليات</option>
                     <option value="strategy_planning">تخطيط استراتيجي</option>
+                    <option value="general_inquiry">استفسار عام / شراكة أعمال</option>
                     <option value="other">أخرى</option>
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">رسالتك</label>
-                  <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} className="text-[var(--neutral-medium)] bg-white w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="اشرح ما هي احتياجاتك وأهدافك" autoComplete="off"></textarea>
+                  <label htmlFor="message" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">رسالتك / تفاصيل إضافية</label>
+                  <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} className="text-[var(--neutral-medium)] bg-white w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" placeholder="اشرح ما هي احتياجاتك أو استفسارك" autoComplete="off"></textarea>
                 </div>
-                <div>
-                  <label htmlFor="preferred_date" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">التاريخ المفضل</label>
-                  <input type="date" id="preferred_date" name="preferred_date" value={formData.preferred_date} onChange={handleChange} className="text-[var(--neutral-medium)] bg-white w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" autoComplete="off" />
-                </div>
-                <div>
-                  <label htmlFor="preferred_time" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">الوقت المفضل</label>
-                  <select id="preferred_time" name="preferred_time" value={formData.preferred_time} onChange={handleChange} className="text-[var(--neutral-medium)] bg-white w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" autoComplete="off">
-                    <option value="">اختر الوقت المفضل</option>
-                    <option value="afternoon">ظهرًا (12:00 - 2:00)</option>
-                    <option value="evening">مساءً (6:00 - 8:00)</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="communication_preference" className="block text-sm font-medium text-[var(--neutral-dark)] mb-1 mr-1">طريقة التواصل المفضلة</label>
-                  <select id="communication_preference" name="communication_preference" value={formData.communication_preference} onChange={handleChange} className="text-[var(--neutral-medium)] bg-white w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--primary-dark)]" autoComplete="off">
-                    <option value="">اختر طريقة التواصل</option>
-                    <option value="video_call">مكالمة فيديو</option>
-                    <option value="phone_call">مكالمة هاتفية</option>
-                  </select>
-                </div>
-                <button type="submit" disabled={status === 'sending'} className="w-full btn-secondary disabled:opacity-50 disabled:cursor-not-allowed">
-                  {status === 'sending' ? 'جار الحجز...' : 'احجز الاستشارة'}
+
+                {/* تم تبسيط الفورم بإزالة تفضيلات التاريخ والوقت في المرحلة الأولية لزيادة نسبة التحويل */}
+
+                <button type="submit" disabled={status === 'sending'} className="w-full btn-secondary disabled:opacity-50 disabled:cursor-not-allowed text-lg font-bold py-3 mt-4">
+                  {status === 'sending' ? 'جار الإرسال...' : 'إرسال الطلب'}
                 </button>
 
                 {/* رسائل الحالة للمستخدم */}
                 {status === 'success' && (
-                  <p className="text-[var(--secondary-medium)] mt-2 text-center text-2xl">
-                    تم إرسال طلبك بنجاح! سأتواصل معك قريبًا لتأكيد الموعد.
-                  </p>
+                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4" role="alert">
+                    <strong className="font-bold">تم الإرسال بنجاح! </strong>
+                    <span className="block sm:inline">سأتواصل معك قريبًا.</span>
+                  </div>
                 )}
                 {status === 'error' && (
                   <p className="text-red-600 mt-2 text-center">
-                    حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل معي مباشرة.
+                    حدث خطأ. يرجى المحاولة مرة أخرى أو التواصل معي مباشرة عبر واتساب.
                   </p>
                 )}
               </form>
@@ -198,64 +203,39 @@ export default function Consultation() {
         </div >
       </section>
 
-      {/* قسم الأسئلة الشائعة */}
-      <section className="w-full py-16 bg-[var(--neutral-light)]"> 
+      {/* قسم الأسئلة الشائعة - محدث استراتيجياً */}
+      <section className="w-full py-16 bg-[var(--neutral-light)]">
         <div className="section-container max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+          <div className="text-center mb-12">
             <h2 className="text-[var(--primary-medium)] text-3xl font-bold">الأسئلة الشائعة</h2>
             <p className="text-[var(--neutral-medium)] max-w-3xl mx-auto">
-              إجابات على الأسئلة الأكثر شيوعًا حول الاستشارات وكيفية العمل معي
+              إجابات على أهم تساؤلاتك قبل البدء
             </p>
           </div>
           <Accordion>
-            {/* 1. حول الاستشارة المجانية وأهدافها */}
-            <AccordionItem title="ماذا أتوقع من الاستشارة المجانية الأولية؟">
-              الاستشارة المجانية هي فرصة لنا لنتعارف، نفهم تحديات عملك الحالية، ونستكشف الأهداف التي تسعى لتحقيقها. سأقدم لك رؤى أولية حول كيفية مقاربتنا لهذه التحديات والفرص المحتملة للنمو. لا يوجد أي التزام بالتعاقد بعدها.
+            {/* 1. حول الاستشارة المجانية */}
+            <AccordionItem title="ماذا أتوقع من الاستشارة المجانية؟">
+              الاستشارة هي جلسة تشخيصية مدتها 30 دقيقة لنفهم تحدياتك ونحدد هل نحن الشريك المناسب لك. سنقوم بتحليل أولي للوضع وتقديم توصيات مبدئية. لا يوجد أي التزام بالتعاقد بعدها.
             </AccordionItem>
 
-            {/* 2. عملية العمل والتعاقد */}
-            <AccordionItem title="كيف تتم عملية العمل بعد الاستشارة المجانية؟">
-              بعد الاستشارة المجانية، إذا رأينا أن هناك توافقًا وإمكانية للعمل معًا، سأقوم بإعداد مقترح مفصل. سيتضمن هذا المقترح نطاق العمل، الأهداف المحددة، المنهجية المقترحة، الجدول الزمني المتوقع، والتكلفة. بمجرد موافقتك، نبدأ رحلتنا لتحقيق أهدافك.
+            {/* 2. حول التنفيذ وريو */}
+            <AccordionItem title="هل التنفيذ يتم عن طريقكم؟">
+              نعم، بصفتي مؤسس لـ <strong>Rio Marketing Solutions</strong>، نمتلك ذراعاً تنفيذياً كاملاً ومتخصصاً لتطبيق الاستراتيجيات التي نضعها، مما يضمن لك وحدة الرؤية ودقة التنفيذ دون الحاجة للتعامل مع جهات متعددة.
             </AccordionItem>
 
-            {/* 3. قياس النجاح والعائد على الاستثمار (ROI) */}
-            <AccordionItem title="كيف يمكنني قياس نجاح المشاريع الاستشارية معكم؟">
-              في بداية كل مشروع، نحدد معًا مؤشرات الأداء الرئيسية (KPIs) والمعايير التي ستستخدم لقياس النجاح والعائد على الاستثمار (ROI). هذه المؤشرات قابلة للقياس وتتفق مع أهداف عملك، مثل زيادة المبيعات، تحسين كفاءة العمليات، توسيع قاعدة العملاء، تعزيز الوعي بالعلامة التجارية، أو تحسين تجربة المستخدم.
+            {/* 3. الجغرافيا */}
+            <AccordionItem title="هل تقدمون خدمات خارج مصر؟">
+              نعم، نقدم خدماتنا لعملاء في السعودية، الإمارات، وكل الدول العربية عبر اجتماعات أونلاين فعالة ومنظمة، ولنا سابقة أعمال ناجحة في أسواق متعددة.
             </AccordionItem>
 
-            {/* 4. أنواع الخدمات التي تقدمونها */}
-            <AccordionItem title="ما هي أنواع الشركات والخدمات التي تقدمون لها الاستشارات؟">
-              أقدم خدمات استشارية متكاملة لرواد الأعمال وقادة الشركات الناشئة والصغيرة في قطاعات متنوعة. تشمل خبراتي التخطيط الاستراتيجي، تطوير الأعمال، التسويق الرقمي وبناء العلامات التجارية، إدارة العمليات، والتحول الرقمي، بالإضافة إلى الإرشاد والتوجيه.
+            {/* 4. السرية */}
+            <AccordionItem title="كيف تضمنون سرية معلوماتي؟">
+              نحن نأخذ السرية بجدية تامة. نوقع اتفاقية عدم إفشاء (NDA) عند الطلب، ونعامل بياناتك واستراتيجياتك كأسرار تجارية مقدسة لا يتم مشاركتها مع أي طرف ثالث.
             </AccordionItem>
 
-            {/* 5. الجغرافيا والتواجد */}
-            <AccordionItem title="هل تقدمون خدمات استشارية للشركات خارج مصر؟">
-              نعم بالتأكيد، أقدم خدمات استشارية للشركات في جميع أنحاء العالم العربي وخارجه. يتم إجراء الاجتماعات والاستشارات بكفاءة وفعالية عبر الإنترنت، مما يتيح لنا العمل مع عملاء من مختلف المناطق الجغرافية والثقافات.
-            </AccordionItem>
-
-            {/* 6. المدة الزمنية للمشاريع */}
-            <AccordionItem title="ما هي المدة المتوقعة للمشاريع الاستشارية؟">
-              تختلف مدة المشاريع الاستشارية بناءً على حجم المشروع، تعقيد التحديات، والأهداف المحددة. يمكن أن تتراوح من استشارات قصيرة المدى (بضعة أسابيع للتركيز على نقطة معينة) إلى شراكات طويلة الأمد (عدة أشهر أو حتى سنوات لتحقيق نمو مستدام وتحول شامل). نحدد المدة المناسبة خلال مرحلة التخطيط الأولي.
-            </AccordionItem>
-
-            {/* 7. الجانب التقني / دمج التكنولوجيا */}
-            <AccordionItem title="كيف يمكن للتكنولوجيا والحلول الرقمية أن تساهم في نمو أعمالنا؟">
-              أعمل على دمج أحدث التقنيات والحلول الرقمية، بما في ذلك الذكاء الاصطناعي والأتمتة، في الاستراتيجيات التي نقدمها. سواء كان ذلك بتحسين تواجدكم الرقمي (المواقع والتطبيقات)، أتمتة العمليات لزيادة الكفاءة، أو تحليل البيانات لدعم اتخاذ القرارات، فإن التكنولوجيا هي حجر الزاوية لتحقيق التحول والنمو في العصر الرقمي.
-            </AccordionItem>
-
-            {/* 8. القيمة المضافة / ما يميزكم */}
-            <AccordionItem title="ما الذي يميز خدماتكم الاستشارية عن غيركم؟">
-              أجمع بين خبرة عملية تزيد عن 20 عامًا في قطاعات متنوعة، وفهم عميق للتحليل الاستراتيجي والتسويق، مع إلمام قوي بالجانب التقني. أركز على تقديم حلول عملية قابلة للتنفيذ تحقق نتائج ملموسة ومستدامة، مع الالتزام بالقيم الأخلاقية والشفافية التامة، وبناء علاقات شراكة حقيقية مع عملائي.
-            </AccordionItem>
-
-            {/* 9. سرية المعلومات والبيانات */}
-            <AccordionItem title="كيف تضمنون سرية معلومات وبيانات شركتي؟">
-              نحن نولي أقصى درجات الأهمية لسرية معلومات عملائنا. يتم التعامل مع جميع البيانات والمعلومات بسرية تامة ووفقًا لأعلى معايير الأمن السيبراني. نوقع اتفاقيات عدم إفشاء (NDAs) عند الضرورة لضمان حماية بياناتكم بشكل كامل.
-            </AccordionItem>
-
-            {/* 10. كيفية البدء / الخطوة التالية */}
-            <AccordionItem title="ما هي الخطوة التالية لحجز استشارة؟">
-              الخطوة التالية بسيطة! قم بملء النموذج الموجود في هذه الصفحة لطلب استشارتك المجانية. سأقوم بمراجعة طلبك والتواصل معك لتحديد موعد مناسب يناسب جدولك.
+            {/* 5. الخطوة التالية */}
+            <AccordionItem title="ما هي الخطوة التالية بعد ملء النموذج؟">
+              سأقوم بمراجعة طلبك شخصياً لتحليله، وسيتواصل معك فريقي خلال 24 ساعة لتحديد الموعد المناسب للاجتماع أو للرد على استفسارك.
             </AccordionItem>
           </Accordion>
         </div>

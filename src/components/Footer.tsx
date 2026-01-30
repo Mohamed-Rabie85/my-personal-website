@@ -86,7 +86,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-300">
                 <IoMail className="text-[var(--secondary-medium)] mt-1 flex-shrink-0" size={18} />
-                <Link href="/contact" className="hover:text-white transition-colors">
+                <Link href="/consultation" className="hover:text-white transition-colors">
                   تواصل معنا
                 </Link>
               </li>
